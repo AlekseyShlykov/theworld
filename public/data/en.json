@@ -1,0 +1,130 @@
+{
+  "ui": {
+    "title": "Guns, Germs & Steel!",
+    "subtitle": "An Interactive Journey Through Human History",
+    "buttons": {
+      "music": "Music",
+      "tts": "Voice",
+      "sfx": "SFX",
+      "site": "Website",
+      "twitter": "Twitter",
+      "email": "Contact"
+    },
+    "areaLabels": {
+      "A1": "Region 1: Fertile Crescent",
+      "A2": "Region 2: East Asia",
+      "A3": "Region 3: Mesoamerica",
+      "A4": "Region 4: Sub-Saharan Africa",
+      "A5": "Region 5: New Guinea"
+    },
+    "toast": {
+      "advanced": "advanced this turn",
+      "powerGain": "Power",
+      "accGain": "Growth"
+    },
+    "finalScreen": {
+      "title": "Journey Complete",
+      "subtitle": "The story of human civilization is one of geography, environment, and chance.",
+      "restart": "Play Again"
+    }
+  },
+  "steps": [
+    {
+      "id": 1,
+      "icon": "stone.png",
+      "title": "Settlement & Where to Live",
+      "phase1Text": "Around 13,000 years ago, humans transitioned from nomadic hunter-gatherers to settled communities. The availability of wild plants and animals in different regions determined where these first settlements would emerge. Geography shaped destiny—some regions offered abundant resources, while others presented harsh challenges.",
+      "choiceQuestion": "Which region will develop most this turn?",
+      "phase3": {
+        "image": "step1.jpg",
+        "video": null,
+        "text": "The Fertile Crescent—a region spanning modern Iraq, Syria, Lebanon, Israel, Palestine, and parts of Turkey and Iran—became humanity's first agricultural heartland. Its Mediterranean climate, reliable rainfall, and diverse wild plants made it ideal for early farming. Wild wheat and barley grew in abundance, and large mammals like wild goats and sheep roamed the hills. These environmental advantages gave the region's inhabitants a crucial head start in the race toward civilization."
+      }
+    },
+    {
+      "id": 2,
+      "icon": "food.png",
+      "title": "Agriculture & Domestication of Plants",
+      "phase1Text": "The agricultural revolution was not a sudden invention but a gradual process spanning thousands of years. Different regions independently domesticated different crops based on what grew wild in their environment. Wheat and barley in the Middle East, rice in China, corn in Mesoamerica, and sorghum in Africa. Each crop required different farming techniques and supported different population densities.",
+      "choiceQuestion": "Which region will advance agricultural techniques this turn?",
+      "phase3": {
+        "image": null,
+        "video": "step2.mp4",
+        "text": "The domestication of wheat transformed human society. Early farmers selected seeds from the largest, most nutritious plants year after year, gradually creating new varieties that were larger and easier to harvest than their wild ancestors. This reliable food source allowed populations to grow and settle in permanent villages. But agriculture wasn't universally beneficial—it required hard labor, made people dependent on a narrow range of crops, and created the first social hierarchies as some accumulated surplus while others did not."
+      }
+    },
+    {
+      "id": 3,
+      "icon": "cow.png",
+      "title": "Domestication of Animals",
+      "phase1Text": "While crops provided calories, domesticated animals revolutionized agriculture by providing muscle power, transportation, milk, meat, and wool. But not all regions had animals suitable for domestication. Of the 148 large mammal species on Earth, only 14 were successfully domesticated—and most of these lived in Eurasia. This disparity would have profound consequences for human history.",
+      "choiceQuestion": "Which region will gain advantages from animal husbandry?",
+      "phase3": {
+        "image": "step3.jpg",
+        "video": null,
+        "text": "Eurasia possessed an extraordinary array of domesticable animals: cattle, horses, pigs, sheep, and goats. Horses revolutionized transportation and warfare. Oxen pulled plows, multiplying agricultural productivity. Cows provided milk, creating a new food source that didn't require killing the animal. By contrast, sub-Saharan Africa's zebras proved impossible to tame, and the Americas had no large domesticable mammals after the megafauna extinctions—no horses, no cattle, no camels. This biological lottery gave Eurasian societies an enormous advantage in food production, transportation, and military capability."
+      }
+    },
+    {
+      "id": 4,
+      "icon": "alphabet.png",
+      "title": "Writing",
+      "phase1Text": "Writing systems emerged independently in several regions, but not everywhere. Writing allowed societies to record transactions, codify laws, preserve knowledge across generations, and coordinate large organizations. The invention of writing marked the transition from prehistory to history, from oral tradition to recorded civilization.",
+      "choiceQuestion": "Which region will develop writing systems?",
+      "phase3": {
+        "image": "step4.jpg",
+        "video": null,
+        "text": "The earliest known writing system emerged in Mesopotamia around 3,200 BCE—cuneiform, pressed into clay tablets with a reed stylus. Egyptian hieroglyphics appeared shortly after. Chinese characters developed independently around 1,200 BCE. The Phoenician alphabet, ancestor of most modern alphabets, spread throughout the Mediterranean. Writing didn't just record information—it transformed human cognition, enabling abstract thought, complex mathematics, and the accumulation of knowledge across generations. Societies with writing could build on the discoveries of their ancestors, while oral cultures had to rediscover knowledge anew each generation."
+      }
+    },
+    {
+      "id": 5,
+      "icon": "continents.png",
+      "title": "Trade Journeys (East-West / North-South)",
+      "phase1Text": "The orientation of continents profoundly affected the spread of agriculture and technology. Eurasia's east-west axis meant that crops, animals, and innovations could spread across similar climatic zones—wheat that grew in the Fertile Crescent could also grow in Europe and China. But in the Americas and Africa, the north-south orientation meant crossing multiple climate zones, slowing the diffusion of agricultural knowledge.",
+      "choiceQuestion": "Which region will benefit most from trade networks?",
+      "phase3": {
+        "image": "step5.jpg",
+        "video": null,
+        "text": "Along the Silk Road, ideas traveled faster than merchants. A farmer in Spain could grow the same wheat varieties as a farmer in China, separated by 6,000 miles but sharing the same latitude and similar climate. Innovations in irrigation, metallurgy, and writing spread relatively quickly across Eurasia. By contrast, the llamas domesticated in the Andes couldn't survive in the Amazon rainforest or the deserts of Mexico. Corn developed in Mesoamerica took thousands of years to reach eastern North America. This geographic difference—the result of continental shapes formed by plate tectonics millions of years earlier—created a massive advantage for Eurasian societies."
+      }
+    },
+    {
+      "id": 6,
+      "icon": "germs.png",
+      "title": "Microbes & Diseases",
+      "phase1Text": "Living in close proximity to domesticated animals had an unexpected consequence: diseases. Measles came from cattle, smallpox from camels or cattle, influenza from pigs and ducks. Over thousands of years, Eurasian populations developed some immunity to these diseases through terrible epidemics that killed millions. But these same diseases would become biological weapons when Eurasians encountered populations that had never been exposed to them.",
+      "choiceQuestion": "Which region will develop disease resistance?",
+      "phase3": {
+        "image": "step6.jpg",
+        "video": null,
+        "text": "When Europeans arrived in the Americas in 1492, they brought more than guns and steel—they brought smallpox, measles, typhus, and influenza. Indigenous American populations, having never encountered these diseases, died in catastrophic numbers. Some estimates suggest that up to 90% of the pre-Columbian population perished from European diseases. This wasn't a deliberate act of biological warfare (though that came later)—it was the inevitable consequence of thousands of years of different agricultural histories. The societies that had lived with domesticated animals for millennia had inadvertently developed both the diseases and the immune resistance that would reshape the world."
+      }
+    },
+    {
+      "id": 7,
+      "icon": "guns.png",
+      "title": "Technology Development",
+      "phase1Text": "Technological innovation built upon itself, each advance enabling the next. Bronze gave way to iron, simple tools to complex machines, human power to animal power to water power. But technology didn't develop in isolation—it required surplus food to support specialized craftspeople, writing to preserve and transmit knowledge, trade networks to spread innovations, and population density to generate new ideas through the interaction of many minds.",
+      "choiceQuestion": "Which region will achieve technological breakthroughs?",
+      "phase3": {
+        "image": "step7.jpg",
+        "video": null,
+        "text": "By 1500 CE, Eurasian societies had developed gunpowder, ocean-going ships, printing presses, and steel weaponry. These technologies weren't the result of genetic superiority—they emerged from the accumulated advantages of geography. More domesticable plants and animals meant denser populations, which meant more potential inventors. East-west trade routes meant innovations spread quickly across the continent. Writing systems preserved knowledge. The competition between numerous kingdoms drove innovation in warfare and statecraft. When European explorers encountered other societies, their technological advantages—especially in military technology and ship-building—were overwhelming. But these advantages stemmed from environmental circumstances, not innate human differences."
+      }
+    },
+    {
+      "id": 8,
+      "icon": "social.png",
+      "title": "Social Institutions",
+      "phase1Text": "As societies grew more complex, they developed increasingly sophisticated institutions: organized religions, legal systems, bureaucracies, and standing armies. Food surpluses allowed some members of society to specialize in roles beyond farming—priests, soldiers, administrators, craftspeople. But this complexity came at a cost: social stratification, inequality, and the concentration of power in the hands of elites.",
+      "choiceQuestion": "Which region will develop complex social institutions?",
+      "phase3": {
+        "image": "step8.jpg",
+        "video": null,
+        "text": "The rise of complex societies followed similar patterns across the world, but at different times depending on when agriculture emerged. From early city-states emerged kingdoms, then empires. Writing enabled bureaucracy, which enabled taxation and standing armies. Organized religion legitimized the power of rulers and helped coordinate large populations. These institutions weren't inevitable or universal—many human societies chose different paths, remaining egalitarian and decentralized. But in conflicts between centralized agricultural empires and smaller-scale societies, the empires usually won, not through cultural superiority, but through sheer numbers, organization, and the technological advantages that came from thousands of years of accumulated agricultural surplus. The shape of the modern world—with its vast nation-states, complex economies, and global inequalities—can be traced back to these early divergences in agricultural development, themselves determined largely by the geography and biology of different regions."
+      }
+    }
+  ]
+}
+

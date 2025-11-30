@@ -1,0 +1,79 @@
+/* Intro Map Animation Styles */
+/* Shows a 800x200px cropped view of the map with vertical scrolling animation */
+/* Note: Spacing rules for .intro-map-animation-container.intro-image-top-spacing */
+/* are defined in IntroScreens.css to ensure consistency across all intro screens */
+
+.intro-map-animation-container {
+  width: 800px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  background-color: #2c5f7d; /* Ocean color as fallback */
+}
+
+.intro-map-animation-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  animation: scrollDown 30s linear forwards;
+  will-change: transform; /* Optimize for animation */
+}
+
+@keyframes scrollDown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .intro-map-animation-container {
+    width: 100%;
+    max-width: 800px;
+    height: calc(200px * (min(100vw, 800px) / 800px));
+    min-height: 150px;
+    margin-bottom: 0;
+  }
+
+  .intro-map-animation-image {
+    width: 100%;
+    height: calc(600px * (min(100vw, 800px) / 800px));
+  }
+}
+
+/* Responsive design - Mobile */
+@media (max-width: 768px) {
+  .intro-map-animation-container {
+    width: 100%;
+    max-width: 800px;
+    height: calc(200px * (min(100vw - 32px, 800px) / 800px));
+    min-height: 120px;
+    margin-bottom: 0;
+  }
+
+  .intro-map-animation-image {
+    width: 100%;
+    height: calc(600px * (min(100vw - 32px, 800px) / 800px));
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-map-animation-container {
+    height: calc(200px * (min(100vw - 24px, 800px) / 800px));
+    min-height: 100px;
+    margin-bottom: 0;
+  }
+
+  .intro-map-animation-image {
+    height: calc(600px * (min(100vw - 24px, 800px) / 800px));
+  }
+}
+

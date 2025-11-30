@@ -1,0 +1,148 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 10px 0 4px 0;
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 0;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.top-bar-center {
+  flex: 1;
+  text-align: center;
+  min-width: 0; /* Allows text to shrink if needed */
+}
+
+.round-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.language-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.language-selector button {
+  padding: 8px 16px;
+  border: 2px solid var(--primary-color);
+  background: white;
+  color: var(--primary-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.language-selector button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.language-selector button.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Responsive design - Tablets */
+@media (max-width: 1024px) {
+  .top-bar {
+    gap: 14px;
+    padding: 8px 0 4px 0;
+  }
+
+  .round-title {
+    font-size: 1.1rem;
+  }
+
+  .language-selector button {
+    padding: 7px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive design - Mobile */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 0 4px 0;
+    align-items: stretch;
+  }
+
+  .top-bar-left {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .top-bar-center {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .round-title {
+    font-size: 1rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .top-bar-right {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  .language-selector {
+    gap: 8px;
+  }
+
+  .language-selector button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    gap: 10px;
+    padding: 6px 0 4px 0;
+  }
+
+  .round-title {
+    font-size: 0.95rem;
+  }
+
+  .language-selector button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+

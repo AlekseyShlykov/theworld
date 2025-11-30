@@ -1,0 +1,236 @@
+/* INTRO SCREENS STYLES */
+/* These styles are for the intro sequence that appears before Step 1 */
+/* To disable the intro, simply set introScreen to null in App.tsx */
+
+/* Unified spacing for all intro images/animations from TopBar line */
+/* This ensures consistent spacing across start screen and all intro steps */
+/* Must match EXACTLY the spacing used by .pre-step1-intro-screen #map-container */
+.intro-screen .intro-image-container.intro-image-top-spacing,
+.intro-screen .intro-map-animation-container.intro-image-top-spacing {
+  margin-top: 16px;
+  margin-bottom: 0; /* Gap property handles spacing */
+}
+
+/* Responsive adjustments for unified spacing */
+/* Must match EXACTLY .pre-step1-intro-screen #map-container spacing at each breakpoint */
+@media (max-width: 1024px) {
+  .intro-screen .intro-image-container.intro-image-top-spacing,
+  .intro-screen .intro-map-animation-container.intro-image-top-spacing {
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-screen .intro-image-container.intro-image-top-spacing,
+  .intro-screen .intro-map-animation-container.intro-image-top-spacing {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-screen .intro-image-container.intro-image-top-spacing,
+  .intro-screen .intro-map-animation-container.intro-image-top-spacing {
+    margin-top: 10px;
+  }
+}
+
+.intro-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 0 20px 20px 20px;
+  max-width: 1000px;
+  margin: 0 auto 20px auto;
+  margin-top: 0;
+  gap: 20px;
+}
+
+/* Screen 1: Start screen with title overlay */
+.intro-screen-1 {
+  position: relative;
+  min-height: 80vh;
+}
+
+.intro-image-container {
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.intro-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.intro-title-section {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0 20px;
+}
+
+.intro-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.intro-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Content screens (2, 3, 4): Image + Text layout */
+.intro-screen-content {
+  gap: 20px;
+}
+
+.intro-text-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  /* UnifiedTextBlock handles its own padding and styling */
+}
+
+/* Buttons */
+.intro-button {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  margin-top: 0;
+  margin-bottom: 0;
+  min-width: 200px;
+}
+
+.intro-button:hover {
+  background-color: #1e4460;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.intro-button:active {
+  transform: translateY(0);
+}
+
+.intro-start-game-button {
+  background-color: var(--secondary-color);
+  min-width: 250px;
+}
+
+.intro-start-game-button:hover {
+  background-color: #6b5a42;
+}
+
+/* Responsive design - Tablets */
+@media (max-width: 1024px) {
+  .intro-screen {
+    padding: 0 18px 18px 18px;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+
+  .intro-title {
+    font-size: 2.5rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1.15rem;
+  }
+
+  /* Text styling now handled by UnifiedTextBlock */
+
+  .intro-button {
+    padding: 14px 35px;
+    font-size: 1.05rem;
+    min-width: 220px;
+  }
+}
+
+/* Responsive design - Mobile */
+@media (max-width: 768px) {
+  .intro-title {
+    font-size: 2rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Text styling now handled by UnifiedTextBlock */
+
+  .intro-button {
+    padding: 14px 30px;
+    font-size: 1rem;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 44px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .intro-screen {
+    padding: 0 15px 16px 15px;
+    min-height: 60vh;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+
+  .intro-text-container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-title {
+    font-size: 1.75rem;
+  }
+
+  .intro-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* Text styling now handled by UnifiedTextBlock */
+
+  .intro-button {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .intro-screen {
+    padding: 0 12px 12px 12px;
+    min-height: 55vh;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+
+  .intro-text-container {
+    padding: 0 12px;
+  }
+}
+
+
+
+

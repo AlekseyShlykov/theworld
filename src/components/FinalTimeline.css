@@ -1,0 +1,199 @@
+.final-timeline-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.final-timeline-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.final-timeline-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.final-timeline-svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.milestone-marker {
+  cursor: pointer;
+  transition: r 0.2s ease;
+}
+
+.milestone-marker:hover {
+  r: 8;
+}
+
+.final-timeline-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.legend-label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.final-timeline-achievements {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 6px;
+}
+
+.final-timeline-achievements h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.final-timeline-achievements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.final-timeline-achievements li {
+  padding: 8px 0;
+  font-size: 13px;
+  color: #666;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.final-timeline-achievements li:last-child {
+  border-bottom: none;
+}
+
+.final-timeline-achievements li strong {
+  color: #333;
+  margin-right: 8px;
+}
+
+/* Responsive design - Tablets */
+@media (max-width: 1024px) {
+  .final-timeline-container {
+    padding: 18px;
+    margin: 30px auto;
+  }
+
+  .final-timeline-title {
+    font-size: 22px;
+  }
+
+  .final-timeline-wrapper {
+    padding: 8px 0;
+  }
+}
+
+/* Responsive design - Mobile */
+@media (max-width: 768px) {
+  .final-timeline-container {
+    padding: 16px;
+    margin: 20px auto;
+  }
+
+  .final-timeline-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .final-timeline-wrapper {
+    padding: 5px 0;
+    margin-bottom: 16px;
+  }
+
+  .final-timeline-svg {
+    min-width: 800px; /* Ensure timeline is scrollable on mobile */
+  }
+
+  .final-timeline-legend {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .legend-item {
+    gap: 6px;
+  }
+
+  .legend-color {
+    width: 14px;
+    height: 14px;
+  }
+
+  .legend-label {
+    font-size: 12px;
+  }
+
+  .final-timeline-achievements {
+    padding: 12px;
+  }
+
+  .final-timeline-achievements h4 {
+    font-size: 15px;
+  }
+
+  .final-timeline-achievements li {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .final-timeline-container {
+    padding: 12px;
+    margin: 16px auto;
+  }
+
+  .final-timeline-title {
+    font-size: 18px;
+  }
+
+  .final-timeline-svg {
+    min-width: 600px;
+  }
+
+  .final-timeline-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .final-timeline-achievements li {
+    font-size: 11px;
+  }
+}
+

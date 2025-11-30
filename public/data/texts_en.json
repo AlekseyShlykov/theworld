@@ -1,0 +1,205 @@
+{
+  "intro": {
+    "screen1": {
+
+      "subtitle": "A short interactive story based on Jared Diamond's scientific explanations.",
+      "button": "Start"
+    },
+    "screen2": {
+      "text": "In 1532, a detachment of 168 adventurer-soldiers led by Francisco Pizarro captured Emperor Atahualpa — the ruler of the largest and most advanced state in the New World at the time."
+    },
+    "screen3": {
+      "text": "Pizarro's detachment was in an unfamiliar region, had no clear understanding of the local people, and was completely cut off from other Spaniards — the closest Spanish forces were over 160 kilometers to the north.\n\nAtahualpa, meanwhile, was in the heart of his empire, surrounded by more than a million of his subjects in the city of Cajamarca.\n\nYet Pizarro's group captured him within minutes of their first encounter — and held him for eight months while demanding a massive ransom. After receiving it, they executed Atahualpa anyway."
+    },
+    "screen4": {
+      "text": "This event dramatically accelerated the European conquest of the Inca Empire. Superior Spanish weaponry would have eventually led to domination regardless, but the capture of Atahualpa made everything far easier. And we know the outcome: the New World was colonized by Europeans.\n\nBut why did it happen this way and not the opposite?\n\nWhy didn't Atahualpa's adventurers sail to Europe and conquer it?\n\nWhy weren't their diseases deadlier, or their weapons more advanced?\n\nWhat made history unfold exactly as it did?\n\nThis short game will help explain that — based on scientific evidence from Jared Diamond's Guns, Germs, and Steel.",
+      "button": "Start the game"
+    }
+  },
+  "rounds": {
+    "1": {
+      "introText": "For tens of thousands of years, humans spread across the planet.\n\nFinally, that long migration came to an end.\n\nCivilization centers began to form. Of course, there were far more than five —\nbut in this story, we will follow these five and observe them across 8,000 years.\n\nOne turn equals 1,000 years.\n\nTheir triumphs or failures will be shaped by their starting conditions — and by your choices.\n\nLet's meet them.",
+      "zoneTexts": {
+        "1": "This is a large territory with many big animals that can provide plenty of food.\n\nHere, animal food sources are much more abundant than plant-based ones.\n\nMany different tribes live in this region, often in conflict with one another.",
+        "2": "This region is separated from others by high mountains that are hard to cross.\n\nIt is rich in large animals suitable for food and also rich in edible plants.\n\nBecause access is difficult, there are fewer tribes here, and each has enough land.",
+        "3": "This territory lies on another continent.\n\nIt has fewer large animals, but an abundance of edible plants.\n\nThe region is highly isolated, developing independently,\nand only a few tribes live here due to limited accessibility.",
+        "4": "This center of future civilization lies on a third major continent.\n\nThe excellent climate attracts many tribes.\n\nThey are drawn by the small number of large predators\nand the great variety of edible plants.",
+        "5": "These wide, fertile lands are home to many tribes living close together.\n\nThere are plenty of large animals to feed many people,\nbut the soil is not rich in edible plants."
+      },
+      "preChoiceText": "But this will not be just a passive story.\n\nYou will be able to influence it. How?\n\nYou control chance itself — the wild card of history.\n\nYou decide in which civilization center a brilliant idea appears early,\nor where a great leader emerges who can organize people faster and more effectively.\n\nSo now you must choose which of the five centers\nwill be slightly more successful during the next thousand years.",
+      "postChoiceText": "What happened during this thousand years?\n\nDifferent civilization centers transitioned from a nomadic lifestyle to a settled one —\nbut at very different speeds.\n\nFor millennia, settled and nomadic tribes often coexisted side by side.\n\nAbundant edible plants helped people obtain calories more reliably.\n\nWhen large edible animals became scarce, communities were pushed\nto look for new food sources and to explore agriculture.\n\nOver time, settled tribes grew stronger and more numerous.\n\nTheir lives were more predictable, and they reproduced faster.\n\nNomadic families typically could raise a child only every four years —\nbut in settled societies, that interval shrank to two years.\n\nAs a result, settled tribes eventually outnumbered and displaced nomadic ones."
+    },
+    "2": {
+      "introText": "Over the previous thousand years, all five of our civilization centers have shifted from a nomadic lifestyle to a settled one. Some did it earlier, some later. The first large communities with their own leaders began to form.\n\nThese communities quickly reached their population limits. The land they lived on, its plants and animals, simply could not feed more people.\n\nBut let's see what happened to each civilization center.",
+      "zoneTexts": {
+        "1": "The first civilization center had a difficult time. Because of the large number of animals suitable for food, nomadic tribes remained dominant here for a very long time, which slowed the development of a fully settled lifestyle. Conflicts with neighboring tribes were frequent.\n\nBut the same factors that slowed growth in the previous thousand years can now help. Yes, this territory still lacks a rich variety of edible plants, but the presence of neighbors allows people to obtain better plant specimens, accelerating the growth of food production.",
+        "2": "The second civilization center grew quickly. People learned how to obtain enough food from plants, and the many large animals provided a safety net in years of poor harvest. Gradually, people saw the advantages of a settled lifestyle and transitioned toward it.\n\nThe small number of neighboring tribes did not allow very rapid experimentation with different edible plants, but the overall diversity of plants made many experiments successful, helping to speed up food production.",
+        "3": "On another continent, the small number of large animals – including predators – allowed people to expand their habitat very quickly. The richness of edible plants made it easy to shift to a settled way of life.\n\nOver the next thousand years, people here calmly experimented with different types of plants, trying to find the very best ones. This allowed the population to grow very quickly.",
+        "4": "On the third continent, the abundance of edible plants and the relatively small number of large animals made the transition to a settled lifestyle easy and fast.\n\nOver the next thousand years, people tried different plants, compared their effectiveness, and spread into new territories. The large number of neighboring tribes allowed them to adopt the best crops from each other – sometimes through trade, and sometimes through war.",
+        "5": "The fifth civilization center developed slowly. The large number of big animals fit for food delayed the shift from a nomadic lifestyle to gathering and agriculture. The many neighboring tribes also created frequent problems and bloodshed.\n\nEven though the diversity of edible plants here is not very high, the number of neighbors increases the total number of experiments with them. This allows the territory to grow gradually."
+      },
+      "preChoiceText": "So, as you have probably realized, in the next thousand years our civilization centers will grow mainly through experimentation with agricultural crops: which ones to grow, how to process them, and when to plant them.\n\nThey will learn all this through trial and error. But let's once again remember the role of chance. Which of the civilization centers will luck favor in the next thousand years?",
+      "postChoiceText": "What happened during this thousand years?\n\nDuring this period, people gradually mastered agriculture. They experimented with crops, selecting the best ones among those available (such as wheat and rice). This became the foundation of food production for many thousands of years to come.\n\nChance played a huge role here: how diverse the available crops were for experimentation, and which specific crops they were. For example, it was much easier to domesticate wheat than apples.\n\nAt this stage, the economic efficiency of agriculture began to far surpass hunting. Step by step, all societies moved over to farming."
+    },
+    "3": {
+      "introText": "All our civilization centers grew during the previous thousand years. Some found or received the most efficient agricultural crops earlier and more easily, others later. Those who managed to do so earlier were able to extend their influence much farther.\n\nBut any kind of efficiency eventually hits a ceiling. There is a maximum amount of land one person can cultivate by hand. To make the next leap in effectiveness, people had to come up with something unusual. That \"unusual\" solution was domesticated animals.\n\nBut let's see what happened in each civilization center.",
+      "zoneTexts": {
+        "1": "Because of the limited diversity of plants suitable for food, this civilization center developed with difficulty. It also faced constant pressure from neighbors trying to seize parts of its arable land.\n\nBut things may be easier in this millennium. There is great diversity in large animals here, which increases the chance that at least some of them can be used in agriculture.",
+        "2": "The past thousand years went quite well. The best crops were found quickly, and cultivated lands steadily expanded.\n\nThe prospects now also look good. There are enough large animals in this region to select some that are suitable for domestication.",
+        "3": "In this civilization center, the past millennium was one of constant growth. The areas fit for agriculture expanded, and the abundance of crops made it easy to find the best ones. Growth was slowed only by natural barriers such as mountains and rivers.\n\nBut the next thousand years will be difficult. There are very few large animals here, which means the chances that some of them will be useful for domestication are low.",
+        "4": "On this continent, the last thousand years were excellent. The richness of plants made it easy to quickly identify the best ones and grow very fast. The small number of neighbors and the low competition for land only sped up that growth.\n\nBut the story is different for large animals. There are not many of them here, and finding species suitable for domestication will be difficult.",
+        "5": "The last millennium was very hard. There were few edible plants and intense competition for them from neighboring tribes. Cultivated lands expanded very slowly.\n\nHowever, there is no shortage of large animals here. They are plentiful and diverse. That creates many opportunities: they can be used in agriculture to pull plows, raised for meat, and used as transport."
+      },
+      "preChoiceText": "In the next thousand years, all our civilization centers will begin using animals. They will use them in agriculture to pull plows, raise them for food, and employ them as a means of transport.\n\nBut this depends on more than just the abundance of animals. Once again, chance plays a role. Some animals have a suitable temperament; others do not reproduce in captivity; some take too long to grow, making them inefficient to raise. In which center will luck be on their side this millennium?",
+      "postChoiceText": "What happened during this thousand years?\n\nPeople gradually domesticated animals and integrated them into their lives. Animals radically changed the efficiency of food production. They were used for clothing and footwear (sheep, cattle), for agricultural work (bulls, oxen), and for food (cows, goats, pigs).\n\nOnce again, chance was a crucial factor: which animals were available in each region. Over time, people domesticated many species – but the five most important ones were cattle, sheep, goats, pigs, and horses. Whether these animals were available to a society gave it a huge advantage in development.\n\nThere were also many species that could have been domesticated in theory but never were. For example, zebras are not that different from horses, yet they were never domesticated. Why?\n\nSeveral factors mattered:\n\n- Diet, and how much food an animal needs to produce 10 kg of edible meat.\n\n- Growth rate: some are grown and ready to be eaten by age 3, others only by 15.\n\n- Problems with reproduction in captivity.\n\n- Social structure: herd animals are easier to control, because a human can replace the herd leader.\n\n- Temperament: animals that are too fearful or aggressive are unsuitable for domestication. For example, bears are excellent in many respects, but their temperament makes them a bad candidate.\n\nOver this thousand years, animals became an integral part of human life."
+    },
+    "4": {
+      "introText": "Thanks to animal domestication, our civilization centers made a leap in food production and its predictability. Traders could travel greater distances, and pack animals could carry far more goods, which stimulated trade and exposure to new cultures.\n\nBut every development eventually hits a limit. A new problem appeared: the number of connections (commercial and political) multiplied, and the volume of information grew so large that it became impossible to remember everything. Passing accurate information, especially across long distances, was simply not possible.\n\nThat is how people came to the idea that information had to be stored somehow – and writing was born.\n\nBut first, let's see what happened in each civilization center.",
+      "zoneTexts": {
+        "1": "The enormous diversity of large animals allowed this civilization center to domesticate them quickly, even if feeding them was not always easy. Still, this led to huge growth in population and in the amount of land under control.\n\nThe conditions for the emergence of writing are quite good here: there is a lot of food to administer, many different neighboring tribes, and trade routes that help import technologies from other civilization centers.",
+        "2": "The diversity of large animals and the abundance of food allowed this center to develop quickly during the previous thousand years, resulting in rapid growth of population and territory.\n\nNatural barriers that helped earlier – mountains and rivers that slowed hostile tribes – now work against them. They complicate trade and slow the exchange of technologies with neighbors.",
+        "3": "In the past thousand years, this civilization center struggled. There are very few animals suitable for domestication here, so development has been slow. The area of cultivated land is still limited by manual labor.\n\nThe conditions required for writing are weak: there is no urgent need for it. It is also harder to adopt the idea of writing from neighbors, because there are very few of them.",
+        "4": "The small number of large animals was previously an advantage, because it meant fewer predators. Now it becomes a drawback: just when animal domestication could significantly boost food production, there simply are not enough suitable species.\n\nTrade is gradually developing here, and the many neighbors that once were mainly a source of conflict are now potential partners. Perhaps this center will not invent writing itself, but it has a decent chance to see it elsewhere and then copy it.",
+        "5": "In the fifth civilization center, the last thousand years went very well. Suitable animal species for domestication were found quickly, and active trade with neighbors helped fill in the gaps and obtain missing species.\n\nWriting has a good chance to appear here. There is demand, there is need, and there are many neighbors who are thinking about the same problem."
+      },
+      "preChoiceText": "In the next thousand years, our civilization centers will, in one way or another, make use of writing. But the timing of when they develop their own script (whether alphabetic or hieroglyphic) is extremely important.\n\nWhoever achieves this first makes a truly monumental breakthrough. In which of our civilization centers will people be most successful in inventing writing?",
+      "postChoiceText": "It seems that writing had an enormous impact on human development. But the task was so difficult that, as far as we can tell, writing arose completely independently only twice: among the Sumerians, and among the indigenous peoples of Mexico. Egyptian and Chinese writing systems may also have arisen independently.\n\nMuch more often, however, writing spread by diffusion. Someone saw that writing existed and then began to think about how to create their own version, because they now knew such a thing was possible in principle. Thus, writing was more often borrowed and adapted than invented from scratch each time.\n\nIt was also critical that writing be truly necessary for a society, and that the society had enough resources to support scribes. The earliest writers were bureaucrats keeping accounts. At first, writing was very simple and served mainly to transmit information.\n\nAlphabetic writing emerged much later and was far better suited for expressing emotions and telling stories."
+    },
+    "5": {
+      "introText": "By now, writing has become part of everyday life in all civilization centers. In some places it is still used in simplified form mainly for accounting, while in others people are already creating early books and plays.\n\nThe civilization centers have grown stronger and learned to administer large territories. Now a very important stage begins: the development of trade and the exchange of ideas. Everyone is interacting more and more, adopting technologies, useful crops, and domesticated animals from one another.\n\nHere, one critical factor comes into play – something no one can control: the geography of the continent.",
+      "zoneTexts": {
+        "1": "Over the last thousand years, writing in this civilization center reached great heights. They mastered writing quickly and developed their own script.\n\nIn the coming thousand years, the most important factor will be the shape of the continent: whether it stretches more from north to south, or from east to west. This will determine how well crops adapt to new climates, how comfortable animals feel, and much more.\n\nIt looks like this civilization center has fairly good chances for growth in this millennium.",
+        "2": "Writing appeared quickly here as well, though it developed in a very distinctive way due to the small number of neighbors.\n\nIn the coming thousand years, trade and the exchange of culture, ideas, and climate-appropriate crops become central. Those who are fortunate enough to live on continents stretched along the east–west axis gain a huge advantage. Regions on the same latitude share similar day length and seasonality.",
+        "3": "Writing did appear here, but quite late: there was not much urgent need for it, and the small number of neighbors did not help people discover and copy the idea quickly. The last thousand years passed in slow but steady development.\n\nThe coming thousand years will be very hard for this center. Here, every possible obstacle exists. The main axis of the continent is north–south. That means each latitude requires its own crops, with its own diseases, growing seasons, and more. There are also many mountains and rivers, which complicate trade and the diffusion of ideas.",
+        "4": "In this civilization center, things developed gradually. Writing did not appear immediately, but thanks to trade it eventually emerged and made it possible to administer large territories.\n\nThis thousand years will be somewhat more difficult. Although the main axis of the continent is east–west, there are many natural barriers here – mountains, deserts – that slow down and complicate the spread of cultivated plants.",
+        "5": "Here, development was very active. Writing appeared early or arrived through trade, and soon afterward a local script emerged.\n\nChances for this thousand years also look good: the continent is oriented along the east–west axis, and there are many opportunities for trade and for adopting new ideas."
+      },
+      "preChoiceText": "As you can see, in this thousand years development depends far more on geography than on anything else – although all previous stages still influence how each civilization center can use this opportunity.\n\nBut which one will be the luckiest? Whose merchants will be the fastest and most observant?",
+      "postChoiceText": "The geographical orientation of continents is a crucial reason why civilization centers developed unevenly. The axis along which a continent extends can either accelerate development or create serious obstacles.\n\nAn east–west axis turns out to be more effective mainly because climate zones and day length are similar at the same latitude. This means that the same useful crops can grow without major changes in any similar region on that continent. Wheat that originally grew in Mesopotamia could later be grown in Rome and in China.\n\nOn north–south oriented continents, moving just a few hundred kilometers can be a serious challenge: temperate climates may give way to subtropical or even tropical conditions. Plants and animals adapt poorly to such drastic changes."
+    },
+    "6": {
+      "introText": "Geography strongly influenced the pace of development in our civilization centers. In the coming thousand years, they will face a new problem – one that grew out of the very things that helped them develop before. That problem is diseases and epidemics.\n\nFor an epidemic to emerge and be maintained within a human population, several factors are needed. A large, densely packed population is one of them, and the rise of cities made it much easier for epidemics to appear and spread. Trade routes then carried them to neighboring societies.",
+      "zoneTexts": {
+        "1": "The previous thousand years were wonderful for this civilization center. Favorable geography allowed it to trade profitably and receive goods and ideas from neighbors.\n\nBut the coming thousand years will be hard. Rapid population growth has created densely populated cities, and trade routes now deliver not only goods but also epidemics.",
+        "2": "Things were excellent here in the last millennium. Population grew and territories developed.\n\nNow, however, difficult times are coming. All the conditions for epidemics are in place. Natural barriers such as mountains and rivers help a little, but not enough.",
+        "3": "This civilization center was not very favorably located, which slowed its development in the previous thousand years.\n\nBut now it has excellent chances. First, population density and crowding are much lower here. Second, there is very little domestic livestock, which makes it harder for epidemic diseases to emerge in the first place.",
+        "4": "The last thousand years brought population and territorial growth. Trade across the ocean also began to develop.\n\nIn the coming millennium, there are decent opportunities for development. It is harder for diseases to arise here, and there are not many neighbors. Still, it will not be possible to avoid epidemics entirely.",
+        "5": "The previous millennium was a golden age for this civilization center. The same factors that created this flourishing will now work against it.\n\nMost likely, many epidemics will originate here. Neighbors will also be affected through trade, but the main damage will be done in this region."
+      },
+      "preChoiceText": "It is time to choose again. Which territory will be luckier? Where will a perceptive healer or doctor appear who figures out how to defeat, or at least control, epidemics?",
+      "postChoiceText": "Diseases and epidemics have reshaped the world and killed no fewer people than wars. European diseases, for example, killed more people in the New World than Europeans themselves did. The microbes and bacteria they brought were far deadlier than those the local population was used to.\n\nBut where did these diseases come from in the first place? They could not have existed in their epidemic form before large cities, where huge numbers of people lived in crowded, unsanitary conditions. Research suggests that many of these diseases came to us from domestic animals, which also suffer from \"crowding diseases.\"\n\nSo when we domesticated herd animals, we obtained not only many benefits but also serious drawbacks. Over time, of course, the development of medicine helped us cope with epidemics and slow their spread – especially with the advent of vaccinations and more advanced technologies."
+    },
+    "7": {
+      "introText": "We are approaching our own time. The differences between civilization centers are now growing larger. In the previous thousand years, diseases and epidemics reduced the population of many centers, while others passed through this era relatively calmly – but did not acquire immunity.\n\nIn the coming thousand years, technologies become the main driver of development. Of course, they have been evolving all along, but now they take center stage. It is not enough to invent something; it must also be implemented. Inventions are usually born from the curiosity of individuals. Technologies, however, grow by reinforcing one another and helping to solve concrete problems.\n\nTechnological development is a self-sustaining and accelerating (autocatalytic) process: the more technologies you already have, the more complex things you can create. For example, to invent and rapidly spread printing, you need more than just the printing press itself. You also need paper-making, advanced metallurgy, movable type, presses, ink, and, of course, writing.\n\nLet's look at our civilization centers and see how they will develop in this millennium.",
+      "zoneTexts": {
+        "1": "Epidemics cost many lives but also spurred the development of medicine, which increased life expectancy. That gave people more time for experiments and discovery.\n\nThis center has excellent conditions for technological development. There are many neighbors and countless ways to exchange ideas – through trade, migration, and conquest.",
+        "2": "Isolation from other civilization centers helped in the previous thousand years. Borders were closed in time, and the spread of epidemics was restricted.\n\nBut this same isolation and distinctiveness will hinder development in the coming millennium. Such societies often experience technological regression, as some technologies are simply abandoned for their own internal reasons.",
+        "3": "Its relatively isolated position helped this center avoid major epidemics and significantly expand its controlled territory.\n\nHowever, having few neighbors is not ideal for accelerating technological progress. Some inventions may appear here but never be widely adopted, simply because there is not enough demand or need for them.",
+        "4": "Limited trade helped this center avoid the worst epidemics. Some diseases still arrived and reduced its population and territory.\n\nIn the coming thousand years, conditions for technological development are fairly good. There are disadvantages, of course: not many neighbors, so some inventions will simply disappear without finding a practical use.",
+        "5": "In the previous thousand years, this center suffered the most severe epidemics, which dramatically reduced its population and territory. But they also forced people to pay greater attention to medicine.\n\nIn this millennium, many of the previous drawbacks turn into advantages: there are enough neighbors for ideas to circulate, and new technologies will appear and spread. Active trade and exchange will significantly accelerate development."
+      },
+      "preChoiceText": "Now you must decide once more. Who will be the luckiest? Where will the greatest number of scientists appear, and where will rulers create systems that make it profitable to implement new technologies?",
+      "postChoiceText": "Where do technologies and innovations come from?\n\nThe tendency toward innovation is common to people everywhere. Inventions usually arise from human curiosity. But turning an invention into a working technology that benefits society requires more than curiosity alone.\n\nMost technologies are not invented from scratch; they are borrowed or adapted from neighboring societies. The more neighboring cultures and ideas you are exposed to, the greater the chance that an invention will be useful to someone and become part of everyday life. But curiosity and borrowing are still not enough.\n\nTechnological development is fostered by factors such as: long life expectancy, high cost of labor, good education, strong patent law, individualism and the possibility of profiting from inventions, a culture that rewards risk-taking, and tolerance for a wide variety of ideas.\n\nIt turns out that the structure of society and power is just as important to technological development as human curiosity."
+    },
+    "8": {
+      "introText": "The final thousand years. We have traveled a long path — from the first settled communities to large states using the achievements of modern technologies.\n\nPower and the structure of authority have accompanied humanity through all eight thousand years, yet they stayed behind the scenes for most of this journey.\n\nAt first, there were small kin-based groups of about fifty people, all connected by family ties. They were followed by tribes, numbering in the hundreds, with people already specializing outside of food production.\n\nLater came chiefdoms — communities of tens of thousands, large enough to require unified administration to resolve disputes and maintain rules, since people no longer personally knew everyone in their society.\n\nMuch later, chiefdoms were replaced by states of millions of people, governed by bureaucracies.\n\nOf course, this evolution happened very unevenly across regions and millennia. Some places formed chiefdoms earlier, others later, and only gradually did they transition into full-fledged states.\n\nIn this millennium, the main driving force will be the institutions of power.",
+      "zoneTexts": {
+        "1": "Many neighbors forced this civilization center to understand early that population size matters greatly for military strength.\n\nTo manage such large populations and defend against neighbors, they had to develop complex administrative institutions — systems that supported technological and educational development, rather than simply enriching leaders.\n\nNow, in our final millennium, this early progress pays off.",
+        "2": "Natural barriers created a somewhat isolated and unique civilization center, while a large number of neighbors pushed it to develop a dynamic administrative system.\n\nDevelopment was not extremely fast due to isolation and a unique technological path, but this is still one of the more advanced civilization centers.",
+        "3": "Long-lasting isolation and the small number of neighbors significantly delayed the emergence of state institutions here.\n\nBeing disconnected from global trade networks allowed autonomous development for some time, but not as dynamically as in other centers of civilization.",
+        "4": "The isolation of this continent helped avoid major epidemics, but it also slowed technological development and the formation of governing institutions.\n\nBureaucracy emerged later here — but it did emerge in time, enabling the state to grow.",
+        "5": "Geography forced this civilization center to develop its institutions of power extremely quickly. Some of the first bureaucrats appeared here, and the abundance of neighbors allowed them to adopt the best administrative practices.\n\nThis millennium is the moment to reap the fruits of the previous seven thousand years."
+      },
+      "preChoiceText": "Great rulers and philosophers are as important for building stable institutions as scientists are for advancing knowledge.\n\nWhich territory will be the luckiest? Where will the most talented rulers appear?",
+      "postChoiceText": "How did political power evolve?\n\nFor thousands of years, human societies consisted of kin-based and tribal communities. They differed in population size and density, and tribes lived a settled lifestyle.\n\nEverything changed with the rise of chiefdoms around 7,500 years ago. These communities were much larger — several thousand or tens of thousands of people. Humans had to learn how to interact regularly with strangers without violence.\n\nPart of the solution was granting the chief exclusive authority to use force, resolve conflicts, and distribute resources.\n\nBut this created new problems. Everything depended on the chief's personality and intelligence. A chief might allocate resources to support growth — or redirect them to himself and the elite. Many tools justified such behavior: disarming the population, empowering the elite, spending part of the tribute on popular causes, or creating ideologies or religions that justified the system.\n\nChiefdoms were eventually replaced by states around 6,000 years ago. States governed hundreds of thousands or millions of people. They displaced chiefdoms due to more efficient resource management, technological sophistication, and simply larger populations, allowing them to field much stronger armies.\n\nStates relied on a professional bureaucratic class responsible for managing resources effectively. This distributed power, stabilized society, and enabled governance over millions of people."
+    }
+  },
+  "ui": {
+    "next": "Next",
+    "start": "Start",
+    "startGame": "Start the game",
+    "nextRound": "Next Round",
+    "chooseLanguage": "Choose language / Выберите язык",
+    "english": "English",
+    "russian": "Русский"
+  },
+  "areaButtons": {
+    "area1": "Area 1",
+    "area2": "Area 2",
+    "area3": "Area 3",
+    "area4": "Area 4",
+    "area5": "Area 5"
+  },
+  "final": {
+    "mapText": "Here is the world we have built over these eight thousand years. We observed how our five civilization centers developed and which factors influenced their paths the most.\n\nAs you can see, much depended on the randomness of initial conditions — who had suitable grains, diverse large animals, or more opportunities for contact with neighbors due to geography.",
+    "endingText": "Now let us return to the beginning, to the story of the conquistador.\n\nAfter this interactive longread, we can finally answer the question:\nWhy did Europeans invade Atahualpa's territory — and not the other way around?\n\nFirst, technological differences. Eurasians had steel swords, armor, muskets, artillery, and horses — which simply did not exist in the Americas at that time.\n\nSecond, writing. Written systems existed for thousands of years in Eurasia, allowing knowledge about distant lands and peoples to be preserved and transmitted long before arrival. Writing also accelerated technological progress by preserving accumulated knowledge.\n\nThird, centralized competing states. Not every state could finance such an expedition — it required enormous resources, and those who invested expected profit in return. And on top of that, Europe had advanced maritime technology capable of crossing oceans against the wind.\n\nFourth, agricultural and energy advantages. Eurasians had long used cattle, horses, and donkeys, as well as watermills and windmills — while in the Americas most work was still done by human labor.\n\nFifth, diseases. Eurasian epidemic diseases were far more deadly than those of the Americas. Long life in dense cities and close proximity to livestock created pathogens that spread quickly — and Europeans had partial immunity.\n\nAll these factors shaped history in exactly the way it happened.\n\nThis interactive longread was created by Alex Shlykov, based on the book \"Guns, Germs, and Steel\" by Jared Diamond. I hope you found it interesting! The book contains far more details — it is absolutely worth reading.\n\nIf you enjoyed this, you can try my other educational games!",
+    "playAgain": "Play again",
+    "myWebsite": "My website: buildtounderstand.dev"
+  },
+  "timeline": {
+    "title": "Historical Timeline",
+    "axisYears": "Years",
+    "axisTime": "Time",
+    "achievementsTitle": "Achievements by Round:",
+    "roundLabel": "Round",
+    "yearLabel": "Year",
+    "milestones": {
+      "sedentary": "End of nomadic lifestyle / transition to sedentary living",
+      "crops": "Best food-producing crops identified",
+      "domestication": "Domestication of animals",
+      "writing": "Writing system developed or adopted",
+      "trade": "Expansion of trade networks and cultural exchange",
+      "epidemics": "First epidemics and early responses",
+      "technology": "Industrial / technological breakthroughs",
+      "governance": "Effective governing institutions"
+    }
+  },
+  "populationChart": {
+    "title": "Population Dynamics",
+    "axis": {
+      "time": "Time (Years)",
+      "population": "Population (Acc × Power)"
+    },
+    "tooltip": {
+      "round": "Round",
+      "acc": "Acc",
+      "power": "Power",
+      "populationValue": "Population",
+      "year": "Year"
+    },
+    "explanation": "Note: Population is calculated as Acc × Power for each civilization center. Values are recorded after each round completes, tracking how each center's population evolves over 8000 years.",
+    "yAxisLabel": "Population (Acc × Power)"
+  },
+  "dominanceChart": {
+    "title": "Periods of Civilization Dominance",
+    "axis": {
+      "time": "Time (Years)",
+      "dominance": "Dominance Index (%)"
+    },
+    "tooltip": {
+      "round": "Round",
+      "year": "Year",
+      "dominance": "Dominance",
+      "acc": "Acc",
+      "power": "Power",
+      "rawValue": "Acc × Power"
+    },
+    "explanation": "This chart shows which civilization center dominated each 1000-year period. Dominance is calculated as (Acc × Power) / sum(Acc × Power of all centers) for each round. The highlighted segments indicate the dominant civilization during each period."
+  },
+  "futureProjectionChart": {
+    "title": "Future Projection: Next 4000 Years",
+    "axis": {
+      "time": "Time (Years)",
+      "development": "Development Strength (Acc × Power)"
+    },
+    "tooltip": {
+      "predicted": "Predicted",
+      "round": "Round",
+      "acc": "Acc",
+      "power": "Power",
+      "value": "Value"
+    },
+    "explanation": "This chart predicts how each civilization center would continue developing beyond the 8000-year timeline. Projections are based entirely on the growth trend observed between rounds 7 and 8. Solid lines represent real data (rounds 1-8), while dashed lines show predicted trajectories (rounds 9-12). Development strength is calculated as Acc × Power for each round."
+  }
+}
+

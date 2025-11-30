@@ -1,0 +1,87 @@
+/* Unified Text Block Styles */
+/* This is the single source of truth for all JSON-driven text formatting */
+
+.json-text-block {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color, #444);
+  text-align: left;
+}
+
+.json-text-block-paragraph {
+  margin-bottom: 1.2em;
+  text-align: left;
+}
+
+.json-text-block-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Emphasis style for question paragraphs (first paragraph that starts with questions) */
+.json-text-block-emphasis {
+  font-weight: 600;
+  color: var(--primary-color, #2c5f7d);
+  margin-top: 0.5em;
+}
+
+/* Numbered item style (for lists like "First", "Second", etc.) */
+.json-text-block-numbered {
+  font-weight: 500;
+  color: #444;
+  margin-left: 1.25em;
+  margin-bottom: 0.75em;
+}
+
+/* Responsive Design - Tablets */
+@media (max-width: 1024px) {
+  .json-text-block {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    padding: 16px 20px;
+  }
+
+  .json-text-block-paragraph {
+    margin-bottom: 1.1em;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .json-text-block {
+    font-size: 1rem;
+    line-height: 1.75;
+    padding: 0 16px;
+    max-width: 100%;
+  }
+
+  .json-text-block-paragraph {
+    margin-bottom: 1em;
+  }
+
+  .json-text-block-numbered {
+    margin-left: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .json-text-block {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding: 0 12px;
+  }
+
+  .json-text-block-paragraph {
+    margin-bottom: 0.9em;
+  }
+
+  .json-text-block-numbered {
+    margin-left: 0.75em;
+  }
+}
+
+
+

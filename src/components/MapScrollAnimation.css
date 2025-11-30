@@ -1,0 +1,74 @@
+/* Map Scroll Animation Styles */
+/* Shows a 800x200px cropped view of the map with vertical scrolling animation */
+
+.map-scroll-animation-container {
+  width: 800px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 16px auto 30px;
+  background-color: #2c5f7d; /* Ocean color as fallback */
+}
+
+.map-scroll-animation-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  animation: scrollDown 30s linear forwards;
+  will-change: transform; /* Optimize for animation */
+}
+
+@keyframes scrollDown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* Responsive design - Tablets */
+@media (max-width: 1024px) {
+  .map-scroll-animation-container {
+    width: 100%;
+    max-width: 800px;
+    height: calc(200px * (min(100vw, 800px) / 800px));
+    min-height: 150px;
+  }
+
+  .map-scroll-animation-image {
+    width: 100%;
+    height: calc(600px * (min(100vw, 800px) / 800px));
+  }
+}
+
+/* Responsive design - Mobile */
+@media (max-width: 768px) {
+  .map-scroll-animation-container {
+    width: 100%;
+    max-width: 800px;
+    height: calc(200px * (min(100vw - 32px, 800px) / 800px));
+    min-height: 120px;
+    margin: 12px auto 20px;
+  }
+
+  .map-scroll-animation-image {
+    width: 100%;
+    height: calc(600px * (min(100vw - 32px, 800px) / 800px));
+  }
+}
+
+@media (max-width: 480px) {
+  .map-scroll-animation-container {
+    height: calc(200px * (min(100vw - 24px, 800px) / 800px));
+    min-height: 100px;
+    margin: 10px auto 16px;
+  }
+
+  .map-scroll-animation-image {
+    height: calc(600px * (min(100vw - 24px, 800px) / 800px));
+  }
+}
+

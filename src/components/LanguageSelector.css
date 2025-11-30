@@ -1,0 +1,78 @@
+/* LANGUAGE SELECTOR SCREEN STYLES */
+.language-selector-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, var(--bg-color) 0%, #e0e0e0 100%);
+}
+
+.language-selector-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.language-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.language-button {
+  padding: 25px 50px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  min-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.language-button:hover {
+  background-color: #1e4460;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.language-button:active {
+  transform: translateY(-1px);
+}
+
+.language-button-russian {
+  background-color: var(--secondary-color);
+}
+
+.language-button-russian:hover {
+  background-color: #6b5a42;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .language-selector-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .language-button {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    min-width: 250px;
+  }
+}
+
+
+
+
+
+

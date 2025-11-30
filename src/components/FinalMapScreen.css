@@ -1,0 +1,173 @@
+.final-map-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.final-map-text-container {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  /* UnifiedTextBlock handles its own padding and styling */
+}
+
+.final-values-container {
+  margin: 30px 0;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.final-values-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.final-value-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.final-value-row:last-child {
+  border-bottom: none;
+}
+
+.final-zone-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.final-value-separator {
+  margin: 0 10px;
+  color: #999;
+}
+
+.final-value {
+  font-family: monospace;
+  color: #333;
+}
+
+.final-map-button {
+  margin-top: 30px;
+  padding: 12px 40px;
+  font-size: 18px;
+  background: #4ECDC4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.final-map-button:hover {
+  background: #3ab5ae;
+}
+
+.final-map-button:active {
+  background: #2a9d96;
+}
+
+/* Responsive design - Tablets */
+@media (max-width: 1024px) {
+  .final-map-screen {
+    padding: 18px;
+  }
+
+  /* Text styling now handled by UnifiedTextBlock */
+
+  .final-values-container {
+    padding: 18px;
+  }
+}
+
+/* Responsive design - Mobile */
+@media (max-width: 768px) {
+  .final-map-screen {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .final-map-text-container {
+    margin-top: 20px;
+    margin-bottom: 16px;
+    padding: 0 16px;
+  }
+
+  /* Text styling now handled by UnifiedTextBlock */
+
+  .final-values-container {
+    margin: 20px 0;
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .final-values-title {
+    font-size: 18px;
+  }
+
+  .final-value-row {
+    padding: 8px 0;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .final-zone-label,
+  .final-value {
+    font-size: 0.9rem;
+  }
+
+  .final-map-button {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    min-height: 44px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .final-map-screen {
+    padding: 12px;
+  }
+
+  .final-map-text-container {
+    padding: 0 12px;
+  }
+
+  /* Text styling now handled by UnifiedTextBlock */
+
+  .final-values-container {
+    padding: 12px;
+  }
+
+  .final-values-title {
+    font-size: 16px;
+  }
+
+  .final-map-button {
+    padding: 12px 16px;
+    font-size: 15px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+
+

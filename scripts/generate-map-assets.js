@@ -1,0 +1,171 @@
+// This script generates an HTML file that can create the map assets in a browser
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const htmlContent = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Map Assets</title>
+</head>
+<body>
+    <h1>Map Asset Generator</h1>
+    <p>Generating map-image.png and land-mask.png...</p>
+    
+    <h2>Map Image (800x600)</h2>
+    <canvas id="mapCanvas" width="800" height="600"></canvas>
+    
+    <h2>Land Mask (800x600)</h2>
+    <canvas id="maskCanvas" width="800" height="600"></canvas>
+    
+    <div id="downloads"></div>
+
+    <script>
+        // Generate map-image.png
+        const mapCanvas = document.getElementById('mapCanvas');
+        const mapCtx = mapCanvas.getContext('2d');
+        
+        // Ocean background
+        mapCtx.fillStyle = '#2c5f7d';
+        mapCtx.fillRect(0, 0, 800, 600);
+        
+        // Draw land masses (simplified continents)
+        mapCtx.fillStyle = '#8b7355';
+        
+        // Eurasia (large landmass)
+        mapCtx.beginPath();
+        mapCtx.ellipse(400, 250, 280, 120, 0, 0, Math.PI * 2);
+        mapCtx.fill();
+        
+        // Africa
+        mapCtx.beginPath();
+        mapCtx.ellipse(350, 420, 80, 100, 0, 0, Math.PI * 2);
+        mapCtx.fill();
+        
+        // Americas - North
+        mapCtx.beginPath();
+        mapCtx.ellipse(150, 200, 60, 140, 0.2, 0, Math.PI * 2);
+        mapCtx.fill();
+        
+        // Americas - South
+        mapCtx.beginPath();
+        mapCtx.ellipse(130, 400, 50, 90, -0.1, 0, Math.PI * 2);
+        mapCtx.fill();
+        
+        // Australia
+        mapCtx.beginPath();
+        mapCtx.ellipse(650, 450, 70, 50, 0, 0, Math.PI * 2);
+        mapCtx.fill();
+        
+        // Add texture/noise
+        for (let i = 0; i < 2000; i++) {
+            const x = Math.random() * 800;
+            const y = Math.random() * 600;
+            const size = Math.random() * 3;
+            mapCtx.fillStyle = \`rgba(139, 115, 85, \${Math.random() * 0.3})\`;
+            mapCtx.fillRect(x, y, size, size);
+        }
+        
+        // Add some darker spots for variation
+        for (let i = 0; i < 500; i++) {
+            const x = Math.random() * 800;
+            const y = Math.random() * 600;
+            const size = Math.random() * 5;
+            mapCtx.fillStyle = \`rgba(107, 92, 68, \${Math.random() * 0.2})\`;
+            mapCtx.fillRect(x, y, size, size);
+        }
+        
+        // Generate land-mask.png
+        const maskCanvas = document.getElementById('maskCanvas');
+        const maskCtx = maskCanvas.getContext('2d');
+        
+        // Black background (ocean = blocked)
+        maskCtx.fillStyle = '#000000';
+        maskCtx.fillRect(0, 0, 800, 600);
+        
+        // White land (allowed areas)
+        maskCtx.fillStyle = '#FFFFFF';
+        
+        // Same land masses as map
+        maskCtx.beginPath();
+        maskCtx.ellipse(400, 250, 280, 120, 0, 0, Math.PI * 2);
+        maskCtx.fill();
+        
+        maskCtx.beginPath();
+        maskCtx.ellipse(350, 420, 80, 100, 0, 0, Math.PI * 2);
+        maskCtx.fill();
+        
+        maskCtx.beginPath();
+        maskCtx.ellipse(150, 200, 60, 140, 0.2, 0, Math.PI * 2);
+        maskCtx.fill();
+        
+        maskCtx.beginPath();
+        maskCtx.ellipse(130, 400, 50, 90, -0.1, 0, Math.PI * 2);
+        maskCtx.fill();
+        
+        maskCtx.beginPath();
+        maskCtx.ellipse(650, 450, 70, 50, 0, 0, Math.PI * 2);
+        maskCtx.fill();
+        
+        // Add some barriers (rivers/mountains as black lines)
+        maskCtx.strokeStyle = '#000000';
+        maskCtx.lineWidth = 8;
+        maskCtx.beginPath();
+        maskCtx.moveTo(300, 200);
+        maskCtx.lineTo(320, 280);
+        maskCtx.stroke();
+        
+        maskCtx.lineWidth = 12;
+        maskCtx.beginPath();
+        maskCtx.moveTo(450, 180);
+        maskCtx.lineTo(480, 240);
+        maskCtx.stroke();
+        
+        // Create download links
+        const downloads = document.getElementById('downloads');
+        
+        const mapLink = document.createElement('a');
+        mapLink.download = 'map-image.png';
+        mapLink.href = mapCanvas.toDataURL('image/png');
+        mapLink.textContent = 'Download map-image.png';
+        mapLink.style.display = 'block';
+        mapLink.style.margin = '10px';
+        mapLink.style.padding = '10px';
+        mapLink.style.background = '#4ECDC4';
+        mapLink.style.color = 'white';
+        mapLink.style.textDecoration = 'none';
+        mapLink.style.borderRadius = '5px';
+        mapLink.style.width = '200px';
+        mapLink.style.textAlign = 'center';
+        downloads.appendChild(mapLink);
+        
+        const maskLink = document.createElement('a');
+        maskLink.download = 'land-mask.png';
+        maskLink.href = maskCanvas.toDataURL('image/png');
+        maskLink.textContent = 'Download land-mask.png';
+        maskLink.style.display = 'block';
+        maskLink.style.margin = '10px';
+        maskLink.style.padding = '10px';
+        maskLink.style.background = '#4ECDC4';
+        maskLink.style.color = 'white';
+        maskLink.style.textDecoration = 'none';
+        maskLink.style.borderRadius = '5px';
+        maskLink.style.width = '200px';
+        maskLink.style.textAlign = 'center';
+        downloads.appendChild(maskLink);
+        
+        console.log('Assets generated! Click the links to download.');
+    </script>
+</body>
+</html>`;
+
+// Write the HTML file
+const outputPath = path.join(__dirname, '..', 'public', 'assets', 'generate-map-assets.html');
+fs.writeFileSync(outputPath, htmlContent);
+console.log('Created generate-map-assets.html');
+console.log('Open it in a browser to download the map images.');
+

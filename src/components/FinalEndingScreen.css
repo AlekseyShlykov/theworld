@@ -1,0 +1,145 @@
+.final-ending-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.final-ending-image {
+  margin-bottom: 30px;
+}
+
+.final-ending-text-container {
+  max-width: 100%;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 40px;
+  padding: 0;
+  /* UnifiedTextBlock handles its own padding and styling */
+}
+
+.final-ending-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.final-ending-button {
+  padding: 14px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.final-ending-button-primary {
+  background: #4ECDC4;
+  color: white;
+  font-weight: 600;
+}
+
+.final-ending-button-primary:hover {
+  background: #3ab5ae;
+}
+
+.final-ending-button-primary:active {
+  background: #2a9d96;
+}
+
+.final-ending-button-link {
+  background: transparent;
+  color: #4ECDC4;
+  border: 2px solid #4ECDC4;
+  font-weight: 500;
+}
+
+.final-ending-button-link:hover {
+  background: #4ECDC4;
+  color: white;
+}
+
+.final-ending-button-link:active {
+  background: #3ab5ae;
+  border-color: #3ab5ae;
+}
+
+/* Responsive design - Tablets */
+@media (max-width: 1024px) {
+  .final-ending-screen {
+    padding: 18px;
+  }
+
+  /* Text styling now handled by UnifiedTextBlock */
+}
+
+/* Responsive design - Mobile */
+@media (max-width: 768px) {
+  .final-ending-screen {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .final-ending-image {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .final-ending-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .final-ending-text-container {
+    max-width: 100%;
+    margin-bottom: 30px;
+    padding: 0 16px;
+  }
+
+  /* Text styling now handled by UnifiedTextBlock */
+
+  .final-ending-buttons {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .final-ending-button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .final-ending-screen {
+    padding: 12px;
+  }
+
+  .final-ending-text-container {
+    padding: 0 12px;
+  }
+
+  /* Text styling now handled by UnifiedTextBlock */
+
+  .final-ending-buttons {
+    padding: 0 12px;
+  }
+
+  .final-ending-button {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+}
+
+
+

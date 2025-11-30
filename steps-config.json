@@ -1,0 +1,30 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "zones": [
+        { "powerDelta": -0.8, "accDelta": 0.1 },
+        { "powerDelta": 0.4, "accDelta": 0.6 },
+        { "powerDelta": 0.8, "accDelta": 0.8 },
+        { "powerDelta": 0.4, "accDelta": 0.2 },
+        { "powerDelta": -0.8, "accDelta": 0.1 }
+      ]
+    },
+    {
+      "step": 2,
+      "zones": [
+        { "powerDelta": 0.2, "accDelta": 0.4 },
+        { "powerDelta": -0.2, "accDelta": 0.4 },
+        { "powerDelta": -0.2, "accDelta": 0.8 },
+        { "powerDelta": 0.2, "accDelta": 1.0 },
+        { "powerDelta": 0.2, "accDelta": 0.2 }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+

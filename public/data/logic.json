@@ -1,0 +1,24 @@
+{
+  "areas": [
+    { "id": "A1", "start": {"x": 0.33, "y": 0.52}, "power": 1.0, "acc": 1.0, "color": "#1E90FF" },
+    { "id": "A2", "start": {"x": 0.44, "y": 0.52}, "power": 1.0, "acc": 1.0, "color": "#FF9500" },
+    { "id": "A3", "start": {"x": 0.61, "y": 0.47}, "power": 1.0, "acc": 1.0, "color": "#9B59B6" },
+    { "id": "A4", "start": {"x": 0.33, "y": 0.28}, "power": 1.0, "acc": 1.0, "color": "#58D68D" },
+    { "id": "A5", "start": {"x": 0.76, "y": 0.35}, "power": 1.0, "acc": 1.0, "color": "#F0806B" }
+  ],
+  "opacityByRank": { "1": 0.9, "2": 0.75, "3": 0.6, "4": 0.5, "5": 0.4 },
+  "barrierThresholds": {
+    "river": 1.0,
+    "mountain": 3.0,
+    "ocean": 5.0
+  },
+  "turns": 8,
+  "overlayAnimationMaxMs": 2000,
+  "baseGrowthRadius": 30,
+  "growthMultiplier": 1.5,
+  "populationMultipliers": {
+    "round7": 5,
+    "round8": 10
+  }
+}
+

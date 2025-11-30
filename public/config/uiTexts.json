@@ -1,0 +1,25 @@
+{
+  "en": {
+    "startScreen": { "title": "A Short Interactive Story" },
+    "round1": { "title": "Stone Age" },
+    "round2": { "title": "Food Production" },
+    "round3": { "title": "Domestication of Animals" },
+    "round4": { "title": "Writing" },
+    "round5": { "title": "Axis East-West" },
+    "round6": { "title": "Germs & Pandemics" },
+    "round7": { "title": "Technologies" },
+    "round8": { "title": "Power" }
+  },
+  "ru": {
+    "startScreen": { "title": "Краткая интерактивная история" },
+    "round1": { "title": "Каменный век" },
+    "round2": { "title": "Производство пищи" },
+    "round3": { "title": "Одомашнивание животных" },
+    "round4": { "title": "Письменность" },
+    "round5": { "title": "Ось восток-запад" },
+    "round6": { "title": "Микробы и эпидемии" },
+    "round7": { "title": "Технологии" },
+    "round8": { "title": "Власть" }
+  }
+}
+

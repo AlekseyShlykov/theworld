@@ -20,11 +20,12 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
   showIntroAnimation = false
 }) => {
   // Intro images mapping
-  const introStartImage = '/assets/intro/intro_map_start.png'; // Used on screen 1 (static)
+  const baseUrl = import.meta.env.BASE_URL;
+  const introStartImage = `${baseUrl}assets/intro/intro_map_start.png`; // Used on screen 1 (static)
   const introImages = [
-    '/assets/intro/intro_map_1.png', // Intro step 1 (screen 2)
-    '/assets/intro/intro_map_2.png', // Intro step 2 (screen 3)
-    '/assets/intro/intro_map_3.png', // Intro step 3 (screen 4)
+    `${baseUrl}assets/intro/intro_map_1.png`, // Intro step 1 (screen 2)
+    `${baseUrl}assets/intro/intro_map_2.png`, // Intro step 2 (screen 3)
+    `${baseUrl}assets/intro/intro_map_3.png`, // Intro step 3 (screen 4)
   ];
 
   // Get the image index (0-based) for current screen (screens 2, 3, 4 map to indices 0, 1, 2)
@@ -84,7 +85,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         ) : (
           <div className="intro-image-container intro-image-top-spacing">
             <img
-              src="/assets/map-image.png"
+              src={`${baseUrl}assets/map-image.png`}
               alt="World map"
               className="intro-image"
               onError={(e) => {
@@ -125,7 +126,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         ) : (
           <div className="intro-image-container intro-image-top-spacing">
             <img
-              src="/assets/map-image.png"
+              src={`${baseUrl}assets/map-image.png`}
               alt="World map"
               className="intro-image"
               onError={(e) => {
@@ -166,7 +167,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         ) : (
           <div className="intro-image-container intro-image-top-spacing">
             <img
-              src="/assets/map-image.png"
+              src={`${baseUrl}assets/map-image.png`}
               alt="World map"
               className="intro-image"
               onError={(e) => {

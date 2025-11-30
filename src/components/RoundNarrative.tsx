@@ -9,15 +9,16 @@ import { TextsData } from '../hooks/useTexts';
 import './PreStep1Intro.css';
 
 // Round map images mapping
+const baseUrl = import.meta.env.BASE_URL;
 const roundMapImages: Record<number, string> = {
-  1: '/assets/rounds/round1_map.png',
-  2: '/assets/rounds/round2_map.png',
-  3: '/assets/rounds/round3_map.png',
-  4: '/assets/rounds/round4_map.png',
-  5: '/assets/rounds/round5_map.png',
-  6: '/assets/rounds/round6_map.png',
-  7: '/assets/rounds/round7_map.png',
-  8: '/assets/rounds/round8_map.png',
+  1: `${baseUrl}assets/rounds/round1_map.png`,
+  2: `${baseUrl}assets/rounds/round2_map.png`,
+  3: `${baseUrl}assets/rounds/round3_map.png`,
+  4: `${baseUrl}assets/rounds/round4_map.png`,
+  5: `${baseUrl}assets/rounds/round5_map.png`,
+  6: `${baseUrl}assets/rounds/round6_map.png`,
+  7: `${baseUrl}assets/rounds/round7_map.png`,
+  8: `${baseUrl}assets/rounds/round8_map.png`,
 };
 
 interface ChoiceLogEntry {

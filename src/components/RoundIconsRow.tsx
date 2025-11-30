@@ -22,6 +22,7 @@ export const RoundIconsRow: React.FC<RoundIconsRowProps> = ({
   currentRound,
   completedRounds
 }) => {
+  const baseUrl = import.meta.env.BASE_URL;
   const getIconState = (roundIndex: number): 'locked' | 'active' | 'completed' => {
     const roundNumber = roundIndex + 1; // Convert 0-based index to 1-based round number
     
@@ -59,7 +60,7 @@ export const RoundIconsRow: React.FC<RoundIconsRowProps> = ({
           >
             <div className="round-icon-circle">
               <img
-                src={`/assets/${image}`}
+                src={`${baseUrl}assets/${image}`}
                 alt={`Round ${roundNumber} icon`}
                 className="round-icon-image"
                 onError={(e) => {

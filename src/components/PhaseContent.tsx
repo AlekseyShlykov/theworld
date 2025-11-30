@@ -37,13 +37,14 @@ export const PhaseContent: React.FC<PhaseContentProps> = ({
 
   // Phase 3
   const phase3Content = content as StepPhase3;
+  const baseUrl = import.meta.env.BASE_URL;
   
   return (
     <div className="phase-content phase3" role="article">
       {phase3Content.image && (
         <div className="media-container">
           <img
-            src={`/assets/${phase3Content.image}`}
+            src={`${baseUrl}assets/${phase3Content.image}`}
             alt="Historical illustration"
             className="phase3-media"
             onError={(e) => {
@@ -55,7 +56,7 @@ export const PhaseContent: React.FC<PhaseContentProps> = ({
       {phase3Content.video && (
         <div className="media-container">
           <video
-            src={`/assets/${phase3Content.video}`}
+            src={`${baseUrl}assets/${phase3Content.video}`}
             controls
             className="phase3-media"
             aria-label="Historical video"

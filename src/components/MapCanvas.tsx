@@ -31,7 +31,8 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({
     setRenderer(mapRenderer);
 
     // Load land mask
-    mapRenderer.loadLandMask('/assets/land-mask.png').then(() => {
+    const baseUrl = import.meta.env.BASE_URL;
+    mapRenderer.loadLandMask(`${baseUrl}assets/land-mask.png`).then(() => {
       setMapLoaded(true);
     }).catch((err) => {
       console.error('Failed to load land mask:', err);
@@ -47,6 +48,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const baseUrl = import.meta.env.BASE_URL;
     const img = new Image();
     img.onload = () => {
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -56,7 +58,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({
       ctx.fillStyle = '#2c5f7d';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
-    img.src = '/assets/map-image.png';
+    img.src = `${baseUrl}assets/map-image.png`;
   }, []);
 
   // Render area overlays

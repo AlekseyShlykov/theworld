@@ -14,7 +14,8 @@ export const useMusic = (currentRound: number) => {
     }
 
     // Create new audio element for current round
-    const audio = new Audio(`/assets/audio/round${currentRound}.mp3`);
+    const baseUrl = import.meta.env.BASE_URL;
+    const audio = new Audio(`${baseUrl}assets/audio/round${currentRound}.mp3`);
     audio.loop = true;
     audio.volume = 0.5; // Set volume to 50%
     
@@ -69,7 +70,8 @@ export const useSFX = () => {
 
   // Load click sound
   useEffect(() => {
-    const audio = new Audio('/assets/audio/click.mp3');
+    const baseUrl = import.meta.env.BASE_URL;
+    const audio = new Audio(`${baseUrl}assets/audio/click.mp3`);
     audio.volume = 0.3; // Set volume to 30%
     
     audio.addEventListener('error', () => {

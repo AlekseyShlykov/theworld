@@ -85,23 +85,25 @@ export const GameFooter: React.FC<GameFooterProps> = ({
     };
   }, [playClickSound]);
 
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <footer className="game-footer">
       <div className="footer-left">
         <FooterButton
-          icon="/assets/music.png"
+          icon={`${baseUrl}assets/music.png`}
           onClick={handleMusicClick}
           isActive={isMusicPlaying}
           ariaLabel="Toggle background music"
         />
         <FooterButton
-          icon="/assets/Speech.png"
+          icon={`${baseUrl}assets/Speech.png`}
           onClick={handleTTSClick}
           isActive={isSpeechOn}
           ariaLabel={isSpeechOn ? "Stop reading" : "Start reading"}
         />
         <FooterButton
-          icon="/assets/sounds.png"
+          icon={`${baseUrl}assets/sounds.png`}
           onClick={handleSFXClick}
           isActive={sfxEnabled}
           ariaLabel="Toggle sound effects"
@@ -114,17 +116,17 @@ export const GameFooter: React.FC<GameFooterProps> = ({
 
       <div className="footer-right">
         <FooterButton
-          icon="/assets/web.png"
+          icon={`${baseUrl}assets/web.png`}
           onClick={handleWebsiteClick}
           ariaLabel="Visit my website"
         />
         <FooterButton
-          icon="/assets/X.png"
+          icon={`${baseUrl}assets/X.png`}
           onClick={handleXClick}
           ariaLabel="Visit my X (Twitter)"
         />
         <FooterButton
-          icon="/assets/letter.png"
+          icon={`${baseUrl}assets/letter.png`}
           onClick={handleEmailClick}
           ariaLabel="Send email"
         />

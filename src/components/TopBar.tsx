@@ -30,7 +30,8 @@ export const TopBar: React.FC<TopBarProps> = ({
 
   // Load UI texts from JSON
   useEffect(() => {
-    fetch('/config/uiTexts.json')
+    const baseUrl = import.meta.env.BASE_URL;
+    fetch(`${baseUrl}config/uiTexts.json`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to load UI texts');

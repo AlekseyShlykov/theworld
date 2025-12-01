@@ -8,6 +8,10 @@ interface MapCanvasProps {
   highlightedArea: string | null;
   animationProgress?: number;
   currentTurn: number;
+  onSelect?: (areaId: string) => void;
+  onHover?: (areaId: string | null) => void;
+  disabled?: boolean;
+  hasSelected?: boolean;
 }
 
 export const MapCanvas: React.FC<MapCanvasProps> = ({
@@ -15,7 +19,11 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({
   logic,
   highlightedArea,
   animationProgress = 1.0,
-  currentTurn
+  currentTurn,
+  onSelect,
+  onHover,
+  disabled = false,
+  hasSelected = false
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const overlayCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -68,6 +76,81 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({
     renderer.renderAreas(areas, logic, animationProgress, highlightedArea);
   }, [renderer, areas, logic, animationProgress, highlightedArea, mapLoaded]);
 
+  // Convert screen coordinates to canvas coordinates
+  const getCanvasCoordinates = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>): { x: number; y: number } | null => {
+    const canvas = overlayCanvasRef.current;
+    if (!canvas) return null;
+
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+
+    let clientX: number;
+    let clientY: number;
+
+    if ('touches' in e || 'changedTouches' in e) {
+      // Touch event - use changedTouches for touchEnd, touches for touchStart/move
+      const touch = (e as React.TouchEvent<HTMLCanvasElement>).changedTouches?.[0] || 
+                    (e as React.TouchEvent<HTMLCanvasElement>).touches?.[0];
+      if (!touch) return null;
+      clientX = touch.clientX;
+      clientY = touch.clientY;
+    } else {
+      // Mouse event
+      clientX = e.clientX;
+      clientY = e.clientY;
+    }
+
+    const x = (clientX - rect.left) * scaleX;
+    const y = (clientY - rect.top) * scaleY;
+
+    return { x, y };
+  };
+
+  // Handle click on map
+  const handleMapClick = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
+    if (disabled || hasSelected || !onSelect || !renderer) return;
+
+    // Prevent default for touch events to avoid scrolling
+    if ('touches' in e || 'changedTouches' in e) {
+      e.preventDefault();
+    }
+
+    const coords = getCanvasCoordinates(e);
+    if (!coords) return;
+
+    const areaId = renderer.getAreaAtPixel(coords.x, coords.y);
+    if (areaId) {
+      // Play SFX if available
+      if ((window as any).playClickSound) {
+        (window as any).playClickSound();
+      }
+      onSelect(areaId);
+    }
+  };
+
+  // Handle hover on map
+  const handleMapHover = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (disabled || hasSelected || !onHover || !renderer) return;
+
+    const coords = getCanvasCoordinates(e);
+    if (!coords) {
+      onHover(null);
+      return;
+    }
+
+    const areaId = renderer.getAreaAtPixel(coords.x, coords.y);
+    onHover(areaId);
+  };
+
+  // Handle mouse leave
+  const handleMapMouseLeave = () => {
+    if (disabled || hasSelected || !onHover) return;
+    onHover(null);
+  };
+
+  const isClickable = !disabled && !hasSelected && !!onSelect;
+
   return (
     <div className="map-container" role="img" aria-label="World map showing area development">
       <canvas
@@ -82,9 +165,18 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({
         ref={overlayCanvasRef}
         width={800}
         height={533}
-        className="map-overlay"
+        className={`map-overlay ${isClickable ? 'map-clickable' : ''}`}
         aria-hidden="true"
-        style={{ width: '100%', height: '100%' }}
+        style={{ 
+          width: '100%', 
+          height: '100%',
+          cursor: isClickable ? 'pointer' : 'default'
+        }}
+        onClick={handleMapClick}
+        onMouseMove={handleMapHover}
+        onMouseLeave={handleMapMouseLeave}
+        onTouchEnd={handleMapClick}
+        onTouchStart={(e) => e.preventDefault()} // Prevent scrolling on touch start
       />
     </div>
   );

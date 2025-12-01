@@ -180,6 +180,18 @@ export const RoundNarrative: React.FC<RoundNarrativeProps> = ({
 
   // Pre-choice explanation screen
   if (currentScreen === 'pre-choice') {
+    const handleZoneSelect = (areaId: string) => {
+      // Map areaId (A1-A5) to zone number (1-5) for logging
+      // Ensure choice is only made once per round
+      if (hasMadeChoice) {
+        return;
+      }
+      
+      onZoneSelect(areaId);
+      setHasMadeChoice(true);
+      setCurrentScreen('post-choice');
+    };
+
     return (
       <div className="pre-step1-intro-screen" role="dialog" aria-label="Choice explanation">
         <DebugPanel areas={displayAreas} choicesLog={choicesLog} />
@@ -187,9 +199,13 @@ export const RoundNarrative: React.FC<RoundNarrativeProps> = ({
           <MapCanvas
           areas={displayAreas}
           logic={logic}
-          highlightedArea={null}
+          highlightedArea={highlightedZone}
           animationProgress={1}
           currentTurn={round}
+          onSelect={handleZoneSelect}
+          onHover={setHighlightedZone}
+          disabled={hasMadeChoice}
+          hasSelected={hasMadeChoice}
           />
         </div>
         <div className="pre-step1-text-container">
@@ -200,17 +216,7 @@ export const RoundNarrative: React.FC<RoundNarrativeProps> = ({
             areas={displayAreas}
             labels={labels}
             question=""
-            onSelect={(areaId) => {
-              // Map areaId (A1-A5) to zone number (1-5) for logging
-              // Ensure choice is only made once per round
-              if (hasMadeChoice) {
-                return;
-              }
-              
-              onZoneSelect(areaId);
-              setHasMadeChoice(true);
-              setCurrentScreen('post-choice');
-            }}
+            onSelect={handleZoneSelect}
             onHover={setHighlightedZone}
             getColorName={getColorName}
             texts={texts}

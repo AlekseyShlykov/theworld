@@ -11,6 +11,8 @@ export class MapRenderer {
   private width: number;
   private height: number;
   private rng: SeededRandom;
+  // Store pixel-to-area mapping for click detection
+  private pixelToAreaMap: Map<string, string> = new Map();
 
   constructor(canvasParam: HTMLCanvasElement, seed: number = 42) {
     // Extract properties from canvas - we don't need to store the canvas itself
@@ -221,6 +223,8 @@ export class MapRenderer {
     
     // Render pixel by pixel with proper precedence
     const imageData = this.ctx.createImageData(this.width, this.height);
+    // Clear pixel-to-area mapping
+    this.pixelToAreaMap.clear();
     
     for (let y = 0; y < this.height; y++) {
       for (let x = 0; x < this.width; x++) {
@@ -248,6 +252,9 @@ export class MapRenderer {
             winner = topAreas[0];
           }
         }
+        
+        // Store pixel-to-area mapping for click detection
+        this.pixelToAreaMap.set(key, winner.id);
         
         // Get color and opacity
         const color = this.hexToRgb(winner.color);
@@ -281,6 +288,23 @@ export class MapRenderer {
       g: parseInt(result[2], 16),
       b: parseInt(result[3], 16)
     } : {r: 0, g: 0, b: 0};
+  }
+
+  /**
+   * Get the area ID at a given pixel coordinate (in canvas coordinates)
+   * Returns null if no area is at that pixel
+   */
+  getAreaAtPixel(x: number, y: number): string | null {
+    const pixelX = Math.floor(x);
+    const pixelY = Math.floor(y);
+    
+    // Check bounds
+    if (pixelX < 0 || pixelX >= this.width || pixelY < 0 || pixelY >= this.height) {
+      return null;
+    }
+    
+    const key = `${pixelX},${pixelY}`;
+    return this.pixelToAreaMap.get(key) || null;
   }
 }
 

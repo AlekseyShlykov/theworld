@@ -716,6 +716,10 @@ function App() {
               highlightedArea={gameState.highlightedArea}
               animationProgress={animationProgress}
               currentTurn={gameState.currentTurn}
+              onSelect={currentStep ? handleAreaSelect : undefined}
+              onHover={currentStep ? setHighlightedArea : undefined}
+              disabled={!currentStep || gameState.currentPhase !== 'phase2'}
+              hasSelected={gameState.currentPhase !== 'phase2'}
               />
             </div>
 

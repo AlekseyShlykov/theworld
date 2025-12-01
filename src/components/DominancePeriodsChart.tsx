@@ -230,8 +230,6 @@ export const DominancePeriodsChart: React.FC<DominancePeriodsChartProps> = ({
       <h3 className="dominance-periods-chart-title">{dominanceChartTexts.title}</h3>
       <div className="dominance-periods-chart-wrapper">
         <svg
-          width={CHART_WIDTH}
-          height={CHART_HEIGHT}
           className="dominance-periods-chart-svg"
           viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
           preserveAspectRatio="xMidYMid meet"

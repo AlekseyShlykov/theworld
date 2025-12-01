@@ -26,6 +26,9 @@
 .final-timeline-svg {
   display: block;
   margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .milestone-marker {
@@ -122,8 +125,10 @@
 /* Responsive design - Mobile */
 @media (max-width: 768px) {
   .final-timeline-container {
-    padding: 16px;
-    margin: 20px auto;
+    padding: 12px;
+    margin: 16px auto;
+    width: 100%;
+    max-width: 100%;
   }
 
   .final-timeline-title {
@@ -134,10 +139,12 @@
   .final-timeline-wrapper {
     padding: 5px 0;
     margin-bottom: 16px;
+    overflow-x: hidden;
   }
 
   .final-timeline-svg {
-    min-width: 800px; /* Ensure timeline is scrollable on mobile */
+    width: 100%;
+    height: auto;
   }
 
   .final-timeline-legend {
@@ -183,7 +190,8 @@
   }
 
   .final-timeline-svg {
-    min-width: 600px;
+    width: 100%;
+    height: auto;
   }
 
   .final-timeline-legend {

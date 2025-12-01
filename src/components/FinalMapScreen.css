@@ -116,6 +116,17 @@
     max-width: 100%;
   }
 
+  /* Ensure charts are displayed in a single column on mobile */
+  .dominance-periods-chart-container,
+  .final-population-chart-container,
+  .final-timeline-container,
+  .future-projection-chart-container {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .final-values-title {
     font-size: 18px;
   }

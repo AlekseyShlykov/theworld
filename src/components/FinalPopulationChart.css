@@ -26,6 +26,9 @@
 .final-population-chart-svg {
   display: block;
   margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .population-line {
@@ -119,8 +122,10 @@
 /* Responsive design - Mobile */
 @media (max-width: 768px) {
   .final-population-chart-container {
-    padding: 16px;
-    margin: 20px auto;
+    padding: 12px;
+    margin: 16px auto;
+    width: 100%;
+    max-width: 100%;
   }
 
   .final-population-chart-title {
@@ -131,10 +136,12 @@
   .final-population-chart-wrapper {
     padding: 5px 0;
     margin-bottom: 16px;
+    overflow-x: hidden;
   }
 
   .final-population-chart-svg {
-    min-width: 800px; /* Ensure chart is scrollable on mobile */
+    width: 100%;
+    height: auto;
   }
 
   .final-population-chart-legend {
@@ -172,7 +179,8 @@
   }
 
   .final-population-chart-svg {
-    min-width: 600px;
+    width: 100%;
+    height: auto;
   }
 
   .final-population-chart-legend {

@@ -61,11 +61,11 @@ export const FinalMapScreen: React.FC<FinalMapScreenProps> = ({
         })}
       </div>
 
-      <FinalTimeline
+      <DominancePeriodsChart
         areas={areas}
-        choicesLog={choicesLog}
+        areaHistory={areaHistory}
         areaLabels={labels}
-        timelineTexts={texts.timeline}
+        dominanceChartTexts={texts.dominanceChart}
       />
 
       <FinalPopulationChart
@@ -75,11 +75,11 @@ export const FinalMapScreen: React.FC<FinalMapScreenProps> = ({
         populationChartTexts={texts.populationChart}
       />
 
-      <DominancePeriodsChart
+      <FinalTimeline
         areas={areas}
-        areaHistory={areaHistory}
+        choicesLog={choicesLog}
         areaLabels={labels}
-        dominanceChartTexts={texts.dominanceChart}
+        timelineTexts={texts.timeline}
       />
 
       <FutureProjectionChart

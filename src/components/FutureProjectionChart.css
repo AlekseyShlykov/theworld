@@ -26,6 +26,9 @@
 .future-projection-chart-svg {
   display: block;
   margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .projection-line {
@@ -124,8 +127,10 @@
 /* Responsive design - Mobile */
 @media (max-width: 768px) {
   .future-projection-chart-container {
-    padding: 16px;
-    margin: 20px auto;
+    padding: 12px;
+    margin: 16px auto;
+    width: 100%;
+    max-width: 100%;
   }
 
   .future-projection-chart-title {
@@ -136,10 +141,12 @@
   .future-projection-chart-wrapper {
     padding: 5px 0;
     margin-bottom: 16px;
+    overflow-x: hidden;
   }
 
   .future-projection-chart-svg {
-    min-width: 800px; /* Ensure chart is scrollable on mobile */
+    width: 100%;
+    height: auto;
   }
 
   .future-projection-chart-legend {
@@ -177,7 +184,8 @@
   }
 
   .future-projection-chart-svg {
-    min-width: 600px;
+    width: 100%;
+    height: auto;
   }
 
   .future-projection-chart-legend {

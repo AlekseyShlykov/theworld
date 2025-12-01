@@ -149,8 +149,6 @@ export const FinalTimeline: React.FC<FinalTimelineProps> = ({
       <h3 className="final-timeline-title">{timelineTexts.title}</h3>
       <div className="final-timeline-wrapper">
         <svg
-          width={TIMELINE_WIDTH}
-          height={TIMELINE_HEIGHT}
           className="final-timeline-svg"
           viewBox={`0 0 ${TIMELINE_WIDTH} ${TIMELINE_HEIGHT}`}
           preserveAspectRatio="xMidYMid meet"

@@ -270,8 +270,6 @@ export const FutureProjectionChart: React.FC<FutureProjectionChartProps> = ({
       <h3 className="future-projection-chart-title">{futureProjectionChartTexts.title}</h3>
       <div className="future-projection-chart-wrapper">
         <svg
-          width={CHART_WIDTH}
-          height={CHART_HEIGHT}
           className="future-projection-chart-svg"
           viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
           preserveAspectRatio="xMidYMid meet"

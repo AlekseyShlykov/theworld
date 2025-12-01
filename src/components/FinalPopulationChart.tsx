@@ -172,8 +172,6 @@ export const FinalPopulationChart: React.FC<FinalPopulationChartProps> = ({
       <h3 className="final-population-chart-title">{populationChartTexts.title}</h3>
       <div className="final-population-chart-wrapper">
         <svg
-          width={CHART_WIDTH}
-          height={CHART_HEIGHT}
           className="final-population-chart-svg"
           viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
           preserveAspectRatio="xMidYMid meet"

@@ -19,6 +19,7 @@
 .dominance-periods-chart-wrapper {
   width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   margin-bottom: 20px;
   padding: 10px 0;
 }
@@ -26,6 +27,9 @@
 .dominance-periods-chart-svg {
   display: block;
   margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .dominance-line-base {
@@ -121,8 +125,10 @@
 /* Responsive design - Mobile */
 @media (max-width: 768px) {
   .dominance-periods-chart-container {
-    padding: 16px;
-    margin: 20px auto;
+    padding: 12px;
+    margin: 16px auto;
+    width: 100%;
+    max-width: 100%;
   }
 
   .dominance-periods-chart-title {
@@ -133,10 +139,12 @@
   .dominance-periods-chart-wrapper {
     padding: 5px 0;
     margin-bottom: 16px;
+    overflow-x: hidden;
   }
 
   .dominance-periods-chart-svg {
-    min-width: 800px; /* Ensure chart is scrollable on mobile */
+    width: 100%;
+    height: auto;
   }
 
   .dominance-periods-chart-legend {
@@ -174,7 +182,8 @@
   }
 
   .dominance-periods-chart-svg {
-    min-width: 600px;
+    width: 100%;
+    height: auto;
   }
 
   .dominance-periods-chart-legend {

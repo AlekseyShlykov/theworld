@@ -5,8 +5,9 @@
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 100vh;
-  justify-content: center;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
 }
 
 .final-ending-image {
@@ -22,13 +23,21 @@
   /* UnifiedTextBlock handles its own padding and styling */
 }
 
+/* Action section for final ending screen */
+.final-ending-screen .action-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 32px auto 100px;
+  padding: 0;
+}
+
 .final-ending-buttons {
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 100%;
   max-width: 400px;
-  margin-top: 20px;
+  margin: 0 auto;
 }
 
 .final-ending-button {
@@ -85,7 +94,6 @@
 @media (max-width: 768px) {
   .final-ending-screen {
     padding: 16px;
-    min-height: auto;
   }
 
   .final-ending-image {
@@ -107,9 +115,14 @@
 
   /* Text styling now handled by UnifiedTextBlock */
 
+  .final-ending-screen .action-section {
+    margin-bottom: 100px;
+    padding: 0 16px;
+  }
+
   .final-ending-buttons {
     max-width: 100%;
-    padding: 0 16px;
+    padding: 0;
   }
 
   .final-ending-button {
@@ -131,8 +144,13 @@
 
   /* Text styling now handled by UnifiedTextBlock */
 
-  .final-ending-buttons {
+  .final-ending-screen .action-section {
+    margin-bottom: 100px;
     padding: 0 12px;
+  }
+
+  .final-ending-buttons {
+    padding: 0;
   }
 
   .final-ending-button {

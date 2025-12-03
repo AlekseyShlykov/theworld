@@ -18,18 +18,20 @@ export const PhaseContent: React.FC<PhaseContentProps> = ({
       <div className="phase-content phase1" role="article">
         <UnifiedTextBlock text={content as string} />
         {onContinue && (
-          <button
-            className="continue-button"
-            onClick={() => {
-              if ((window as any).playClickSound) {
-                (window as any).playClickSound();
-              }
-              onContinue();
-            }}
-            aria-label="Continue to make choice"
-          >
-            Continue →
-          </button>
+          <div className="action-section action-section-single">
+            <button
+              className="continue-button"
+              onClick={() => {
+                if ((window as any).playClickSound) {
+                  (window as any).playClickSound();
+                }
+                onContinue();
+              }}
+              aria-label="Continue to make choice"
+            >
+              Continue →
+            </button>
+          </div>
         )}
       </div>
     );
@@ -70,18 +72,20 @@ export const PhaseContent: React.FC<PhaseContentProps> = ({
         <UnifiedTextBlock text={phase3Content.text} />
       </div>
       {onContinue && (
-        <button
-          className="continue-button"
-          onClick={() => {
-            if ((window as any).playClickSound) {
-              (window as any).playClickSound();
-            }
-            onContinue();
-          }}
-          aria-label="Continue to next turn"
-        >
-          Next Turn →
-        </button>
+        <div className="action-section action-section-single">
+          <button
+            className="continue-button"
+            onClick={() => {
+              if ((window as any).playClickSound) {
+                (window as any).playClickSound();
+              }
+              onContinue();
+            }}
+            aria-label="Continue to next turn"
+          >
+            Next Turn →
+          </button>
+        </div>
       )}
     </div>
   );

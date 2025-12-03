@@ -2,14 +2,20 @@
 /* Shows a 800x200px cropped view of the map with vertical scrolling animation */
 
 .map-scroll-animation-container {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   height: 200px;
   overflow: hidden;
   position: relative;
   border-radius: var(--border-radius, 8px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  margin: 16px auto 30px;
+  margin: 0 auto;
   background-color: #2c5f7d; /* Ocean color as fallback */
+}
+
+/* When inside pre-step1-content-wrapper, adjust for 2-column layout */
+.pre-step1-content-wrapper .map-scroll-animation-container {
+  margin: 0;
 }
 
 .map-scroll-animation-image {

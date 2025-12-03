@@ -5,26 +5,75 @@
 .pre-step1-intro-screen {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 70vh;
-  padding: 0 20px 20px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  gap: 20px;
-  margin-bottom: 20px;
+  width: 100%;
+  /* Removed height: 100% - flex: 1 handles space filling */
+  flex: 1;
+  min-height: 0;
+  padding: 0 40px;
+  margin: 0;
+  gap: 0;
+  /* Ensure no page scrolling - content fits in viewport */
+  overflow: hidden;
 }
 
+/* Content wrapper for 2-column layout on desktop */
+.pre-step1-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  min-height: 0; /* Allow flex children to shrink */
+  gap: 0;
+}
+
+/* Map container - full width on mobile, left column on desktop */
 .pre-step1-intro-screen #map-container {
-  margin-top: 16px;
-  margin-bottom: 0; /* Gap property handles spacing */
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Keep reasonable max size */
+  margin: 24px 0 0 0;
+  flex-shrink: 0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 800 / 533; /* Critical for canvas rendering */
+  min-height: 0; /* Allow flex to work properly */
+}
+
+/* Ensure inner map container fills the wrapper */
+.pre-step1-intro-screen #map-container > .map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Text and button container - full width on mobile, right column on desktop */
+.pre-step1-text-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  gap: 0;
+  margin-top: 24px;
 }
 
 .pre-step1-text-container {
   width: 100%;
-  max-width: 100%;
   padding: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto; /* Allow scrolling if text is too long */
   /* UnifiedTextBlock handles its own padding and styling */
+}
+
+.pre-step1-button-wrapper {
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: 18px;
+  /* Bottom spacing handled by action-section margin-bottom */
 }
 
 .pre-step1-button {
@@ -37,8 +86,7 @@
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: all var(--transition-speed);
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   min-width: 200px;
 }
 
@@ -61,39 +109,157 @@
   background-color: #6b5a42;
 }
 
-.pre-step1-choice-section {
+/* Action Section - Shared wrapper for buttons */
+/* Global rule: ALL action buttons must be exactly 100px above the footer */
+.action-section {
   width: 100%;
   max-width: 800px;
+  margin: 32px auto 100px;
+  padding: 0;
+}
+
+.pre-step1-choice-section {
+  width: 100%;
+  margin: 0;
   padding: 0 20px;
+}
+
+/* Single button action section - wide button */
+.action-section-single {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.action-section-single .pre-step1-button,
+.action-section-single .intro-button,
+.action-section-single button {
+  width: 100%;
+  max-width: 100%;
+  min-width: unset;
+}
+
+/* Desktop: 2-column layout (map left, text right) */
+@media (min-width: 1025px) {
+  .pre-step1-content-wrapper {
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  
+  /* MapScrollAnimation in post-choice screen */
+  .pre-step1-content-wrapper .map-scroll-animation-container {
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    flex: 0 0 auto;
+    margin: 28px 0 0 0; /* Match map container top margin */
+  }
+  
+  .pre-step1-content-wrapper .pre-step1-text-container {
+    margin-top: 28px; /* Match map/animation top margin */
+  }
+
+  .pre-step1-intro-screen #map-container {
+    width: 100%;
+    max-width: 600px; /* Reasonable max size for desktop 2-column layout */
+    min-width: 300px; /* Ensure minimum size for proper rendering */
+    flex: 0 0 auto;
+    margin: 28px 0 0 0; /* 24-32px from top */
+    /* Maintain aspect ratio and rendering properties */
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 800 / 533;
+    min-height: 0; /* Allow flex to work properly */
+  }
+  
+  /* Ensure inner map container fills the wrapper on desktop */
+  .pre-step1-intro-screen #map-container > .map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .pre-step1-text-button-wrapper {
+    flex: 1;
+    margin-top: 28px; /* Match map top margin */
+    min-width: 0; /* Allow shrinking */
+  }
+
+  .pre-step1-text-container {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .pre-step1-button-wrapper {
+    margin-top: 16px; /* 16-20px between text and button */
+  }
+  
+  /* For pre-choice screen: map left, text right, buttons below */
+  .pre-step1-intro-screen .pre-step1-content-wrapper:has(+ .pre-step1-choice-section) {
+    margin-bottom: 0; /* Buttons will be below */
+  }
+  
+  .pre-step1-choice-section {
+    margin-top: 0;
+    margin-bottom: 100px; /* Global rule: exactly 100px above footer */
+    padding: 0;
+  }
+  
+  /* Global rule: ALL action buttons must be exactly 100px above the footer */
+  .action-section {
+    margin: 32px auto 100px;
+  }
 }
 
 /* Responsive design - Tablets */
 @media (max-width: 1024px) {
   .pre-step1-intro-screen {
-    padding: 0 18px 18px 18px;
-    gap: 18px;
-    margin-bottom: 18px;
+    padding: 0 24px;
   }
 
   .pre-step1-intro-screen #map-container {
-    margin-top: 14px;
+    margin-top: 20px;
   }
 
-  .pre-step1-intro-screen .map-scroll-animation-container {
-    margin-top: 14px;
+  .pre-step1-text-button-wrapper {
+    margin-top: 20px;
   }
 
-  /* Text styling now handled by UnifiedTextBlock */
+  .pre-step1-button-wrapper {
+    margin-top: 16px;
+    /* Bottom spacing handled by action-section margin-bottom */
+  }
 
   .pre-step1-button {
     padding: 14px 35px;
     font-size: 1.05rem;
   }
+  
+  /* Global rule: ALL action buttons must be exactly 100px above the footer */
+  .action-section {
+    margin-bottom: 100px;
+  }
 }
 
 /* Responsive design - Mobile */
 @media (max-width: 768px) {
-  /* Text styling now handled by UnifiedTextBlock */
+  .pre-step1-intro-screen {
+    padding: 0 16px;
+  }
+
+  .pre-step1-intro-screen #map-container {
+    margin-top: 16px;
+  }
+
+  .pre-step1-text-button-wrapper {
+    margin-top: 16px;
+  }
+
   .pre-step1-text-container {
     padding: 0;
   }
@@ -105,46 +271,36 @@
     font-size: 1rem;
     min-width: unset;
     min-height: 44px;
-    margin-left: 16px;
-    margin-right: 16px;
   }
 
-  .pre-step1-intro-screen {
-    padding: 0 15px 16px 15px;
-    min-height: 60vh;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-
-  .pre-step1-intro-screen #map-container {
-    margin-top: 12px;
-  }
-
-  .pre-step1-intro-screen .map-scroll-animation-container {
-    margin-top: 12px;
+  .pre-step1-button-wrapper {
+    margin-top: 14px;
+    /* Bottom spacing handled by action-section margin-bottom */
   }
 
   .pre-step1-choice-section {
     padding: 0 16px;
   }
+  
+  /* Global rule: ALL action buttons must be exactly 100px above the footer */
+  .action-section {
+    margin-bottom: 100px;
+  }
 }
 
 @media (max-width: 480px) {
   .pre-step1-intro-screen {
-    padding: 0 12px 12px 12px;
-    gap: 14px;
-    margin-bottom: 14px;
+    padding: 0 16px;
   }
 
   .pre-step1-intro-screen #map-container {
-    margin-top: 10px;
+    margin-top: 14px;
   }
 
-  .pre-step1-intro-screen .map-scroll-animation-container {
-    margin-top: 10px;
+  .pre-step1-text-button-wrapper {
+    margin-top: 14px;
   }
 
-  /* Text styling now handled by UnifiedTextBlock */
   .pre-step1-text-container {
     padding: 0;
   }
@@ -152,12 +308,20 @@
   .pre-step1-button {
     padding: 12px 16px;
     font-size: 0.95rem;
-    margin-left: 12px;
-    margin-right: 12px;
+  }
+
+  .pre-step1-button-wrapper {
+    margin-top: 12px;
+    /* Bottom spacing handled by action-section margin-bottom */
   }
 
   .pre-step1-choice-section {
     padding: 0 12px;
+  }
+  
+  /* Global rule: ALL action buttons must be exactly 100px above the footer */
+  .action-section {
+    margin-bottom: 100px;
   }
 }
 

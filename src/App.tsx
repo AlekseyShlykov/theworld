@@ -670,17 +670,19 @@ function App() {
                 ))}
             </div>
 
-            <button 
-              className="restart-button" 
-              onClick={() => {
-                if ((window as any).playClickSound) {
-                  (window as any).playClickSound();
-                }
-                handleRestart();
-              }}
-            >
-              {content.ui.finalScreen.restart}
-            </button>
+            <div className="action-section action-section-single">
+              <button 
+                className="restart-button" 
+                onClick={() => {
+                  if ((window as any).playClickSound) {
+                    (window as any).playClickSound();
+                  }
+                  handleRestart();
+                }}
+              >
+                {content.ui.finalScreen.restart}
+              </button>
+            </div>
           </div>
         </main>
         <GameFooter
@@ -709,38 +711,44 @@ function App() {
           <DebugPanel areas={gameState.areas} choicesLog={choicesLog} />
           
           <div className="content-wrapper">
-            <div id="map-container">
-              <MapCanvas
-              areas={gameState.areas}
-              logic={logic}
-              highlightedArea={gameState.highlightedArea}
-              animationProgress={animationProgress}
-              currentTurn={gameState.currentTurn}
-              onSelect={currentStep ? handleAreaSelect : undefined}
-              onHover={currentStep ? setHighlightedArea : undefined}
-              disabled={!currentStep || gameState.currentPhase !== 'phase2'}
-              hasSelected={gameState.currentPhase !== 'phase2'}
-              />
-            </div>
+            <div className="game-content-grid">
+              <div id="map-container">
+                <MapCanvas
+                areas={gameState.areas}
+                logic={logic}
+                highlightedArea={gameState.highlightedArea}
+                animationProgress={animationProgress}
+                currentTurn={gameState.currentTurn}
+                onSelect={currentStep ? handleAreaSelect : undefined}
+                onHover={currentStep ? setHighlightedArea : undefined}
+                disabled={!currentStep || gameState.currentPhase !== 'phase2'}
+                hasSelected={gameState.currentPhase !== 'phase2'}
+                />
+              </div>
 
-            {gameState.currentPhase === 'phase1' && currentStep && (
-              <PhaseContent
-                phase="phase1"
-                content={currentStep.phase1Text}
-                onContinue={handlePhase1Continue}
-              />
-            )}
+              {gameState.currentPhase === 'phase1' && currentStep && (
+                <div className="game-text-container">
+                  <PhaseContent
+                    phase="phase1"
+                    content={currentStep.phase1Text}
+                    onContinue={handlePhase1Continue}
+                  />
+                </div>
+              )}
+            </div>
           </div>
 
           {currentStep && (
-            <ChoiceButtons
-              areas={gameState.areas}
-              labels={content.ui.areaLabels}
-              question={currentStep.choiceQuestion}
-              onSelect={handleAreaSelect}
-              onHover={setHighlightedArea}
-              texts={texts || undefined}
-            />
+            <div className="action-section game-choice-section">
+              <ChoiceButtons
+                areas={gameState.areas}
+                labels={content.ui.areaLabels}
+                question={currentStep.choiceQuestion}
+                onSelect={handleAreaSelect}
+                onHover={setHighlightedArea}
+                texts={texts || undefined}
+              />
+            </div>
           )}
 
           {gameState.currentPhase === 'phase3' && currentStep && (

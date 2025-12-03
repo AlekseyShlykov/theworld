@@ -89,47 +89,49 @@ export const GameFooter: React.FC<GameFooterProps> = ({
 
   return (
     <footer className="game-footer">
-      <div className="footer-left">
-        <FooterButton
-          icon={`${baseUrl}assets/music.png`}
-          onClick={handleMusicClick}
-          isActive={isMusicPlaying}
-          ariaLabel="Toggle background music"
-        />
-        <FooterButton
-          icon={`${baseUrl}assets/Speech.png`}
-          onClick={handleTTSClick}
-          isActive={isSpeechOn}
-          ariaLabel={isSpeechOn ? "Stop reading" : "Start reading"}
-        />
-        <FooterButton
-          icon={`${baseUrl}assets/sounds.png`}
-          onClick={handleSFXClick}
-          isActive={sfxEnabled}
-          ariaLabel="Toggle sound effects"
-        />
-      </div>
+      <div className="game-footer-inner">
+        <div className="footer-left">
+          <FooterButton
+            icon={`${baseUrl}assets/music.png`}
+            onClick={handleMusicClick}
+            isActive={isMusicPlaying}
+            ariaLabel="Toggle background music"
+          />
+          <FooterButton
+            icon={`${baseUrl}assets/Speech.png`}
+            onClick={handleTTSClick}
+            isActive={isSpeechOn}
+            ariaLabel={isSpeechOn ? "Stop reading" : "Start reading"}
+          />
+          <FooterButton
+            icon={`${baseUrl}assets/sounds.png`}
+            onClick={handleSFXClick}
+            isActive={sfxEnabled}
+            ariaLabel="Toggle sound effects"
+          />
+        </div>
 
-      <div className="footer-center">
-        <span className="footer-credit">Created by Alex Shlykov</span>
-      </div>
+        <div className="footer-center">
+          <span className="footer-credit">Created by Alex Shlykov</span>
+        </div>
 
-      <div className="footer-right">
-        <FooterButton
-          icon={`${baseUrl}assets/web.png`}
-          onClick={handleWebsiteClick}
-          ariaLabel="Visit my website"
-        />
-        <FooterButton
-          icon={`${baseUrl}assets/X.png`}
-          onClick={handleXClick}
-          ariaLabel="Visit my X (Twitter)"
-        />
-        <FooterButton
-          icon={`${baseUrl}assets/letter.png`}
-          onClick={handleEmailClick}
-          ariaLabel="Send email"
-        />
+        <div className="footer-right">
+          <FooterButton
+            icon={`${baseUrl}assets/web.png`}
+            onClick={handleWebsiteClick}
+            ariaLabel="Visit my website"
+          />
+          <FooterButton
+            icon={`${baseUrl}assets/X.png`}
+            onClick={handleXClick}
+            ariaLabel="Visit my X (Twitter)"
+          />
+          <FooterButton
+            icon={`${baseUrl}assets/letter.png`}
+            onClick={handleEmailClick}
+            ariaLabel="Send email"
+          />
+        </div>
       </div>
     </footer>
   );

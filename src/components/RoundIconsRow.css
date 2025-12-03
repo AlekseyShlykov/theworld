@@ -73,6 +73,31 @@
   border-radius: 50%;
   pointer-events: none;
   z-index: 2; /* Overlay sits on top of image */
+  transition: opacity 0.3s ease;
+}
+
+/* Desktop-only hover effect for locked (grey) circles */
+@media (hover: hover) {
+  .round-icon--locked:hover .round-icon-overlay {
+    opacity: 0.5;
+  }
+  
+  /* Show underlying image slightly on hover for locked circles */
+  .round-icon--locked:hover .round-icon-image {
+    opacity: 0.3;
+  }
+  
+  /* Active circles should not be affected by hover */
+  .round-icon--active:hover .round-icon-overlay,
+  .round-icon--active:hover .round-icon-image {
+    opacity: 1;
+  }
+  
+  /* Completed circles should not be affected by hover */
+  .round-icon--completed:hover .round-icon-overlay,
+  .round-icon--completed:hover .round-icon-image {
+    opacity: 1;
+  }
 }
 
 /* Active state - image fully visible, no overlay */

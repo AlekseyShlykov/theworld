@@ -89,18 +89,20 @@ export const FinalMapScreen: React.FC<FinalMapScreenProps> = ({
         futureProjectionChartTexts={texts.futureProjectionChart}
       />
 
-      <button
-        className="final-map-button"
-        onClick={() => {
-          if ((window as any).playClickSound) {
-            (window as any).playClickSound();
-          }
-          onNext();
-        }}
-        aria-label="Continue to ending screen"
-      >
-        {texts.ui.next}
-      </button>
+      <div className="action-section action-section-single">
+        <button
+          className="final-map-button"
+          onClick={() => {
+            if ((window as any).playClickSound) {
+              (window as any).playClickSound();
+            }
+            onNext();
+          }}
+          aria-label="Continue to ending screen"
+        >
+          {texts.ui.next}
+        </button>
+      </div>
     </div>
   );
 };

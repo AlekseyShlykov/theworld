@@ -38,31 +38,33 @@ export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
         <UnifiedTextBlock text={texts.final.endingText} emphasizeFirstIfQuestion={true} />
       </div>
 
-      <div className="final-ending-buttons">
-        <button
-          className="final-ending-button final-ending-button-primary"
-          onClick={() => {
-            if ((window as any).playClickSound) {
-              (window as any).playClickSound();
-            }
-            onPlayAgain();
-          }}
-          aria-label="Restart the game"
-        >
-          {texts.final.playAgain}
-        </button>
-        <button
-          className="final-ending-button final-ending-button-link"
-          onClick={() => {
-            if ((window as any).playClickSound) {
-              (window as any).playClickSound();
-            }
-            handleWebsiteClick();
-          }}
-          aria-label="Visit buildtounderstand.dev"
-        >
-          {texts.final.myWebsite}
-        </button>
+      <div className="action-section">
+        <div className="final-ending-buttons">
+          <button
+            className="final-ending-button final-ending-button-primary"
+            onClick={() => {
+              if ((window as any).playClickSound) {
+                (window as any).playClickSound();
+              }
+              onPlayAgain();
+            }}
+            aria-label="Restart the game"
+          >
+            {texts.final.playAgain}
+          </button>
+          <button
+            className="final-ending-button final-ending-button-link"
+            onClick={() => {
+              if ((window as any).playClickSound) {
+                (window as any).playClickSound();
+              }
+              handleWebsiteClick();
+            }}
+            aria-label="Visit buildtounderstand.dev"
+          >
+            {texts.final.myWebsite}
+          </button>
+        </div>
       </div>
     </div>
   );

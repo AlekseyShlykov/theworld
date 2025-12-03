@@ -56,18 +56,20 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
             {texts.intro.screen1.subtitle}
           </p>
         </div>
-        <button
-          className="intro-button intro-start-button"
-          onClick={() => {
-            if ((window as any).playClickSound) {
-              (window as any).playClickSound();
-            }
-            onNext();
-          }}
-          aria-label="Start introduction"
-        >
-          {texts.intro.screen1.button}
-        </button>
+        <div className="action-section action-section-single">
+          <button
+            className="intro-button intro-start-button"
+            onClick={() => {
+              if ((window as any).playClickSound) {
+                (window as any).playClickSound();
+              }
+              onNext();
+            }}
+            aria-label="Start introduction"
+          >
+            {texts.intro.screen1.button}
+          </button>
+        </div>
       </div>
     );
   }
@@ -97,18 +99,20 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         <div className="intro-text-container">
           <UnifiedTextBlock text={texts.intro.screen2.text} />
         </div>
-        <button
-          className="intro-button intro-next-button"
-          onClick={() => {
-            if ((window as any).playClickSound) {
-              (window as any).playClickSound();
-            }
-            onNext();
-          }}
-          aria-label="Continue to next section"
-        >
-          {texts.ui.next}
-        </button>
+        <div className="action-section action-section-single">
+          <button
+            className="intro-button intro-next-button"
+            onClick={() => {
+              if ((window as any).playClickSound) {
+                (window as any).playClickSound();
+              }
+              onNext();
+            }}
+            aria-label="Continue to next section"
+          >
+            {texts.ui.next}
+          </button>
+        </div>
       </div>
     );
   }
@@ -138,18 +142,20 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         <div className="intro-text-container">
           <UnifiedTextBlock text={texts.intro.screen3.text} />
         </div>
-        <button
-          className="intro-button intro-next-button"
-          onClick={() => {
-            if ((window as any).playClickSound) {
-              (window as any).playClickSound();
-            }
-            onNext();
-          }}
-          aria-label="Continue to next section"
-        >
-          {texts.ui.next}
-        </button>
+        <div className="action-section action-section-single">
+          <button
+            className="intro-button intro-next-button"
+            onClick={() => {
+              if ((window as any).playClickSound) {
+                (window as any).playClickSound();
+              }
+              onNext();
+            }}
+            aria-label="Continue to next section"
+          >
+            {texts.ui.next}
+          </button>
+        </div>
       </div>
     );
   }
@@ -179,18 +185,20 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         <div className="intro-text-container">
           <UnifiedTextBlock text={texts.intro.screen4.text} />
         </div>
-        <button
-          className="intro-button intro-start-game-button"
-          onClick={() => {
-            if ((window as any).playClickSound) {
-              (window as any).playClickSound();
-            }
-            onStartGame();
-          }}
-          aria-label="Start the game"
-        >
-          {texts.intro.screen4.button}
-        </button>
+        <div className="action-section action-section-single">
+          <button
+            className="intro-button intro-start-game-button"
+            onClick={() => {
+              if ((window as any).playClickSound) {
+                (window as any).playClickSound();
+              }
+              onStartGame();
+            }}
+            aria-label="Start the game"
+          >
+            {texts.intro.screen4.button}
+          </button>
+        </div>
       </div>
     );
   }

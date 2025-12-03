@@ -29,7 +29,7 @@ body {
 .app {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -157,6 +157,11 @@ body {
 .app-main {
   margin-top: 0;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Allow flex children to shrink */
+  overflow: hidden; /* Prevent page scrolling */
+  width: 100%;
 }
 
 .game-section {
@@ -179,6 +184,68 @@ body {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
+}
+
+/* Game content grid - 2-column layout on desktop */
+.game-content-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+}
+
+.game-text-container {
+  width: 100%;
+}
+
+.game-choice-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0;
+}
+
+/* Apply action-section spacing */
+/* Global rule: ALL action buttons must be exactly 100px above the footer */
+.game-choice-section,
+.action-section {
+  margin: 32px auto 100px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Desktop: 2-column layout for game screen (map left, text right) */
+@media (min-width: 1025px) {
+  .game-content-grid {
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .game-content-grid #map-container {
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    flex: 0 0 auto;
+    margin: 0;
+    /* Maintain aspect ratio and rendering properties */
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 800 / 533;
+  }
+
+  .game-text-container {
+    flex: 1;
+    min-width: 0;
+    margin-top: 0;
+  }
+
+  /* Global rule: ALL action buttons must be exactly 100px above the footer */
+  .game-choice-section,
+  .action-section {
+    margin: 32px auto 100px;
+  }
 }
 
 /* Map */
@@ -273,9 +340,18 @@ body {
   transform: translateY(0);
 }
 
+/* Action Section - Shared wrapper for all primary action buttons */
+/* This ensures consistent vertical positioning across all screens */
+.action-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 32px auto 100px; /* 100px bottom margin for consistent spacing above footer */
+  padding: 0;
+}
+
 /* Choice Buttons */
 .choice-section {
-  margin-top: 30px;
+  margin-top: 0; /* Action section handles spacing */
 }
 
 .choice-question {
@@ -470,7 +546,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-speed);
-  margin-top: 30px;
+  margin-top: 0;
   min-height: 44px;
 }
 
@@ -524,7 +600,7 @@ body {
 /* Responsive Design - Tablets */
 @media (max-width: 1024px) {
   .app {
-    padding: 16px;
+    padding: 16px 16px 0 16px;
   }
 
   .game-section {
@@ -541,7 +617,7 @@ body {
 /* Responsive Design - Mobile */
 @media (max-width: 768px) {
   .app {
-    padding: 10px;
+    padding: 10px 10px 0 10px;
   }
 
   .app-header h1 {
@@ -669,7 +745,7 @@ body {
 
 @media (max-width: 480px) {
   .app {
-    padding: 8px;
+    padding: 8px 8px 0 8px;
   }
 
   .game-section {

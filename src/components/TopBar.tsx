@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { RoundIconsRow } from './RoundIconsRow';
 import { LanguageDropdown, LanguageOption } from './LanguageDropdown';
+import { Language } from '../types';
 import './TopBar.css';
 
 interface TopBarProps {
   currentRound: number;
   completedRounds: number[];
-  currentLanguage: 'en' | 'ru';
-  onLanguageChange: (lang: 'en' | 'ru') => void;
+  currentLanguage: Language;
+  onLanguageChange: (lang: Language) => void;
   isStartScreen?: boolean;
 }
 

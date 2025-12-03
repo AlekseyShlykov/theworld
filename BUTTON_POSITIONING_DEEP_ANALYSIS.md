@@ -603,3 +603,4 @@ The fix is simple:
 
 After these changes, all buttons will maintain exactly 100px spacing above the footer, regardless of content height or screen size.
 
+

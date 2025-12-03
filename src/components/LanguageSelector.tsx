@@ -1,8 +1,9 @@
 import React from 'react';
+import { Language } from '../types';
 import './LanguageSelector.css';
 
 interface LanguageSelectorProps {
-  onLanguageSelect: (language: 'en' | 'ru') => void;
+  onLanguageSelect: (language: Language) => void;
 }
 
 export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onLanguageSelect }) => {

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { Language } from '../types';
 import { validateTextsStructure } from '../utils/validateTexts';
 
 export interface IntroScreenData {
@@ -132,12 +133,12 @@ export interface TextsData {
   futureProjectionChart: FutureProjectionChartData;
 }
 
-export const useTexts = (language: 'en' | 'ru') => {
+export const useTexts = (language: Language) => {
   const [texts, setTexts] = useState<TextsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const loadTexts = useCallback(async (lang: 'en' | 'ru') => {
+  const loadTexts = useCallback(async (lang: Language) => {
     try {
       setLoading(true);
       // Use base URL for GitHub Pages compatibility

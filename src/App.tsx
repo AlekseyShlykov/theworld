@@ -16,14 +16,15 @@ import { useGameData } from './hooks/useGameData';
 import { useGameState } from './hooks/useGameState';
 import { useTexts } from './hooks/useTexts';
 import { useTTS } from './contexts/TTSContext';
+import { Language } from './types';
 import './App.css';
 
 function App() {
   // LANGUAGE STATE
   // null = language not selected yet, 'en' or 'ru' = language selected
   // Start with 'en' to skip language selection screen and go directly to intro
-  const [language, setLanguage] = useState<'en' | 'ru' | null>('en');
-  const [selectedLanguage, setSelectedLanguage] = useState<'en' | 'ru'>('en');
+  const [language, setLanguage] = useState<Language | null>('en');
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>('en');
   
   // Load texts based on selected language
   const { texts, loading: textsLoading, error: textsError } = useTexts(selectedLanguage);
@@ -274,7 +275,7 @@ function App() {
   };
 
   // Handle language selection
-  const handleLanguageSelect = (lang: 'en' | 'ru') => {
+  const handleLanguageSelect = (lang: Language) => {
     setSelectedLanguage(lang);
     setLanguage(lang); // Set language as selected
   };

@@ -1,3 +1,6 @@
+// Language type
+export type Language = 'en' | 'ru';
+
 // Game data types
 export interface Area {
   id: string;

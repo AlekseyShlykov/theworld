@@ -1,11 +1,12 @@
 import React from 'react';
 import { useMusic, useSFX } from '../hooks/useAudio';
 import { useTTS } from '../contexts/TTSContext';
+import { Language } from '../types';
 import './GameFooter.css';
 
 interface GameFooterProps {
   currentRound: number;
-  currentLanguage: 'en' | 'ru';
+  currentLanguage: Language;
   getCurrentScreenText: () => string;
 }
 

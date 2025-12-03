@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Language } from '../types';
 import './LanguageDropdown.css';
 
 export interface LanguageOption {
-  code: string;
+  code: Language;
   label: string;
 }
 
 interface LanguageDropdownProps {
-  currentLanguage: string;
+  currentLanguage: Language;
   availableLanguages: LanguageOption[];
-  onChange: (languageCode: string) => void;
+  onChange: (languageCode: Language) => void;
 }
 
 export const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
@@ -63,7 +64,7 @@ export const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
     };
   }, [isOpen]);
 
-  const handleLanguageSelect = (languageCode: string) => {
+  const handleLanguageSelect = (languageCode: Language) => {
     if (languageCode !== currentLanguage) {
       onChange(languageCode);
     }
@@ -114,4 +115,5 @@ export const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
     </div>
   );
 };
+
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { LogicData, LanguageData, TurnLogic } from '../types';
+import { LogicData, LanguageData, TurnLogic, Language } from '../types';
 
-export const useGameData = (language: string) => {
+export const useGameData = (language: Language) => {
   const [logic, setLogic] = useState<LogicData | null>(null);
   const [content, setContent] = useState<LanguageData | null>(null);
   const [turnLogic, setTurnLogic] = useState<TurnLogic | null>(null);

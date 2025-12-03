@@ -1,9 +1,10 @@
 import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import { Language } from '../types';
 
 interface TTSContextType {
   isSpeechOn: boolean;
   setIsSpeechOn: (value: boolean) => void;
-  speakText: (text: string, language: 'en' | 'ru') => void;
+  speakText: (text: string, language: Language) => void;
   stopSpeaking: () => void;
 }
 
@@ -12,7 +13,7 @@ const TTSContext = createContext<TTSContextType | undefined>(undefined);
 export const TTSProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isSpeechOn, setIsSpeechOn] = useState(false);
 
-  const speakText = useCallback((text: string, language: 'en' | 'ru') => {
+  const speakText = useCallback((text: string, language: Language) => {
     if (!text || text.trim() === '') {
       return;
     }

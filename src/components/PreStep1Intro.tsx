@@ -1,6 +1,6 @@
 import React from 'react';
 import { RoundNarrative } from './RoundNarrative';
-import { Area, LogicData, LanguageData } from '../types';
+import { Area, LogicData, LanguageData, Language } from '../types';
 import { TextsData } from '../hooks/useTexts';
 
 interface ChoiceLogEntry {
@@ -18,7 +18,7 @@ interface PreStep1IntroProps {
   texts: TextsData;
   round: number;
   choicesLog?: ChoiceLogEntry[];
-  currentLanguage?: 'en' | 'ru';
+  currentLanguage?: Language;
 }
 
 export const PreStep1Intro: React.FC<PreStep1IntroProps> = ({

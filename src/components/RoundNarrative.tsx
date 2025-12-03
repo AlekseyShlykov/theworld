@@ -4,7 +4,7 @@ import { MapScrollAnimation } from './MapScrollAnimation';
 import { ChoiceButtons } from './ChoiceButtons';
 import { DebugPanel } from './DebugPanel';
 import { UnifiedTextBlock } from './UnifiedTextBlock';
-import { Area, LogicData, LanguageData } from '../types';
+import { Area, LogicData, LanguageData, Language } from '../types';
 import { TextsData } from '../hooks/useTexts';
 import './PreStep1Intro.css';
 
@@ -36,7 +36,7 @@ interface RoundNarrativeProps {
   onComplete: () => void;
   texts: TextsData;
   choicesLog?: ChoiceLogEntry[];
-  currentLanguage?: 'en' | 'ru';
+  currentLanguage?: Language;
 }
 
 export const RoundNarrative: React.FC<RoundNarrativeProps> = ({

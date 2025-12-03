@@ -101,14 +101,15 @@
 }
 
 /* Responsive design - Tablets and Mobile */
-/* Override full-width technique for smaller screens */
+/* Footer remains full-width on mobile - override container constraints */
 @media (max-width: 1024px) {
   .game-footer {
-    width: 100%;
-    left: auto;
-    right: auto;
-    margin-left: 0;
-    margin-right: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     padding: 11px 20px;
   }
   

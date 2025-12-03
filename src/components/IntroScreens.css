@@ -38,22 +38,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Let content flow from top, not centered */
-  width: 100%;
-  flex: 1; /* Fill available space in .app-main */
-  min-height: 0; /* Allow flex shrinking */
+  justify-content: center;
+  min-height: 70vh;
   padding: 0 20px 20px 20px;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   margin-top: 0;
   gap: 20px;
-  /* Bottom spacing handled by action-section margin-bottom */
 }
 
 /* Screen 1: Start screen with title overlay */
 .intro-screen-1 {
   position: relative;
-  /* No min-height - let content flow naturally with action-section spacing */
+  min-height: 80vh;
 }
 
 .intro-image-container {
@@ -118,27 +115,9 @@
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: all var(--transition-speed);
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   min-width: 200px;
-}
-
-/* Action section for intro screens */
-/* Global rule: ALL action buttons must be exactly 100px above the footer */
-.intro-screen .action-section {
-  width: 100%;
-  max-width: 800px;
-  margin: 32px auto 100px;
-}
-
-/* Desktop: Pin action section to bottom for consistent button position across all intro screens */
-/* This ensures all intro buttons (screens 1-4) appear at the exact same vertical position */
-@media (min-width: 1025px) {
-  .intro-screen .action-section {
-    margin-top: auto; /* Push to bottom of flex column */
-    margin-bottom: 100px; /* Fixed gap above footer */
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 .intro-button:hover {
@@ -165,12 +144,7 @@
   .intro-screen {
     padding: 0 18px 18px 18px;
     gap: 18px;
-    margin-bottom: 0; /* Bottom spacing handled by action-section */
-  }
-  
-  /* Global rule: ALL action buttons must be exactly 100px above the footer */
-  .intro-screen .action-section {
-    margin-bottom: 100px;
+    margin-bottom: 18px;
   }
 
 
@@ -215,14 +189,9 @@
 
   .intro-screen {
     padding: 0 15px 16px 15px;
-    /* Removed min-height: 60vh - let content flow naturally with action-section spacing */
+    min-height: 60vh;
     gap: 16px;
-    margin-bottom: 0; /* Bottom spacing handled by action-section */
-  }
-  
-  /* Global rule: ALL action buttons must be exactly 100px above the footer */
-  .intro-screen .action-section {
-    margin-bottom: 100px;
+    margin-bottom: 16px;
   }
 
 
@@ -251,14 +220,9 @@
 
   .intro-screen {
     padding: 0 12px 12px 12px;
-    /* Removed min-height: 55vh - let content flow naturally with action-section spacing */
+    min-height: 55vh;
     gap: 14px;
-    margin-bottom: 0; /* Bottom spacing handled by action-section */
-  }
-  
-  /* Global rule: ALL action buttons must be exactly 100px above the footer */
-  .intro-screen .action-section {
-    margin-bottom: 100px;
+    margin-bottom: 14px;
   }
 
 

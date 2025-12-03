@@ -39,11 +39,11 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
   if (currentScreen === 1) {
     return (
       <div className="intro-screen intro-screen-1" role="dialog" aria-label="Game introduction">
-        <div className="intro-image-container intro-image-top-spacing">
+        <div className="intro-image-container intro-image-container-first intro-image-top-spacing">
           <img
             src={introStartImage}
             alt="World map"
-            className="intro-image"
+            className="intro-image intro-image-first"
             onError={(e) => {
               // Fallback if image doesn't load
               e.currentTarget.style.display = 'none';

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RoundIconsRow } from './RoundIconsRow';
+import { LanguageDropdown, LanguageOption } from './LanguageDropdown';
 import './TopBar.css';
 
 interface TopBarProps {
@@ -27,6 +28,12 @@ export const TopBar: React.FC<TopBarProps> = ({
 }) => {
   const [uiTexts, setUiTexts] = useState<UITexts | null>(null);
   const [loading, setLoading] = useState(true);
+
+  // Available languages configuration
+  const availableLanguages: LanguageOption[] = [
+    { code: 'en', label: 'EN' },
+    { code: 'ru', label: 'RU' }
+  ];
 
   // Load UI texts from JSON
   useEffect(() => {
@@ -89,22 +96,11 @@ export const TopBar: React.FC<TopBarProps> = ({
       </div>
 
       <div className="top-bar-right">
-        <div className="language-selector">
-          <button
-            className={currentLanguage === 'en' ? 'active' : ''}
-            onClick={() => onLanguageChange('en')}
-            aria-label="Switch to English"
-          >
-            EN
-          </button>
-          <button
-            className={currentLanguage === 'ru' ? 'active' : ''}
-            onClick={() => onLanguageChange('ru')}
-            aria-label="Switch to Russian"
-          >
-            RU
-          </button>
-        </div>
+        <LanguageDropdown
+          currentLanguage={currentLanguage}
+          availableLanguages={availableLanguages}
+          onChange={onLanguageChange}
+        />
       </div>
     </div>
   );

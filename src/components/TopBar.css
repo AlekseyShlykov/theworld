@@ -99,20 +99,25 @@
 /* Responsive design - Mobile */
 @media (max-width: 768px) {
   .top-bar {
-    flex-direction: row;
-    gap: 12px;
-    padding: 4px 0 4px 0;
-    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0 4px 0;
+    align-items: stretch;
   }
 
   .top-bar-left {
-    display: none; /* Hide round icons on mobile intro screen */
+    display: flex;
+    order: 1;
+    width: 100%;
+    justify-content: center;
   }
 
   .top-bar-center {
     flex: 1;
-    text-align: left;
+    text-align: center;
     min-width: 0;
+    order: 2;
+    padding: 0 4px;
   }
 
   .round-title {
@@ -126,6 +131,9 @@
     flex-shrink: 0;
     justify-content: flex-end;
     margin-top: 0;
+    order: 3;
+    align-self: flex-end;
+    padding-right: 4px;
   }
 
   .language-selector {
@@ -142,8 +150,8 @@
 
 @media (max-width: 480px) {
   .top-bar {
-    gap: 8px;
-    padding: 4px 0 4px 0;
+    gap: 6px;
+    padding: 6px 0 4px 0;
   }
 
   .round-title {

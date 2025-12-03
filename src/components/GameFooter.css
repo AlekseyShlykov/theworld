@@ -100,9 +100,15 @@
   display: block;
 }
 
-/* Responsive design - Tablets */
+/* Responsive design - Tablets and Mobile */
+/* Override full-width technique for smaller screens */
 @media (max-width: 1024px) {
   .game-footer {
+    width: 100%;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
     padding: 11px 20px;
   }
   
@@ -126,26 +132,54 @@
 /* Responsive design - Mobile */
 @media (max-width: 768px) {
   .game-footer {
-    padding: 10px 16px;
-    position: sticky;
-    bottom: 0;
+    padding: 8px 16px;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+    position: relative;
+    bottom: auto;
     z-index: 100;
-    flex-direction: row;
-    gap: 6px;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
     flex-wrap: nowrap;
+    margin-top: auto;
+    margin-bottom: 0;
   }
   
   .game-footer-inner {
     width: 100%;
-    gap: 6px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
   }
 
+  .footer-center {
+    display: block;
+    order: 1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4px;
+    flex: 0 0 100%;
+  }
+
+  .footer-credit {
+    display: block;
+    font-size: 0.8rem;
+    color: #4ECDC4;
+    white-space: nowrap;
+  }
+
+  /* Combine all icons into a single row */
   .footer-left {
     display: flex;
     flex-direction: row;
     gap: 6px;
     flex-shrink: 0;
+    order: 2;
+    justify-content: center;
   }
 
   .footer-right {
@@ -153,10 +187,8 @@
     flex-direction: row;
     gap: 6px;
     flex-shrink: 0;
-  }
-
-  .footer-center {
-    display: none; /* Hide credit text on mobile to save space */
+    order: 2;
+    justify-content: center;
   }
 
   .footer-button {
@@ -170,21 +202,26 @@
     width: 20px;
     height: 20px;
   }
-
-  .footer-credit {
-    display: none;
-  }
 }
 
 @media (max-width: 480px) {
   .game-footer {
-    padding: 8px 16px;
-    gap: 4px;
+    padding: 6px 12px;
+    padding-bottom: calc(6px + env(safe-area-inset-bottom));
+    gap: 6px;
   }
   
   .game-footer-inner {
     width: 100%;
-    gap: 4px;
+    gap: 6px;
+  }
+
+  .footer-center {
+    margin-bottom: 2px;
+  }
+
+  .footer-credit {
+    font-size: 0.75rem;
   }
 
   .footer-left,
@@ -202,10 +239,6 @@
   .footer-icon {
     width: 18px;
     height: 18px;
-  }
-
-  .footer-credit {
-    display: none;
   }
 }
 

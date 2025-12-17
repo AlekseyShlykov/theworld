@@ -75,6 +75,26 @@ export function validateTextsStructure(texts: TextsData | null): string[] {
     }
   }
 
+  // Validate header section
+  if (!texts.header) {
+    errors.push("Missing 'header' object");
+  } else {
+    if (!texts.header.introTitle || typeof texts.header.introTitle !== 'string' || texts.header.introTitle.trim() === '') {
+      errors.push("Missing or empty header.introTitle");
+    }
+    
+    if (!texts.header.roundTitles || typeof texts.header.roundTitles !== 'object') {
+      errors.push("Missing or invalid header.roundTitles object");
+    } else {
+      for (let round = 1; round <= 8; round++) {
+        const roundKey = `round${round}` as keyof typeof texts.header.roundTitles;
+        if (!texts.header.roundTitles[roundKey] || typeof texts.header.roundTitles[roundKey] !== 'string' || texts.header.roundTitles[roundKey].trim() === '') {
+          errors.push(`Missing or empty header.roundTitles.${roundKey}`);
+        }
+      }
+    }
+  }
+
   // Validate timeline section
   if (!texts.timeline) {
     errors.push("Missing 'timeline' object");

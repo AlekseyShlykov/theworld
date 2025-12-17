@@ -38,11 +38,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 70vh;
+  justify-content: flex-start;
+  flex: 1;
+  min-height: 0;
   padding: 0 20px 20px 20px;
   max-width: 1000px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto;
   margin-top: 0;
   gap: 20px;
 }
@@ -50,7 +51,6 @@
 /* Screen 1: Start screen with title overlay */
 .intro-screen-1 {
   position: relative;
-  min-height: 80vh;
 }
 
 .intro-image-container {
@@ -62,6 +62,30 @@
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* First screen image - reduced by 30% */
+.intro-image-container-first {
+  max-width: 560px; /* 800px * 0.7 = 560px */
+}
+
+/* Responsive adjustments for first screen image */
+@media (max-width: 1024px) {
+  .intro-image-container-first {
+    max-width: 490px; /* 700px * 0.7 = 490px */
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-image-container-first {
+    max-width: 420px; /* 600px * 0.7 = 420px */
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-image-container-first {
+    max-width: 350px; /* 500px * 0.7 = 350px */
+  }
 }
 
 .intro-image {
@@ -104,6 +128,21 @@
   /* UnifiedTextBlock handles its own padding and styling */
 }
 
+/* Action Section for intro screens */
+.intro-screen .action-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 32px auto 100px;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.intro-screen .action-section-single {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 /* Buttons */
 .intro-button {
   padding: 15px 40px;
@@ -144,9 +183,12 @@
   .intro-screen {
     padding: 0 18px 18px 18px;
     gap: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 0;
   }
 
+  .intro-screen .action-section {
+    margin-bottom: 100px;
+  }
 
   .intro-title {
     font-size: 2.5rem;
@@ -177,21 +219,25 @@
 
   /* Text styling now handled by UnifiedTextBlock */
 
+  .intro-screen .action-section {
+    margin-bottom: 100px;
+    padding: 0 16px;
+  }
+
   .intro-button {
     padding: 14px 30px;
     font-size: 1rem;
     min-width: 100%;
     max-width: 100%;
     min-height: 44px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .intro-screen {
     padding: 0 15px 16px 15px;
-    min-height: 60vh;
     gap: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 0;
   }
 
 
@@ -211,18 +257,22 @@
 
   /* Text styling now handled by UnifiedTextBlock */
 
+  .intro-screen .action-section {
+    margin-bottom: 100px;
+    padding: 0 12px;
+  }
+
   .intro-button {
     padding: 12px 24px;
     font-size: 0.95rem;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .intro-screen {
     padding: 0 12px 12px 12px;
-    min-height: 55vh;
     gap: 14px;
-    margin-bottom: 14px;
+    margin-bottom: 0;
   }
 
 

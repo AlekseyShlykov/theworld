@@ -76,7 +76,8 @@ function App() {
     selectArea,
     nextTurn,
     restartGame,
-    captureCurrentSnapshot
+    captureCurrentSnapshot,
+    markCurrentRoundCompleted
   } = useGameState(logic?.areas || [], logic?.populationMultipliers);
 
   // TTS context for auto-reading
@@ -352,11 +353,11 @@ function App() {
     const currentRound = showRoundNarrative;
     if (currentRound === null) return;
     
-    // If Round 8 is complete, capture final snapshot and transition to final map screen
+    // If Round 8 is complete, mark it as completed and transition to final map screen
     if (currentRound === 8) {
-      // Capture round 8's snapshot before transitioning to final screen
-      // This ensures the population chart has data for all 8 rounds
-      captureCurrentSnapshot();
+      // Mark round 8 as completed (this also captures the snapshot)
+      // This ensures the round 8 icon turns green on final screens
+      markCurrentRoundCompleted();
       setShowRoundNarrative(null);
       setFinalScreen('finalMap');
       setPhase('finalMap');
@@ -440,6 +441,7 @@ function App() {
           completedRounds={gameState.completedSteps}
           currentLanguage={selectedLanguage}
           onLanguageChange={setSelectedLanguage}
+          texts={texts}
         />
         <main className="app-main">
           <DebugPanel areas={gameState.areas} choicesLog={choicesLog} />
@@ -470,6 +472,7 @@ function App() {
           completedRounds={gameState.completedSteps}
           currentLanguage={selectedLanguage}
           onLanguageChange={setSelectedLanguage}
+          texts={texts}
         />
         <main className="app-main">
           <DebugPanel areas={gameState.areas} choicesLog={choicesLog} />
@@ -518,6 +521,7 @@ function App() {
           completedRounds={gameState.completedSteps}
           currentLanguage={selectedLanguage}
           onLanguageChange={setSelectedLanguage}
+          texts={texts}
         />
         <main className="app-main">
           {texts && (
@@ -556,6 +560,7 @@ function App() {
           currentLanguage={selectedLanguage}
           onLanguageChange={setSelectedLanguage}
           isStartScreen={true}
+          texts={texts}
         />
         <main className="app-main">
           {introScreen !== null && texts && (
@@ -588,6 +593,7 @@ function App() {
           currentLanguage={selectedLanguage}
           onLanguageChange={setSelectedLanguage}
           isStartScreen={true}
+          texts={texts}
         />
         <main className="app-main">
           {texts && (
@@ -643,6 +649,7 @@ function App() {
           completedRounds={gameState.completedSteps}
           currentLanguage={selectedLanguage}
           onLanguageChange={setSelectedLanguage}
+          texts={texts}
         />
         <main className="app-main">
           <div className="completion-screen">
@@ -701,6 +708,7 @@ function App() {
         completedRounds={gameState.completedSteps}
         currentLanguage={selectedLanguage}
         onLanguageChange={setSelectedLanguage}
+        texts={texts}
       />
       <main className="app-main">
         <section className="game-section">

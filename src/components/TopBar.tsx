@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { RoundIconsRow } from './RoundIconsRow';
 import { LanguageDropdown, LanguageOption } from './LanguageDropdown';
 import { Language } from '../types';
+import { TextsData } from '../hooks/useTexts';
 import './TopBar.css';
 
 interface TopBarProps {
@@ -10,14 +11,7 @@ interface TopBarProps {
   currentLanguage: Language;
   onLanguageChange: (lang: Language) => void;
   isStartScreen?: boolean;
-}
-
-interface UITexts {
-  [language: string]: {
-    [roundKey: string]: {
-      title: string;
-    };
-  };
+  texts: TextsData | null;
 }
 
 export const TopBar: React.FC<TopBarProps> = ({
@@ -25,62 +19,39 @@ export const TopBar: React.FC<TopBarProps> = ({
   completedRounds,
   currentLanguage,
   onLanguageChange,
-  isStartScreen = false
+  isStartScreen = false,
+  texts
 }) => {
-  const [uiTexts, setUiTexts] = useState<UITexts | null>(null);
-  const [loading, setLoading] = useState(true);
-
   // Available languages configuration
   const availableLanguages: LanguageOption[] = [
     { code: 'en', label: 'EN' },
     { code: 'ru', label: 'RU' }
   ];
 
-  // Load UI texts from JSON
-  useEffect(() => {
-    const baseUrl = import.meta.env.BASE_URL;
-    fetch(`${baseUrl}config/uiTexts.json`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to load UI texts');
-        }
-        return response.json();
-      })
-      .then((data: UITexts) => {
-        setUiTexts(data);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error loading UI texts:', error);
-        setLoading(false);
-      });
-  }, []);
-
-  // Get title based on current round and language
+  // Get title based on current round and screen state
   const getTitle = (): string => {
-    if (!uiTexts) {
-      return 'Guns, Germs & Steel';
+    if (!texts || !texts.header) {
+      // Fallback to default title if texts not loaded
+      return currentLanguage === 'ru' 
+        ? 'Ружья, микробы и сталь' 
+        : 'Guns, Germs & Steel';
     }
 
-    // Use startScreen.title if we're on the first screen
+    // Use introTitle if we're on intro/start screens
     if (isStartScreen) {
-      const startTitle = uiTexts[currentLanguage]?.startScreen?.title;
-      if (startTitle) {
-        return startTitle;
-      }
+      return texts.header.introTitle;
     }
 
-    const roundKey = `round${currentRound}`;
-    const title = uiTexts[currentLanguage]?.[roundKey]?.title;
+    // Use round title based on current round
+    const roundKey = `round${currentRound}` as keyof typeof texts.header.roundTitles;
+    const roundTitle = texts.header.roundTitles[roundKey];
     
-    if (title) {
-      return title;
+    if (roundTitle) {
+      return roundTitle;
     }
 
-    // Fallback to default title
-    return currentLanguage === 'ru' 
-      ? 'Ружья, микробы и сталь' 
-      : 'Guns, Germs & Steel';
+    // Fallback to intro title if round title is missing
+    return texts.header.introTitle;
   };
 
   return (
@@ -93,7 +64,7 @@ export const TopBar: React.FC<TopBarProps> = ({
       </div>
 
       <div className="top-bar-center">
-        <h1 className="round-title">{loading ? '...' : getTitle()}</h1>
+        <h1 className="round-title">{getTitle()}</h1>
       </div>
 
       <div className="top-bar-right">

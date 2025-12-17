@@ -372,6 +372,29 @@ export const useGameState = (
     });
   }, [createAreaSnapshot]);
 
+  // Mark a round as completed without advancing the turn or changing phase
+  // Used when transitioning to final screens to ensure the current round is marked as completed
+  const markCurrentRoundCompleted = useCallback(() => {
+    setGameState(prev => {
+      const currentRound = prev.currentTurn;
+      // Only add if not already in completedSteps
+      if (prev.completedSteps.includes(currentRound)) {
+        return prev;
+      }
+      
+      // Capture snapshot of current round before marking as completed
+      const currentRoundSnapshot = createAreaSnapshot(prev.areas, currentRound);
+      const historyWithoutCurrentRound = prev.areaHistory.filter(s => s.round !== currentRound);
+      const updatedHistory = [...historyWithoutCurrentRound, currentRoundSnapshot].sort((a, b) => a.round - b.round);
+      
+      return {
+        ...prev,
+        completedSteps: [...prev.completedSteps, currentRound],
+        areaHistory: updatedHistory
+      };
+    });
+  }, [createAreaSnapshot]);
+
   return {
     gameState,
     zoneChoiceCounts, // Expose choice counts for debug panel
@@ -380,6 +403,7 @@ export const useGameState = (
     selectArea,
     nextTurn,
     restartGame,
-    captureCurrentSnapshot // Expose for capturing final snapshot
+    captureCurrentSnapshot, // Expose for capturing final snapshot
+    markCurrentRoundCompleted // Expose for marking round as completed without advancing
   };
 };

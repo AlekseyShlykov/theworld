@@ -1,7 +1,7 @@
 {
   "intro": {
     "screen1": {
-
+      "title": "The Evolution of Civilizations",
       "subtitle": "A short interactive story based on Jared Diamond's scientific explanations.",
       "button": "Start"
     },
@@ -122,6 +122,19 @@
     "chooseLanguage": "Choose language / Выберите язык",
     "english": "English",
     "russian": "Русский"
+  },
+  "header": {
+    "introTitle": "The Evolution of Civilizations",
+    "roundTitles": {
+      "round1": "Stone Age",
+      "round2": "Food Production",
+      "round3": "Domestication of Animals",
+      "round4": "Writing",
+      "round5": "Axis East-West",
+      "round6": "Germs & Pandemics",
+      "round7": "Technologies",
+      "round8": "Power"
+    }
   },
   "areaButtons": {
     "area1": "Area 1",

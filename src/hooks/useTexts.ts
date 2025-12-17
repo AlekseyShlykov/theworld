@@ -105,6 +105,20 @@ export interface FutureProjectionChartData {
   explanation: string;
 }
 
+export interface HeaderData {
+  introTitle: string;
+  roundTitles: {
+    round1: string;
+    round2: string;
+    round3: string;
+    round4: string;
+    round5: string;
+    round6: string;
+    round7: string;
+    round8: string;
+  };
+}
+
 export interface TextsData {
   intro: IntroScreenData;
   rounds: {
@@ -119,6 +133,7 @@ export interface TextsData {
     english: string;
     russian: string;
   };
+  header: HeaderData;
   areaButtons: {
     area1: string;
     area2: string;

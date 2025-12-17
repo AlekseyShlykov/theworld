@@ -7,6 +7,7 @@
   --card-bg: #ffffff;
   --border-radius: 8px;
   --transition-speed: 0.3s;
+  --footer-height: 64px;
 }
 
 * {
@@ -33,6 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 }
 
 /* Header styles moved to TopBar component */
@@ -157,6 +159,11 @@ body {
 .app-main {
   margin-top: 0;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: var(--footer-height);
 }
 
 .game-section {
@@ -273,9 +280,27 @@ body {
   transform: translateY(0);
 }
 
+/* Action Section - Global wrapper for buttons */
+/* Ensures buttons are positioned consistently relative to footer */
+.action-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 32px auto 100px;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.action-section-single {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 /* Choice Buttons */
 .choice-section {
   margin-top: 30px;
+  /* Ensure choice buttons also respect footer positioning */
+  margin-bottom: 100px;
 }
 
 .choice-question {
@@ -523,6 +548,10 @@ body {
 
 /* Responsive Design - Tablets */
 @media (max-width: 1024px) {
+  :root {
+    --footer-height: 60px;
+  }
+
   .app {
     padding: 10px;
   }
@@ -535,11 +564,23 @@ body {
     font-size: 1.6rem;
   }
 
+  .action-section {
+    margin-bottom: 100px;
+  }
+
+  .choice-section {
+    margin-bottom: 100px;
+  }
+
   /* Text styling now handled by UnifiedTextBlock */
 }
 
 /* Responsive Design - Mobile */
 @media (max-width: 768px) {
+  :root {
+    --footer-height: 120px;
+  }
+
   .app {
     padding: 10px;
   }
@@ -567,6 +608,15 @@ body {
 
   .content-wrapper {
     padding: 0;
+  }
+
+  .action-section {
+    margin-bottom: 100px;
+    padding: 0 16px;
+  }
+
+  .choice-section {
+    margin-bottom: 100px;
   }
 
   .choice-buttons-row {
@@ -668,6 +718,10 @@ body {
 }
 
 @media (max-width: 480px) {
+  :root {
+    --footer-height: 110px;
+  }
+
   .app {
     padding: 8px;
   }
@@ -679,6 +733,15 @@ body {
   .step-title {
     font-size: 1.2rem;
     margin-bottom: 16px;
+  }
+
+  .action-section {
+    margin-bottom: 100px;
+    padding: 0 12px;
+  }
+
+  .choice-section {
+    margin-bottom: 100px;
   }
 
   .choice-buttons-row {

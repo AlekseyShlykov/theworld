@@ -76,7 +76,6 @@ function App() {
     selectArea,
     nextTurn,
     restartGame,
-    captureCurrentSnapshot,
     markCurrentRoundCompleted
   } = useGameState(logic?.areas || [], logic?.populationMultipliers);
 

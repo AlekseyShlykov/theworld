@@ -1,6 +1,7 @@
 .language-dropdown-container {
   position: relative;
   display: inline-block;
+  z-index: 2001; /* Higher than TopBar to ensure language switcher is always accessible */
 }
 
 .language-dropdown-button {
@@ -19,6 +20,8 @@
   min-height: 44px;
   font-size: inherit;
   font-family: inherit;
+  position: relative;
+  z-index: 2001; /* Ensure button is always clickable */
 }
 
 .language-dropdown-button:hover {
@@ -54,7 +57,7 @@
   border: 2px solid var(--primary-color);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
+  z-index: 2002; /* Highest z-index to ensure dropdown menu appears above all other UI elements */
   min-width: 100%;
   overflow: hidden;
   animation: dropdownFadeIn 0.2s ease-out;

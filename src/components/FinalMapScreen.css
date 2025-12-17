@@ -112,14 +112,14 @@
 
   .final-map-text-container {
     margin-top: 20px;
-    margin-bottom: 16px;
+    margin-bottom: 20px; /* Increased from 16px for better spacing after text on mobile */
     padding: 0 16px;
   }
 
   /* Text styling now handled by UnifiedTextBlock */
 
   .final-values-container {
-    margin: 20px 0;
+    margin: 24px 0; /* Increased from 20px for better vertical spacing on mobile */
     padding: 16px;
     max-width: 100%;
   }
@@ -152,6 +152,7 @@
 
   .final-map-screen .action-section {
     margin-bottom: 100px;
+    margin-top: 24px; /* Added top margin for better spacing before action buttons on mobile */
     padding: 0 16px;
   }
 

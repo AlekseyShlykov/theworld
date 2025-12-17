@@ -154,6 +154,7 @@
     min-width: 300px;
     flex: 0 0 auto;
     margin: 28px 0 0 0; /* Match map container top margin */
+    margin-bottom: 0; /* No bottom margin on desktop, matching map container */
   }
   
   .pre-step1-content-wrapper .pre-step1-text-container {
@@ -254,14 +255,22 @@
 
   .pre-step1-intro-screen #map-container {
     margin-top: 16px;
+    margin-bottom: 20px; /* Added bottom margin for better spacing after map on mobile */
+  }
+
+  /* MapScrollAnimation in post-choice screen - match map container margins on mobile */
+  .pre-step1-content-wrapper .map-scroll-animation-container {
+    margin-top: 16px;
+    margin-bottom: 20px; /* Match map container bottom margin on mobile */
   }
 
   .pre-step1-text-button-wrapper {
-    margin-top: 16px;
+    margin-top: 20px; /* Increased from 16px for better spacing between map and text */
   }
 
   .pre-step1-text-container {
     padding: 0;
+    margin-bottom: 0; /* Remove any default margin to avoid double spacing */
   }
 
   .pre-step1-button {
@@ -274,12 +283,13 @@
   }
 
   .pre-step1-button-wrapper {
-    margin-top: 14px;
+    margin-top: 20px; /* Increased from 14px for better spacing between text and button on mobile */
     /* Bottom spacing handled by action-section margin-bottom */
   }
 
   .pre-step1-choice-section {
     padding: 0 16px;
+    margin-top: 20px; /* Added top margin for better spacing before choice section on mobile */
   }
   
   /* Global rule: ALL action buttons must be exactly 100px above the footer */

@@ -56,14 +56,17 @@
     line-height: 1.75;
     padding: 0 16px;
     max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .json-text-block-paragraph {
-    margin-bottom: 1em;
+    margin-bottom: 1.2em; /* Increased from 1em for better paragraph spacing on mobile */
   }
 
   .json-text-block-numbered {
     margin-left: 1em;
+    margin-bottom: 0.9em; /* Slightly increased for better list item spacing */
   }
 }
 

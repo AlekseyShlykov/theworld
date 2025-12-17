@@ -23,7 +23,8 @@
 @media (max-width: 768px) {
   .intro-screen .intro-image-container.intro-image-top-spacing,
   .intro-screen .intro-map-animation-container.intro-image-top-spacing {
-    margin-top: 12px;
+    margin-top: 16px; /* Increased from 12px for consistency with other top spacing */
+    margin-bottom: 20px; /* Added bottom margin for better spacing after images on mobile */
   }
 }
 
@@ -221,6 +222,7 @@
 
   .intro-screen .action-section {
     margin-bottom: 100px;
+    margin-top: 24px; /* Added top margin for better spacing before action buttons on mobile */
     padding: 0 16px;
   }
 
@@ -236,13 +238,15 @@
 
   .intro-screen {
     padding: 0 15px 16px 15px;
-    gap: 16px;
+    gap: 20px; /* Increased from 16px for better vertical rhythm on mobile */
     margin-bottom: 0;
   }
 
 
   .intro-text-container {
     padding: 0 16px;
+    margin-top: 0; /* Remove any default margin to avoid double spacing */
+    margin-bottom: 0;
   }
 }
 

@@ -11,6 +11,7 @@ interface TopBarProps {
   currentLanguage: Language;
   onLanguageChange: (lang: Language) => void;
   isStartScreen?: boolean;
+  isPreGame?: boolean; // true only during intro screens (before Start button), not during PreStep1Intro
   texts: TextsData | null;
 }
 
@@ -20,6 +21,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   currentLanguage,
   onLanguageChange,
   isStartScreen = false,
+  isPreGame = false,
   texts
 }) => {
   // Available languages configuration
@@ -60,6 +62,7 @@ export const TopBar: React.FC<TopBarProps> = ({
         <RoundIconsRow
           currentRound={currentRound}
           completedRounds={completedRounds}
+          isPreGame={isPreGame}
         />
       </div>
 

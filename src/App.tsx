@@ -559,6 +559,7 @@ function App() {
           currentLanguage={selectedLanguage}
           onLanguageChange={setSelectedLanguage}
           isStartScreen={true}
+          isPreGame={true}
           texts={texts}
         />
         <main className="app-main">
@@ -593,6 +594,7 @@ function App() {
           currentLanguage={selectedLanguage}
           onLanguageChange={setSelectedLanguage}
           isStartScreen={true}
+          isPreGame={false}
           texts={texts}
         />
         <main className="app-main">

@@ -4,6 +4,7 @@ import './RoundIconsRow.css';
 interface RoundIconsRowProps {
   currentRound: number;      // 1–8, the round that is currently running
   completedRounds: number[]; // e.g. [1, 2]
+  isPreGame?: boolean;       // true if before Round 1 starts (intro/pre-step-1 state)
 }
 
 // Image mapping for each round
@@ -20,10 +21,16 @@ const ROUND_IMAGES = [
 
 export const RoundIconsRow: React.FC<RoundIconsRowProps> = ({
   currentRound,
-  completedRounds
+  completedRounds,
+  isPreGame = false
 }) => {
   const baseUrl = import.meta.env.BASE_URL;
   const getIconState = (roundIndex: number): 'locked' | 'active' | 'completed' => {
+    // Before Round 1 starts (intro/pre-game state), all icons appear locked
+    if (isPreGame) {
+      return 'locked';
+    }
+    
     const roundNumber = roundIndex + 1; // Convert 0-based index to 1-based round number
     
     // If round is in completedRounds, it's completed

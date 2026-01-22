@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // GitHub Pages base — MUST match your repo name
   // Use '/' for local development
-  base: '/',
+  base: '/theworld/',
   plugins: [react()],
   server: {
     port: 3002,

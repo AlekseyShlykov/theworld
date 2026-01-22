@@ -13,6 +13,19 @@ export class MapRenderer {
   private rng: SeededRandom;
   // Store pixel-to-area mapping for click detection
   private pixelToAreaMap: Map<string, string> = new Map();
+  
+  // Landmass detection cache
+  private landmassComponents: Array<{
+    pixels: Array<{x: number, y: number}>;
+    centroid: {x: number, y: number};
+    size: number;
+  }> = [];
+  private pixelToLandmassMap: Map<string, number> = new Map(); // pixel key -> landmass index
+  
+  // Configuration constants
+  private static readonly MAJOR_LANDMASS_THRESHOLD = 2000; // Minimum pixels for a "major" landmass
+  private static readonly CLONE_POWER_THRESHOLD = 1.7; // Power threshold for creating clones
+  private static readonly DEBUG_CLONE_PLACEMENT = false; // Set to true to enable debug logging
 
   constructor(canvasParam: HTMLCanvasElement, seed: number = 42) {
     // Extract properties from canvas - we don't need to store the canvas itself
@@ -37,11 +50,166 @@ export class MapRenderer {
         const tempCtx = tempCanvas.getContext('2d')!;
         tempCtx.drawImage(img, 0, 0, this.width, this.height);
         this.landMask = tempCtx.getImageData(0, 0, this.width, this.height);
+        // Compute connected components for landmass detection
+        this.computeLandmassComponents();
         resolve();
       };
       img.onerror = reject;
       img.src = maskImageUrl;
     });
+  }
+  
+  /**
+   * Compute connected components of land pixels (4-connected)
+   * Caches results for reuse during rendering
+   */
+  private computeLandmassComponents(): void {
+    if (!this.landMask) return;
+    
+    this.landmassComponents = [];
+    this.pixelToLandmassMap.clear();
+    const visited = new Set<string>();
+    
+    // 4-connected neighbors (up, down, left, right)
+    const directions = [[0, -1], [0, 1], [-1, 0], [1, 0]];
+    
+    for (let y = 0; y < this.height; y++) {
+      for (let x = 0; x < this.width; x++) {
+        const key = `${x},${y}`;
+        if (visited.has(key)) continue;
+        if (!this.isLand(x, y)) continue;
+        
+        // Flood fill to find connected component
+        const component: Array<{x: number, y: number}> = [];
+        const stack: Array<{x: number, y: number}> = [{x, y}];
+        
+        while (stack.length > 0) {
+          const current = stack.pop()!;
+          const currentKey = `${current.x},${current.y}`;
+          
+          if (visited.has(currentKey)) continue;
+          if (!this.isLand(current.x, current.y)) continue;
+          
+          visited.add(currentKey);
+          component.push(current);
+          
+          for (const [dx, dy] of directions) {
+            const nx = current.x + dx;
+            const ny = current.y + dy;
+            const neighborKey = `${nx},${ny}`;
+            
+            if (nx >= 0 && nx < this.width && ny >= 0 && ny < this.height &&
+                !visited.has(neighborKey) && this.isLand(nx, ny)) {
+              stack.push({x: nx, y: ny});
+            }
+          }
+        }
+        
+        // Calculate centroid
+        if (component.length > 0) {
+          const sumX = component.reduce((sum, p) => sum + p.x, 0);
+          const sumY = component.reduce((sum, p) => sum + p.y, 0);
+          const centroid = {
+            x: sumX / component.length,
+            y: sumY / component.length
+          };
+          
+          const landmassIndex = this.landmassComponents.length;
+          this.landmassComponents.push({
+            pixels: component,
+            centroid,
+            size: component.length
+          });
+          
+          // Map all pixels in this component to the landmass index
+          for (const pixel of component) {
+            this.pixelToLandmassMap.set(`${pixel.x},${pixel.y}`, landmassIndex);
+          }
+        }
+      }
+    }
+    
+    if (MapRenderer.DEBUG_CLONE_PLACEMENT) {
+      console.log(`[MapRenderer] Found ${this.landmassComponents.length} landmass components`);
+      const majorLandmasses = this.landmassComponents.filter(l => l.size >= MapRenderer.MAJOR_LANDMASS_THRESHOLD);
+      console.log(`[MapRenderer] ${majorLandmasses.length} major landmasses (>= ${MapRenderer.MAJOR_LANDMASS_THRESHOLD} pixels)`);
+    }
+  }
+  
+  /**
+   * Find which landmass (if any) contains the given point
+   * Returns landmass index or -1 if not on land or not found
+   */
+  private getLandmassAtPoint(x: number, y: number): number {
+    if (!this.isLand(x, y)) return -1;
+    const key = `${Math.floor(x)},${Math.floor(y)}`;
+    return this.pixelToLandmassMap.get(key) ?? -1;
+  }
+  
+  /**
+   * Find the nearest major landmass to a given point, excluding the landmass containing the point
+   * Returns the landmass index and the closest pixel on that landmass, or null if none found
+   */
+  private findNearestMajorLandmass(
+    originX: number,
+    originY: number
+  ): {landmassIndex: number, seedX: number, seedY: number} | null {
+    const originLandmass = this.getLandmassAtPoint(originX, originY);
+    
+    // Filter to major landmasses, excluding the origin's landmass
+    const candidateLandmasses = this.landmassComponents
+      .map((landmass, index) => ({landmass, index}))
+      .filter(({landmass, index}) => 
+        landmass.size >= MapRenderer.MAJOR_LANDMASS_THRESHOLD && index !== originLandmass
+      );
+    
+    if (candidateLandmasses.length === 0) {
+      if (MapRenderer.DEBUG_CLONE_PLACEMENT) {
+        console.log(`[MapRenderer] No other major landmass found for origin (${originX}, ${originY})`);
+      }
+      return null;
+    }
+    
+    // Find nearest by computing distance to closest pixel in each landmass
+    let nearest: {landmassIndex: number, seedX: number, seedY: number, distance: number} | null = null;
+    
+    for (const {landmass, index} of candidateLandmasses) {
+      // Find closest pixel in this landmass to the origin
+      let closestPixel = landmass.pixels[0];
+      let minDist = Math.sqrt(
+        Math.pow(closestPixel.x - originX, 2) + Math.pow(closestPixel.y - originY, 2)
+      );
+      
+      for (const pixel of landmass.pixels) {
+        const dist = Math.sqrt(
+          Math.pow(pixel.x - originX, 2) + Math.pow(pixel.y - originY, 2)
+        );
+        if (dist < minDist) {
+          minDist = dist;
+          closestPixel = pixel;
+        }
+      }
+      
+      if (!nearest || minDist < nearest.distance) {
+        nearest = {
+          landmassIndex: index,
+          seedX: closestPixel.x,
+          seedY: closestPixel.y,
+          distance: minDist
+        };
+      }
+    }
+    
+    if (nearest && MapRenderer.DEBUG_CLONE_PLACEMENT) {
+      console.log(`[MapRenderer] Nearest major landmass for origin (${originX}, ${originY}): ` +
+        `landmass ${nearest.landmassIndex} at (${nearest.seedX}, ${nearest.seedY}), distance ${nearest.distance.toFixed(2)}`);
+    }
+    
+    return nearest ? {
+      landmassIndex: nearest.landmassIndex,
+      seedX: nearest.seedX,
+      seedY: nearest.seedY
+    } : null;
   }
 
   /**
@@ -210,16 +378,51 @@ export class MapRenderer {
     // Clear canvas
     this.ctx.clearRect(0, 0, this.width, this.height);
     
-    // Rank areas and get opacity values
-    const opacityMap = this.rankAreas(areas, logic.opacityByRank);
-    
-    // Generate overlays for each area
+    // Generate overlays for each area, including clones for power > 1.7
     const areaOverlays = new Map<string, Set<string>>();
+    
     for (const area of areas) {
       const progress = animationProgress;
       const overlay = this.generateAreaOverlay(area, logic, progress);
       areaOverlays.set(area.id, overlay);
+      
+      // If power > 1.7, create a clone on the nearest major landmass
+      if (area.power > MapRenderer.CLONE_POWER_THRESHOLD) {
+        const startX = Math.floor(area.start.x * this.width);
+        const startY = Math.floor(area.start.y * this.height);
+        
+        const nearestLandmass = this.findNearestMajorLandmass(startX, startY);
+        if (nearestLandmass) {
+          // Create clone area with same properties but new seed position
+          const cloneArea: Area = {
+            id: area.id, // Same ID so clicks map to the same area
+            start: {
+              x: nearestLandmass.seedX / this.width,
+              y: nearestLandmass.seedY / this.height
+            },
+            power: area.power,
+            acc: area.acc,
+            color: area.color
+          };
+          
+          const cloneOverlay = this.generateAreaOverlay(cloneArea, logic, progress);
+          
+          // Merge clone overlay pixels into the same area overlay
+          // This ensures conflict resolution works correctly
+          for (const pixel of cloneOverlay) {
+            areaOverlays.get(area.id)!.add(pixel);
+          }
+          
+          if (MapRenderer.DEBUG_CLONE_PLACEMENT) {
+            console.log(`[MapRenderer] Created clone for area ${area.id} (power ${area.power}) ` +
+              `at (${cloneArea.start.x.toFixed(3)}, ${cloneArea.start.y.toFixed(3)})`);
+          }
+        }
+      }
     }
+    
+    // Rank areas and get opacity values (using original areas list for ranking)
+    const opacityMap = this.rankAreas(areas, logic.opacityByRank);
     
     // Render pixel by pixel with proper precedence
     const imageData = this.ctx.createImageData(this.width, this.height);
@@ -230,7 +433,7 @@ export class MapRenderer {
       for (let x = 0; x < this.width; x++) {
         const key = `${x},${y}`;
         
-        // Find all areas claiming this pixel
+        // Find all areas claiming this pixel (use original areas list for lookup)
         const claimingAreas = areas.filter(area => 
           areaOverlays.get(area.id)?.has(key)
         );

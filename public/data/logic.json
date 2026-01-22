@@ -1,16 +1,16 @@
 {
   "areas": [
-    { "id": "A1", "start": {"x": 0.33, "y": 0.52}, "power": 1.0, "acc": 1.0, "color": "#1E90FF" },
-    { "id": "A2", "start": {"x": 0.44, "y": 0.52}, "power": 1.0, "acc": 1.0, "color": "#FF9500" },
-    { "id": "A3", "start": {"x": 0.61, "y": 0.47}, "power": 1.0, "acc": 1.0, "color": "#9B59B6" },
-    { "id": "A4", "start": {"x": 0.33, "y": 0.28}, "power": 1.0, "acc": 1.0, "color": "#2ECC71" },
-    { "id": "A5", "start": {"x": 0.76, "y": 0.35}, "power": 1.0, "acc": 1.0, "color": "#E74C3C" }
+    { "id": "A1", "start": {"x": 0.21, "y": 0.48}, "power": 1.0, "acc": 1.0, "color": "#1E90FF" },
+    { "id": "A2", "start": {"x": 0.54, "y": 0.59}, "power": 1.0, "acc": 1.0, "color": "#FF9500" },
+    { "id": "A3", "start": {"x": 0.73, "y": 0.53}, "power": 1.0, "acc": 1.0, "color": "#9B59B6" },
+    { "id": "A4", "start": {"x": 0.49, "y": 0.36}, "power": 1.0, "acc": 1.0, "color": "#2ECC71" },
+    { "id": "A5", "start": {"x": 0.33, "y": 0.73}, "power": 1.0, "acc": 1.0, "color": "#E74C3C" }
   ],
   "opacityByRank": { "1": 0.9, "2": 0.75, "3": 0.6, "4": 0.5, "5": 0.4 },
   "barrierThresholds": {
-    "river": 1.0,
-    "mountain": 3.0,
-    "ocean": 5.0
+    "river": 0.1,
+    "mountain": 0.5,
+    "ocean": 1.0
   },
   "turns": 8,
   "overlayAnimationMaxMs": 2000,

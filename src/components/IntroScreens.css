@@ -148,35 +148,13 @@
 .intro-button {
   padding: 15px 40px;
   font-size: 1.1rem;
-  font-weight: 600;
-  color: white;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: all var(--transition-speed);
   margin-top: 0;
   margin-bottom: 0;
   min-width: 200px;
 }
 
-.intro-button:hover {
-  background-color: #1e4460;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.intro-button:active {
-  transform: translateY(0);
-}
-
 .intro-start-game-button {
-  background-color: var(--secondary-color);
   min-width: 250px;
-}
-
-.intro-start-game-button:hover {
-  background-color: #6b5a42;
 }
 
 /* Responsive design - Tablets */
@@ -185,6 +163,7 @@
     padding: 0 18px 18px 18px;
     gap: 18px;
     margin-bottom: 0;
+
   }
 
   .intro-screen .action-section {
@@ -277,6 +256,7 @@
     padding: 0 12px 12px 12px;
     gap: 14px;
     margin-bottom: 0;
+
   }
 
 
@@ -284,6 +264,8 @@
     padding: 0 12px;
   }
 }
+
+
 
 
 

@@ -20,7 +20,7 @@ export const PhaseContent: React.FC<PhaseContentProps> = ({
         {onContinue && (
           <div className="action-section action-section-single">
             <button
-              className="continue-button"
+              className="nav-button continue-button"
               onClick={() => {
                 if ((window as any).playClickSound) {
                   (window as any).playClickSound();
@@ -74,7 +74,7 @@ export const PhaseContent: React.FC<PhaseContentProps> = ({
       {onContinue && (
         <div className="action-section action-section-single">
           <button
-            className="continue-button"
+            className="nav-button continue-button"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();

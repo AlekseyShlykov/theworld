@@ -27,6 +27,7 @@ export interface LogicData {
     round7: number;
     round8: number;
   };
+  imageScrollSpeed: number;
 }
 
 export interface StepPhase3 {

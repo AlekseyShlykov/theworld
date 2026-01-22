@@ -122,7 +122,7 @@ export const RoundNarrative: React.FC<RoundNarrativeProps> = ({
         </div>
         <div className="action-section action-section-single">
           <button
-            className="pre-step1-button"
+            className="nav-button pre-step1-button"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();
@@ -166,7 +166,7 @@ export const RoundNarrative: React.FC<RoundNarrativeProps> = ({
         </div>
         <div className="action-section action-section-single">
           <button
-            className="pre-step1-button"
+            className="nav-button pre-step1-button"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();
@@ -245,6 +245,7 @@ export const RoundNarrative: React.FC<RoundNarrativeProps> = ({
           <MapScrollAnimation
             imageSrc={roundMapImages[round] || roundMapImages[1]}
             animationKey={round} // Key changes per round to restart animation
+            scrollSpeed={logic.imageScrollSpeed}
           />
           <div className="pre-step1-text-container">
             <UnifiedTextBlock text={roundData.postChoiceText} emphasizeFirstIfQuestion={true} />
@@ -252,7 +253,7 @@ export const RoundNarrative: React.FC<RoundNarrativeProps> = ({
         </div>
         <div className="action-section action-section-single">
           <button
-            className="pre-step1-button pre-step1-next-round-button"
+            className="nav-button pre-step1-button pre-step1-next-round-button"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();

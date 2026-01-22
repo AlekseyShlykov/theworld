@@ -43,42 +43,28 @@
 .final-ending-button {
   padding: 14px 30px;
   font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s;
   text-align: center;
 }
 
 .final-ending-button-primary {
-  background: #4ECDC4;
-  color: white;
   font-weight: 600;
-}
-
-.final-ending-button-primary:hover {
-  background: #3ab5ae;
-}
-
-.final-ending-button-primary:active {
-  background: #2a9d96;
 }
 
 .final-ending-button-link {
   background: transparent;
-  color: #4ECDC4;
-  border: 2px solid #4ECDC4;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   font-weight: 500;
 }
 
 .final-ending-button-link:hover {
-  background: #4ECDC4;
+  background-color: var(--primary-color);
   color: white;
 }
 
 .final-ending-button-link:active {
-  background: #3ab5ae;
-  border-color: #3ab5ae;
+  background-color: #1e4460;
+  border-color: #1e4460;
 }
 
 /* Responsive design - Tablets */

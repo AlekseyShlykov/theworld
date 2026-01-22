@@ -41,7 +41,7 @@ export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
       <div className="action-section">
         <div className="final-ending-buttons">
           <button
-            className="final-ending-button final-ending-button-primary"
+            className="nav-button final-ending-button final-ending-button-primary"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();
@@ -53,7 +53,7 @@ export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
             {texts.final.playAgain}
           </button>
           <button
-            className="final-ending-button final-ending-button-link"
+            className="nav-button final-ending-button final-ending-button-link"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();

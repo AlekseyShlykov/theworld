@@ -28,33 +28,17 @@
 .language-button {
   padding: 25px 50px;
   font-size: 1.5rem;
-  font-weight: 600;
-  color: white;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: all var(--transition-speed);
   min-width: 300px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .language-button:hover {
-  background-color: #1e4460;
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .language-button:active {
   transform: translateY(-1px);
-}
-
-.language-button-russian {
-  background-color: var(--secondary-color);
-}
-
-.language-button-russian:hover {
-  background-color: #6b5a42;
 }
 
 /* Responsive design */

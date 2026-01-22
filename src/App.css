@@ -256,22 +256,42 @@ body {
   max-width: 100%;
 }
 
-.continue-button {
-  display: block;
-  margin: 21px auto 0;
-  padding: 12px 30px;
-  background: var(--primary-color);
+/* Unified Navigation Button Style */
+/* All navigation/progression buttons use this single consistent color */
+.nav-button {
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: var(--border-radius);
-  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-speed);
 }
 
+.nav-button:hover {
+  background-color: #1e4460;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+}
+
+.nav-button:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.continue-button {
+  display: block;
+  margin: 21px auto 0;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+}
+
 .continue-button:hover {
-  background: var(--accent-color);
+  background-color: #1e4460;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -518,21 +538,15 @@ body {
 
 .restart-button {
   padding: 15px 40px;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: var(--border-radius);
   font-size: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-speed);
   margin-top: 30px;
   min-height: 44px;
 }
 
 .restart-button:hover {
-  background: var(--accent-color);
-  transform: scale(1.05);
+  background-color: #1e4460;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Loading & Error Screens */

@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextsData } from '../hooks/useTexts';
+import { LogicData } from '../types';
 import { IntroMapAnimation } from './IntroMapAnimation';
 import { UnifiedTextBlock } from './UnifiedTextBlock';
 import './IntroScreens.css';
@@ -10,6 +11,7 @@ interface IntroScreensProps {
   onStartGame: () => void;
   texts: TextsData;
   showIntroAnimation?: boolean;
+  logic?: LogicData | null;
 }
 
 export const IntroScreens: React.FC<IntroScreensProps> = ({
@@ -17,7 +19,8 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
   onNext,
   onStartGame,
   texts,
-  showIntroAnimation = false
+  showIntroAnimation = false,
+  logic
 }) => {
   // Intro images mapping
   const baseUrl = import.meta.env.BASE_URL;
@@ -58,7 +61,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         </div>
         <div className="action-section action-section-single">
           <button
-            className="intro-button intro-start-button"
+            className="nav-button intro-button intro-start-button"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();
@@ -83,6 +86,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
             isActive={true} 
             imageSource={introImages[getImageIndex(2)]}
             animationKey={2} // Key changes on each step to restart animation
+            scrollSpeed={logic?.imageScrollSpeed}
           />
         ) : (
           <div className="intro-image-container intro-image-top-spacing">
@@ -101,7 +105,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         </div>
         <div className="action-section action-section-single">
           <button
-            className="intro-button intro-next-button"
+            className="nav-button intro-button intro-next-button"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();
@@ -126,6 +130,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
             isActive={true} 
             imageSource={introImages[getImageIndex(3)]}
             animationKey={3} // Key changes on each step to restart animation
+            scrollSpeed={logic?.imageScrollSpeed}
           />
         ) : (
           <div className="intro-image-container intro-image-top-spacing">
@@ -144,7 +149,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         </div>
         <div className="action-section action-section-single">
           <button
-            className="intro-button intro-next-button"
+            className="nav-button intro-button intro-next-button"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();
@@ -169,6 +174,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
             isActive={true} 
             imageSource={introImages[getImageIndex(4)]}
             animationKey={4} // Key changes on each step to restart animation
+            scrollSpeed={logic?.imageScrollSpeed}
           />
         ) : (
           <div className="intro-image-container intro-image-top-spacing">
@@ -187,7 +193,7 @@ export const IntroScreens: React.FC<IntroScreensProps> = ({
         </div>
         <div className="action-section action-section-single">
           <button
-            className="intro-button intro-start-game-button"
+            className="nav-button intro-button intro-start-game-button"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();

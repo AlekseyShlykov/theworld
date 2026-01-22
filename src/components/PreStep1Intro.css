@@ -79,34 +79,12 @@
 .pre-step1-button {
   padding: 15px 40px;
   font-size: 1.1rem;
-  font-weight: 600;
-  color: white;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: all var(--transition-speed);
   margin: 0;
   min-width: 200px;
 }
 
-.pre-step1-button:hover {
-  background-color: #1e4460;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.pre-step1-button:active {
-  transform: translateY(0);
-}
-
 .pre-step1-next-round-button {
-  background-color: var(--secondary-color);
   min-width: 250px;
-}
-
-.pre-step1-next-round-button:hover {
-  background-color: #6b5a42;
 }
 
 /* Action Section - Shared wrapper for buttons */

@@ -18,15 +18,21 @@
   margin: 0;
 }
 
-.map-scroll-animation-image {
+.map-scroll-animation-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  animation: scrollDown linear infinite;
+  animation-duration: 30s; /* Default fallback, overridden by inline style */
+  will-change: transform; /* Optimize for animation */
+}
+
+.map-scroll-animation-image {
+  position: relative;
+  width: 100%;
   height: auto; /* Maintain natural aspect ratio - image can be taller than container for scrolling */
   display: block;
-  animation: scrollDown 30s linear forwards;
-  will-change: transform; /* Optimize for animation */
 }
 
 @keyframes scrollDown {
@@ -34,7 +40,7 @@
     transform: translateY(0%);
   }
   to {
-    transform: translateY(-100%);
+    transform: translateY(-50%);
   }
 }
 

@@ -48,7 +48,8 @@
 }
 
 .footer-credit {
-  color: #4ECDC4; /* Teal color */
+  color: var(--primary-color); /* Same color as unified navigation buttons */
+  opacity: 0.7; /* 70% opacity for subtle appearance */
   font-size: 0.95rem;
   font-weight: 500;
   white-space: nowrap;
@@ -156,7 +157,7 @@
   .footer-credit {
     display: block;
     font-size: 0.8rem;
-    color: #4ECDC4;
+    color: var(--primary-color); /* Same color as unified navigation buttons */
     white-space: nowrap;
   }
 

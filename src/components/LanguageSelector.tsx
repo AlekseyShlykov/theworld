@@ -12,14 +12,14 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onLanguageSe
       <h1 className="language-selector-title">Choose language / Выберите язык</h1>
       <div className="language-buttons">
         <button
-          className="language-button language-button-english"
+          className="nav-button language-button language-button-english"
           onClick={() => onLanguageSelect('en')}
           aria-label="Select English"
         >
           English
         </button>
         <button
-          className="language-button language-button-russian"
+          className="nav-button language-button language-button-russian"
           onClick={() => onLanguageSelect('ru')}
           aria-label="Select Russian"
         >

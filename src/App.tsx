@@ -569,6 +569,7 @@ function App() {
               onStartGame={handleStartGame}
               texts={texts}
               showIntroAnimation={isIntroAnimationActive}
+              logic={logic}
             />
           )}
         </main>
@@ -679,7 +680,7 @@ function App() {
             </div>
 
             <button 
-              className="restart-button" 
+              className="nav-button restart-button" 
               onClick={() => {
                 if ((window as any).playClickSound) {
                   (window as any).playClickSound();

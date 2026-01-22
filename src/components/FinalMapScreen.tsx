@@ -91,7 +91,7 @@ export const FinalMapScreen: React.FC<FinalMapScreenProps> = ({
 
       <div className="action-section action-section-single">
         <button
-          className="final-map-button"
+          className="nav-button final-map-button"
           onClick={() => {
             if ((window as any).playClickSound) {
               (window as any).playClickSound();

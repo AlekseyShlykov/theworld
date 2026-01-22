@@ -20,6 +20,7 @@
   "populationMultipliers": {
     "round7": 2,
     "round8": 2
-  }
+  },
+  "imageScrollSpeed": 50
 }
 

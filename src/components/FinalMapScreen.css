@@ -75,20 +75,6 @@
   margin-top: 0;
   padding: 12px 40px;
   font-size: 18px;
-  background: #4ECDC4;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.final-map-button:hover {
-  background: #3ab5ae;
-}
-
-.final-map-button:active {
-  background: #2a9d96;
 }
 
 /* Responsive design - Tablets */

@@ -1,57 +1,92 @@
 import { useState, useEffect, useRef } from 'react';
 
-// Music management for round-based background music
-export const useMusic = (currentRound: number) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+// Singleton audio instance for background music
+// This ensures only one audio element exists across the entire app
+let globalAudioInstance: HTMLAudioElement | null = null;
+let globalIsPlaying = false;
+let globalListeners: Set<(isPlaying: boolean) => void> = new Set();
 
-  // Load music for the current round
+// Music management - always plays round1.mp3 continuously
+// currentRound parameter kept for backward compatibility but not used
+export const useMusic = (_currentRound: number) => {
+  const [isPlaying, setIsPlaying] = useState(globalIsPlaying);
+  const hasInitializedRef = useRef(false);
+
+  // Initialize global audio instance once
   useEffect(() => {
-    // Clean up previous audio
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current = null;
-    }
+    if (!globalAudioInstance && !hasInitializedRef.current) {
+      hasInitializedRef.current = true;
+      
+      const baseUrl = import.meta.env.BASE_URL;
+      const audio = new Audio(`${baseUrl}assets/audio/round1.mp3`);
+      audio.loop = true; // Loop continuously
+      audio.volume = 0.5; // Set volume to 50%
+      
+      // Handle errors gracefully
+      audio.addEventListener('error', () => {
+        console.warn('Background music file (round1.mp3) not found or failed to load');
+      });
 
-    // Create new audio element for current round
-    const baseUrl = import.meta.env.BASE_URL;
-    const audio = new Audio(`${baseUrl}assets/audio/round${currentRound}.mp3`);
-    audio.loop = true;
-    audio.volume = 0.5; // Set volume to 50%
-    
-    // Handle errors gracefully (file might not exist)
-    audio.addEventListener('error', () => {
-      console.warn(`Music file for round ${currentRound} not found or failed to load`);
-    });
+      // Add ended event listener as fallback to ensure continuous looping
+      // This ensures the track restarts even if the loop property doesn't work
+      audio.addEventListener('ended', () => {
+        if (globalIsPlaying && globalAudioInstance) {
+          globalAudioInstance.currentTime = 0;
+          globalAudioInstance.play().catch(err => {
+            console.warn('Failed to restart background music:', err);
+          });
+        }
+      });
 
-    audioRef.current = audio;
+      globalAudioInstance = audio;
 
-    // If music was playing, continue playing with new track
-    if (isPlaying) {
+      // Auto-start music when first initialized (after user interaction has occurred)
+      // This happens when GameFooter mounts, which is after the game starts
       audio.play().catch(err => {
-        console.warn('Failed to play music:', err);
-        setIsPlaying(false);
+        console.warn('Failed to auto-start background music:', err);
+        // This is expected on some browsers that require user interaction first
+      }).then(() => {
+        // If play succeeds, update global state
+        if (!audio.paused) {
+          globalIsPlaying = true;
+          globalListeners.forEach(listener => listener(true));
+        }
       });
     }
 
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
+    // Register this component as a listener for global state changes
+    const updateListener = (newIsPlaying: boolean) => {
+      setIsPlaying(newIsPlaying);
     };
-  }, [currentRound]);
+    globalListeners.add(updateListener);
+
+    return () => {
+      globalListeners.delete(updateListener);
+    };
+  }, []); // Only run once on mount
 
   // Sync playback state with isPlaying
+  // This connects the footer button state to audio playback
   useEffect(() => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.play().catch(err => {
+    if (globalAudioInstance) {
+      if (isPlaying && !globalIsPlaying) {
+        // Button is ON: Start playing from the beginning
+        globalAudioInstance.currentTime = 0; // Reset to start
+        globalAudioInstance.play().catch(err => {
           console.warn('Failed to play music:', err);
           setIsPlaying(false);
+        }).then(() => {
+          if (!globalAudioInstance?.paused) {
+            globalIsPlaying = true;
+            globalListeners.forEach(listener => listener(true));
+          }
         });
-      } else {
-        audioRef.current.pause();
+      } else if (!isPlaying && globalIsPlaying) {
+        // Button is OFF: Stop immediately and reset to beginning
+        globalAudioInstance.pause();
+        globalAudioInstance.currentTime = 0; // Reset to start
+        globalIsPlaying = false;
+        globalListeners.forEach(listener => listener(false));
       }
     }
   }, [isPlaying]);

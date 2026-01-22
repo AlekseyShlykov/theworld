@@ -24,7 +24,6 @@ export class MapRenderer {
   
   // Configuration constants
   private static readonly MAJOR_LANDMASS_THRESHOLD = 2000; // Minimum pixels for a "major" landmass
-  private static readonly CLONE_POWER_THRESHOLD = 1.7; // Power threshold for creating clones
   private static readonly DEBUG_CLONE_PLACEMENT = false; // Set to true to enable debug logging
 
   constructor(canvasParam: HTMLCanvasElement, seed: number = 42) {
@@ -378,7 +377,7 @@ export class MapRenderer {
     // Clear canvas
     this.ctx.clearRect(0, 0, this.width, this.height);
     
-    // Generate overlays for each area, including clones for power > 1.7
+    // Generate overlays for each area, including clones for power > clonePowerThreshold
     const areaOverlays = new Map<string, Set<string>>();
     
     for (const area of areas) {
@@ -386,8 +385,8 @@ export class MapRenderer {
       const overlay = this.generateAreaOverlay(area, logic, progress);
       areaOverlays.set(area.id, overlay);
       
-      // If power > 1.7, create a clone on the nearest major landmass
-      if (area.power > MapRenderer.CLONE_POWER_THRESHOLD) {
+      // If power > clonePowerThreshold, create a clone on the nearest major landmass
+      if (area.power > logic.clonePowerThreshold) {
         const startX = Math.floor(area.start.x * this.width);
         const startY = Math.floor(area.start.y * this.height);
         

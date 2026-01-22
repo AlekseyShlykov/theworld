@@ -22,6 +22,7 @@ export interface LogicData {
   overlayAnimationMaxMs: number;
   baseGrowthRadius: number;
   growthMultiplier: number;
+  clonePowerThreshold: number;
   populationMultipliers?: {
     round7: number;
     round8: number;

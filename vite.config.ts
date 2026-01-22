@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     port: 3002,
     host: 'localhost',
-    strictPort: true
+    strictPort: false
   },
   build: {
     outDir: 'dist',

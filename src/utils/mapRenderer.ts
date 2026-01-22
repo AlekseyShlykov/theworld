@@ -85,7 +85,7 @@ export class MapRenderer {
    */
   private classifyBarrier(width: number, _thresholds: LogicData['barrierThresholds']): 'river' | 'mountain' | 'ocean' | null {
     if (width < 5) return 'river';
-    if (width < 200) return 'mountain';
+    if (width < 15) return 'mountain';
     return 'ocean';
   }
 

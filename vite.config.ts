@@ -4,12 +4,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // GitHub Pages base — MUST match your repo name
   // Use '/' for local development
-  base: '/theworld/',
+  base: '/',
   plugins: [react()],
   server: {
-    port: 3002,
-    host: true,
-    strictPort: false
+    port: 3002
   },
   build: {
     outDir: 'dist',

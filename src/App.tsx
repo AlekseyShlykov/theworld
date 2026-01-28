@@ -18,6 +18,7 @@ import { useGameState } from './hooks/useGameState';
 import { useTexts } from './hooks/useTexts';
 import { useTTS } from './contexts/TTSContext';
 import { Language } from './types';
+import { sendChoiceEvent } from './utils/analytics';
 import './App.css';
 
 function App() {
@@ -277,6 +278,7 @@ function App() {
       round: gameState.currentTurn,
       zone: zoneNumber
     }]);
+    sendChoiceEvent(gameState.currentTurn, zoneNumber);
 
     // Show toast notification (deltas from steps-config + choice bonus 0.05)
     const area = gameState.areas.find(a => a.id === areaId);
@@ -363,6 +365,7 @@ function App() {
       round: 1,
       zone: zoneNumber
     }]);
+    sendChoiceEvent(1, zoneNumber);
   };
 
   // Handler for completing pre-step-1 intro and proceeding to Step 2
@@ -401,6 +404,7 @@ function App() {
       round: currentRound,
       zone: zoneNumber
     }]);
+    sendChoiceEvent(currentRound, zoneNumber);
   };
 
   // Handler for completing a round narrative and proceeding to next round

@@ -26,11 +26,28 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Check analytics secret (optional)
+        env:
+          VITE_ANALYTICS_WEB_APP_URL: ${{ secrets.VITE_ANALYTICS_WEB_APP_URL }}
+        run: |
+          if [ -n "$VITE_ANALYTICS_WEB_APP_URL" ]; then
+            echo "✓ Analytics URL is set (game will send choice events to Google Sheets)."
+          else
+            echo "⚠ Analytics URL is NOT set. To enable: repo Settings → Secrets and variables → Actions → New repository secret → Name: VITE_ANALYTICS_WEB_APP_URL, Value: your Web App URL."
+          fi
+
       - name: Build project
         env:
-          # Analytics Web App URL (optional). Add secret VITE_ANALYTICS_WEB_APP_URL in repo Settings → Secrets and variables → Actions.
           VITE_ANALYTICS_WEB_APP_URL: ${{ secrets.VITE_ANALYTICS_WEB_APP_URL }}
         run: npm run build
+
+      - name: Verify analytics URL in build
+        run: |
+          if grep -rq "script.google.com" dist/ 2>/dev/null || grep -rq "VITE_ANALYTICS_WEB_APP_URL" dist/ 2>/dev/null; then
+            echo "✓ Analytics URL found in built files."
+          else
+            echo "⚠ Analytics URL NOT found in build. If you set the secret, ensure it's named exactly VITE_ANALYTICS_WEB_APP_URL and rebuild."
+          fi
 
       - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v3

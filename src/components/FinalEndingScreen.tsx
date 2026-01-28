@@ -14,8 +14,8 @@ interface FinalEndingScreenProps {
   onNext?: () => void;
 }
 
-/** Same image as intro screen 2 when animation is shown */
-const ENDING_IMAGE = 'assets/intro/intro_map_1.png';
+/** Dedicated ending image (independent from intro screens) */
+const ENDING_IMAGE = 'assets/intro/ending_image.png';
 
 export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
   areas: _areas,

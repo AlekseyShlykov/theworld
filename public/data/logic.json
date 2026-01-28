@@ -2,11 +2,11 @@
   "areas": [
     { "id": "A1", "start": {"x": 0.15, "y": 0.37}, "power": 1.0, "acc": 1.0, "color": "#FF9500" },
     { "id": "A2", "start": {"x": 0.54, "y": 0.59}, "power": 1.0, "acc": 1.0, "color": "#1E90FF" },
-    { "id": "A3", "start": {"x": 0.73, "y": 0.53}, "power": 1.0, "acc": 1.0, "color": "#9B59B6" },
+    { "id": "A3", "start": {"x": 0.73, "y": 0.53}, "power": 1.0, "acc": 1.0, "color": "#F5C542" },
     { "id": "A4", "start": {"x": 0.60, "y": 0.23}, "power": 1.0, "acc": 1.0, "color": "#2ECC71" },
     { "id": "A5", "start": {"x": 0.32, "y": 0.53}, "power": 1.0, "acc": 1.0, "color": "#E74C3C" }
   ],
-  "opacityByRank": { "1": 0.7, "2": 0.65, "3": 0.6, "4": 0.55, "5": 0.5 },
+  "opacityByRank": { "1": 0.7, "2": 0.65, "3": 0.60, "4": 0.55, "5": 0.50 },
   "barrierThresholds": {
     "river": 0.1,
     "mountain": 0.5,

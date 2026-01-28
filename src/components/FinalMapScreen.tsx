@@ -45,6 +45,8 @@ export const FinalMapScreen: React.FC<FinalMapScreenProps> = ({
     return out;
   }, [texts, labels]);
 
+  const showFinalValues = false; // Set to true to show the "Final Values" block
+
   return (
     <div className="final-map-screen" role="dialog" aria-label="Final map results">
       <MapCanvas
@@ -59,16 +61,18 @@ export const FinalMapScreen: React.FC<FinalMapScreenProps> = ({
         <UnifiedTextBlock text={texts.final.mapText} />
       </div>
 
-      <div className="final-values-container">
-        <h3 className="final-values-title">Final Values</h3>
-        {areas.map((area) => (
-          <div key={area.id} className="final-value-row">
-            <span className="final-zone-label">{chartAreaLabels[area.id] ?? area.id}</span>
-            <span className="final-value-separator">—</span>
-            <span className="final-value">Power: {area.power.toFixed(1)}, Acc: {area.acc.toFixed(1)}</span>
-          </div>
-        ))}
-      </div>
+      {showFinalValues && (
+        <div className="final-values-container">
+          <h3 className="final-values-title">Final Values</h3>
+          {areas.map((area) => (
+            <div key={area.id} className="final-value-row">
+              <span className="final-zone-label">{chartAreaLabels[area.id] ?? area.id}</span>
+              <span className="final-value-separator">—</span>
+              <span className="final-value">Power: {area.power.toFixed(1)}, Acc: {area.acc.toFixed(1)}</span>
+            </div>
+          ))}
+        </div>
+      )}
 
       <DominancePeriodsChart
         areas={areas}

@@ -12,6 +12,7 @@ interface TopBarProps {
   onLanguageChange: (lang: Language) => void;
   isStartScreen?: boolean;
   isPreGame?: boolean; // true only during intro screens (before Start button), not during PreStep1Intro
+  isEndingScreen?: boolean; // true when showing endingText (final narrative) screen
   texts: TextsData | null;
 }
 
@@ -22,6 +23,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   onLanguageChange,
   isStartScreen = false,
   isPreGame = false,
+  isEndingScreen = false,
   texts
 }) => {
   // Available languages configuration
@@ -44,7 +46,12 @@ export const TopBar: React.FC<TopBarProps> = ({
       return texts.header.introTitle;
     }
 
-    // Use round title based on current round
+    // Use endingTitle when on endingText (final narrative) screen
+    if (isEndingScreen && texts.header.endingTitle) {
+      return texts.header.endingTitle;
+    }
+
+    // Use round title based on current round (rounds 1–8)
     const roundKey = `round${currentRound}` as keyof typeof texts.header.roundTitles;
     const roundTitle = texts.header.roundTitles[roundKey];
     

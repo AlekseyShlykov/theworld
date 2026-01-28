@@ -125,6 +125,7 @@
   },
   "header": {
     "introTitle": "The Evolution of Civilizations",
+    "endingTitle": "The World",
     "roundTitles": {
       "round1": "Stone Age",
       "round2": "Food Production",
@@ -147,8 +148,10 @@
     "mapText": "This is the journey our world has made over 8,000 years. We followed the development of five civilization centers and saw which factors shaped their fates.\n\nMuch depended on chance — where suitable grains grew, where large animals lived, and how the geography of the continents was arranged. But your choices also shaped the world that resulted.",
     "endingText": "But let us return to the story of the conquistador Pizarro. Now, after this whole journey, we can answer the main question.\nWhy did Europeans come to Atahualpa's lands, and not the other way around?\n\nFirst, technology. The people of Eurasia had steel swords, armor, muskets, artillery, and horses — animals that simply did not exist in the Americas.\n\nSecond, writing. It had existed in Eurasia for thousands of years, storing knowledge and passing it between generations. Thanks to this, Pizarro's men knew much about the Inca people even before meeting them.\n\nThird, states. Only large centralized powers could afford to equip ocean-going expeditions and compete with each other for new lands.\n\nFourth, advantages in husbandry and energy. Eurasians had long used cattle, horses, donkeys, and water and wind mills. In the Americas, most heavy work was still done by hand. Not because the peoples of the Americas developed more slowly. Simply because the only animals available to them were llamas.\n\nFifth, disease. Eurasian epidemics proved deadlier than any weapon. Dense cities and life alongside domestic animals spawned infections to which Old World peoples had immunity.\n\nAll these factors came together — and made possible the outcome we know from history.",
     "authorshipText": "This interactive longread was created by Aleksey Shlykov, based on Jared Diamond's book Guns, Germs, and Steel. I hope you found it interesting! The book has much more to offer, and it is well worth reading.\n\nIf you enjoyed it, you can also try my other educational games.",
+    "illustrationsCredit": "Illustrations by Ekaterina Zueva.",
     "playAgain": "Play again",
-    "myWebsite": "My website: buildtounderstand.dev"
+    "myWebsite": "My website: buildtounderstand.dev",
+    "illustratorButton": "Ekaterina Zueva, Illustrator"
   },
   "timeline": {
     "title": "Historical Timeline",

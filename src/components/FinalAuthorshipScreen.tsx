@@ -27,6 +27,10 @@ export const FinalAuthorshipScreen: React.FC<FinalAuthorshipScreenProps> = ({
     window.open('https://buildtounderstand.dev/', '_blank');
   };
 
+  const handleIllustratorClick = () => {
+    window.open('https://www.instagram.com/katya_evazu/', '_blank');
+  };
+
   return (
     <div className="final-ending-screen" role="dialog" aria-label="Authorship and credits">
       <div className="final-ending-image">
@@ -40,7 +44,7 @@ export const FinalAuthorshipScreen: React.FC<FinalAuthorshipScreenProps> = ({
       </div>
 
       <div className="final-ending-text-container">
-        <UnifiedTextBlock text={texts.final.authorshipText} />
+        <UnifiedTextBlock text={`${texts.final.authorshipText}\n\n${texts.final.illustrationsCredit}`} />
       </div>
 
       <div className="action-section">
@@ -68,6 +72,18 @@ export const FinalAuthorshipScreen: React.FC<FinalAuthorshipScreenProps> = ({
             aria-label="Visit buildtounderstand.dev"
           >
             {texts.final.myWebsite}
+          </button>
+          <button
+            className="nav-button final-ending-button final-ending-button-link"
+            onClick={() => {
+              if ((window as any).playClickSound) {
+                (window as any).playClickSound();
+              }
+              handleIllustratorClick();
+            }}
+            aria-label={texts.final.illustratorButton}
+          >
+            {texts.final.illustratorButton}
           </button>
         </div>
       </div>

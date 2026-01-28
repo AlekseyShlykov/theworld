@@ -55,7 +55,7 @@ export function validateTextsStructure(texts: TextsData | null): string[] {
   if (!texts.final) {
     errors.push("Missing 'final' object");
   } else {
-    const requiredFinalKeys = ['mapText', 'endingText', 'authorshipText', 'playAgain', 'myWebsite'];
+    const requiredFinalKeys = ['mapText', 'endingText', 'authorshipText', 'illustrationsCredit', 'playAgain', 'myWebsite', 'illustratorButton'];
     for (const key of requiredFinalKeys) {
       if (!texts.final[key as keyof typeof texts.final] || typeof texts.final[key as keyof typeof texts.final] !== 'string') {
         errors.push(`Missing or invalid final.${key}`);
@@ -82,7 +82,9 @@ export function validateTextsStructure(texts: TextsData | null): string[] {
     if (!texts.header.introTitle || typeof texts.header.introTitle !== 'string' || texts.header.introTitle.trim() === '') {
       errors.push("Missing or empty header.introTitle");
     }
-    
+    if (!texts.header.endingTitle || typeof texts.header.endingTitle !== 'string' || texts.header.endingTitle.trim() === '') {
+      errors.push("Missing or empty header.endingTitle");
+    }
     if (!texts.header.roundTitles || typeof texts.header.roundTitles !== 'object') {
       errors.push("Missing or invalid header.roundTitles object");
     } else {

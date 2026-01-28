@@ -33,8 +33,10 @@ export interface FinalData {
   mapText: string;
   endingText: string;
   authorshipText: string;
+  illustrationsCredit: string;
   playAgain: string;
   myWebsite: string;
+  illustratorButton: string;
 }
 
 export interface TimelineData {
@@ -108,6 +110,7 @@ export interface FutureProjectionChartData {
 
 export interface HeaderData {
   introTitle: string;
+  endingTitle: string;
   roundTitles: {
     round1: string;
     round2: string;

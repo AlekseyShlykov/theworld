@@ -507,6 +507,7 @@ function App() {
           completedRounds={gameState.completedSteps}
           currentLanguage={selectedLanguage}
           onLanguageChange={setSelectedLanguage}
+          isEndingScreen={true}
           texts={texts}
         />
         <main ref={scrollContainerRef} className="app-main">

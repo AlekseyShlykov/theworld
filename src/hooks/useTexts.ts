@@ -32,6 +32,7 @@ export interface RoundData {
 export interface FinalData {
   mapText: string;
   endingText: string;
+  authorshipText: string;
   playAgain: string;
   myWebsite: string;
 }

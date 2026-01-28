@@ -3,8 +3,8 @@
     {
       "step": 1,
       "zones": [
-        { "powerDelta": -0.4, "accDelta": 0.2 },
-        { "powerDelta": 0.2,  "accDelta": 0.7 },
+        { "powerDelta": 0.2, "accDelta": 0.7 },
+        { "powerDelta": -0.4,  "accDelta": 0.2 },
         { "powerDelta": 0.1,  "accDelta": 0.9 },
         { "powerDelta": 0.1,  "accDelta": 0.3 },
         { "powerDelta": -0.4, "accDelta": 0.2 }
@@ -13,8 +13,8 @@
     {
       "step": 2,
       "zones": [
-        { "powerDelta": 0.2,  "accDelta": 0.4 },
-        { "powerDelta": -0.2, "accDelta": 0.6 },
+        { "powerDelta": 0.2,  "accDelta": 0.6 },
+        { "powerDelta": 0.2, "accDelta": 0.4 },
         { "powerDelta": -0.2, "accDelta": 0.8 },
         { "powerDelta": 0.1,  "accDelta": 1.0 },
         { "powerDelta": 0.2,  "accDelta": 0.5 }
@@ -23,7 +23,7 @@
     {
       "step": 3,
       "zones": [
-        { "powerDelta": 0.4,  "accDelta": 1.2 },
+        { "powerDelta": 0.0,  "accDelta": 1.2 },
         { "powerDelta": 0.4,  "accDelta": 1.2 },
         { "powerDelta": -0.4, "accDelta": 0.4 },
         { "powerDelta": 0.1,  "accDelta": 0.5 },
@@ -33,18 +33,18 @@
     {
       "step": 4,
       "zones": [
-        { "powerDelta": 0.2,  "accDelta": 1.0 },
-        { "powerDelta": 0.3, "accDelta": 0.6 },
+        { "powerDelta": 0.0,  "accDelta": 0.6 },
+        { "powerDelta": 0.2, "accDelta": 1.0 },
         { "powerDelta": -0.2, "accDelta": 0.3 },
         { "powerDelta": 0.1,  "accDelta": 0.9 },
-        { "powerDelta": 0.2,  "accDelta": 1.1 }
+        { "powerDelta": 0.1,  "accDelta": 1.1 }
       ]
     },
     {
       "step": 5,
       "zones": [
-        { "powerDelta": 0.4,  "accDelta": 1.0 },
         { "powerDelta": 0.3,  "accDelta": 1.2 },
+        { "powerDelta": 0.4,  "accDelta": 1.0 },
         { "powerDelta": 0.0,  "accDelta": 0.9 },
         { "powerDelta": 0.4, "accDelta": 0.9 },
         { "powerDelta": 0.3,  "accDelta": 0.7 }
@@ -53,8 +53,8 @@
     {
       "step": 6,
       "zones": [
-        { "powerDelta": -0.6, "accDelta": -0.6 },
-        { "powerDelta": 0.0,  "accDelta": -0.4 },
+        { "powerDelta": 0.2, "accDelta": -0.3 },
+        { "powerDelta": -0.6,  "accDelta": -0.6 },
         { "powerDelta": -0.2,  "accDelta": 1.0 },
         { "powerDelta": 0.2,  "accDelta": -0.2 },
         { "powerDelta": -0.6, "accDelta": -1.0 }
@@ -63,19 +63,19 @@
     {
       "step": 7,
       "zones": [
-        { "powerDelta": 0.6,  "accDelta": 1.5 },
         { "powerDelta": 0.0,  "accDelta": 1.2 },
+        { "powerDelta": 0.3,  "accDelta": 1.5 },
         { "powerDelta": 0.1, "accDelta": 0.7 },
-        { "powerDelta": -0.2, "accDelta": 1.6 },
+        { "powerDelta": -0.5, "accDelta": 1.6 },
         { "powerDelta": 0.6,  "accDelta": 1.7 }
       ]
     },
     {
       "step": 8,
       "zones": [
-        { "powerDelta": 0.3,  "accDelta": 2.0 },
-        { "powerDelta": 0.0, "accDelta": 2.0 },
-        { "powerDelta": 0.0,  "accDelta": 2.6 },
+        { "powerDelta": -0.2,  "accDelta": 2.0 },
+        { "powerDelta": 0.3, "accDelta": 2.0 },
+        { "powerDelta": 0.0,  "accDelta": 2.9 },
         { "powerDelta": 0.0,  "accDelta": 1.5 },
         { "powerDelta": 0.2,  "accDelta": 2.1 }
       ]

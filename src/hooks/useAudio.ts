@@ -39,19 +39,7 @@ export const useMusic = (_currentRound: number) => {
       });
 
       globalAudioInstance = audio;
-
-      // Auto-start music when first initialized (after user interaction has occurred)
-      // This happens when GameFooter mounts, which is after the game starts
-      audio.play().catch(err => {
-        console.warn('Failed to auto-start background music:', err);
-        // This is expected on some browsers that require user interaction first
-      }).then(() => {
-        // If play succeeds, update global state
-        if (!audio.paused) {
-          globalIsPlaying = true;
-          globalListeners.forEach(listener => listener(true));
-        }
-      });
+      // Music is off by default; user can turn it on via the footer button
     }
 
     // Register this component as a listener for global state changes

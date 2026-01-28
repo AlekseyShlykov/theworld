@@ -9,6 +9,11 @@ interface UnifiedTextBlockProps {
    */
   emphasizeFirstIfQuestion?: boolean;
   /**
+   * Optional: Apply numbered list styling (First, Second, Во-первых, etc.).
+   * Set to false for plain story text (e.g. ending screen) to match intro/narrative blocks.
+   */
+  useNumberedStyle?: boolean;
+  /**
    * Optional: Custom class name to add to the container
    */
   className?: string;
@@ -27,6 +32,7 @@ interface UnifiedTextBlockProps {
 export const UnifiedTextBlock: React.FC<UnifiedTextBlockProps> = ({
   text,
   emphasizeFirstIfQuestion = false,
+  useNumberedStyle = true,
   className = ''
 }) => {
   // Split text by double newlines to create paragraphs
@@ -45,8 +51,8 @@ export const UnifiedTextBlock: React.FC<UnifiedTextBlockProps> = ({
           paragraph.startsWith('Почему')
         );
 
-        // Check if this is a numbered item (for final ending screen)
-        const isNumberedItem = /^(First|Second|Third|Fourth|Fifth|Во-первых|Во-вторых|В-третьих|В-четвёртых|В-пятых)/.test(paragraph);
+        // Check if this is a numbered item (only when useNumberedStyle is enabled)
+        const isNumberedItem = useNumberedStyle && /^(First|Second|Third|Fourth|Fifth|Во-первых|Во-вторых|В-третьих|В-четвёртых|В-пятых)/.test(paragraph);
 
         return (
           <p 

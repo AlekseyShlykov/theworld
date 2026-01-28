@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 import { MapCanvas } from './components/MapCanvas';
 import { ChoiceButtons } from './components/ChoiceButtons';
 import { PhaseContent } from './components/PhaseContent';
@@ -9,6 +9,7 @@ import { RoundNarrative } from './components/RoundNarrative';
 import { LanguageSelector } from './components/LanguageSelector';
 import { FinalMapScreen } from './components/FinalMapScreen';
 import { FinalEndingScreen } from './components/FinalEndingScreen';
+import { FinalAuthorshipScreen } from './components/FinalAuthorshipScreen';
 import { DebugPanel } from './components/DebugPanel';
 import { TopBar } from './components/TopBar';
 import { GameFooter } from './components/GameFooter';
@@ -29,7 +30,7 @@ function App() {
   // Load texts based on selected language
   const { texts, loading: textsLoading, error: textsError } = useTexts(selectedLanguage);
   
-  const { logic, content, turnLogic, loading, error } = useGameData(selectedLanguage);
+  const { logic, content, loading, error } = useGameData(selectedLanguage);
   const [animationProgress, setAnimationProgress] = useState(0);
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
@@ -57,8 +58,8 @@ function App() {
   
   // FINAL SCREENS STATE
   // Controls showing final screens after Round 8
-  // null = not showing, 'finalMap' = showing final map, 'finalEnding' = showing ending
-  const [finalScreen, setFinalScreen] = useState<'finalMap' | 'finalEnding' | null>(null);
+  // Order: finalEnding (ending text) → finalMap (results) → finalAuthorship (credits)
+  const [finalScreen, setFinalScreen] = useState<'finalEnding' | 'finalMap' | 'finalAuthorship' | null>(null);
   
   // DEBUG: Choices log for tracking player decisions
   interface ChoiceLogEntry {
@@ -74,10 +75,52 @@ function App() {
     setPhase,
     setHighlightedArea,
     selectArea,
+    getStepDeltas,
     nextTurn,
     restartGame,
     markCurrentRoundCompleted
   } = useGameState(logic?.areas || [], logic?.populationMultipliers);
+
+  // STEP 1 — Real scroll container(s):
+  // - .app-main (App.css L159–166): overflow-y: auto, flex:1, min-height:0 → main content scrolls here.
+  // - Footer is position:fixed (GameFooter.css) so it does not scroll.
+  // - html/body (index.css): no overflow-y set → document can also scroll on some viewports (e.g. mobile).
+  const scrollContainerRef = useRef<HTMLElement | null>(null);
+
+  const scrollToTop = () => {
+    const main = scrollContainerRef.current ?? document.querySelector<HTMLElement>('.app-main');
+    const winBefore = window.scrollY;
+    const mainBefore = main?.scrollTop ?? null;
+    const opts = { top: 0, left: 0, behavior: 'auto' as ScrollBehavior };
+    window.scrollTo(opts);
+    (document.documentElement as HTMLElement).scrollTop = 0;
+    document.body.scrollTop = 0;
+    if (main) {
+      main.scrollTop = 0;
+      main.scrollTo(opts);
+    }
+    // Optional: set window.__SCROLL_DEBUG = true in console to log before/after
+    if (typeof window !== 'undefined' && (window as unknown as { __SCROLL_DEBUG?: boolean }).__SCROLL_DEBUG) {
+      console.log('[scroll] screenKey=', screenKey, 'before', { window: winBefore, main: mainBefore }, 'after', { window: window.scrollY, main: main?.scrollTop ?? null });
+    }
+  };
+
+  // Screen identity: changes only on navigation (not language/audio/footer).
+  const screenKey = [
+    introScreen,
+    showPreStep1Intro,
+    showRoundNarrative,
+    finalScreen,
+    gameState.currentPhase,
+    gameState.currentTurn
+  ].join('-');
+
+  // Scroll to top when screen changes: sync before paint, then rAF to beat any scroll restore.
+  useLayoutEffect(() => {
+    scrollToTop();
+    const raf = requestAnimationFrame(() => scrollToTop());
+    return () => cancelAnimationFrame(raf);
+  }, [screenKey]);
 
   // TTS context for auto-reading
   const { isSpeechOn, speakText, stopSpeaking } = useTTS();
@@ -113,11 +156,14 @@ function App() {
     }
 
     // Final screens
+    if (finalScreen === 'finalEnding') {
+      return texts.final.endingText;
+    }
     if (finalScreen === 'finalMap') {
       return texts.final.mapText;
     }
-    if (finalScreen === 'finalEnding') {
-      return texts.final.endingText;
+    if (finalScreen === 'finalAuthorship') {
+      return texts.final.authorshipText;
     }
 
     // Phase content
@@ -216,13 +262,14 @@ function App() {
 
   // Handle phase transitions
   const handlePhase1Continue = () => {
+    scrollToTop();
     setPhase('phase2');
   };
 
   const handleAreaSelect = (areaId: string) => {
-    if (!turnLogic || !logic) return;
-
-    selectArea(areaId, turnLogic, logic);
+    if (!logic) return;
+    scrollToTop();
+    selectArea(areaId);
 
     // Log the choice to debug panel
     const zoneNumber = parseInt(areaId.replace('A', ''));
@@ -231,24 +278,30 @@ function App() {
       zone: zoneNumber
     }]);
 
-    // Show toast notification
+    // Show toast notification (deltas from steps-config + choice bonus 0.05)
     const area = gameState.areas.find(a => a.id === areaId);
-    const choice = turnLogic[`turn${gameState.currentTurn}`]?.onChoose[areaId];
-    if (area && choice && content) {
+    const deltas = getStepDeltas(gameState.currentTurn);
+    const zoneIndex = ['A1', 'A2', 'A3', 'A4', 'A5'].indexOf(areaId);
+    const delta = deltas[zoneIndex];
+    if (area && delta && content) {
       const label = content.ui.areaLabels[areaId];
+      const powerDisplay = (delta.powerDelta + 0.05).toFixed(1);
+      const accDisplay = (delta.accDelta + 0.05).toFixed(1);
       setToastMessage(
-        `${label} ${content.ui.toast.advanced}: +${choice.powerDelta.toFixed(1)} ${content.ui.toast.powerGain}, +${choice.accDelta.toFixed(1)} ${content.ui.toast.accGain}`
+        `${label} ${content.ui.toast.advanced}: +${powerDisplay} ${content.ui.toast.powerGain}, +${accDisplay} ${content.ui.toast.accGain}`
       );
       setShowToast(true);
     }
   };
 
   const handlePhase3Continue = () => {
+    scrollToTop();
     nextTurn();
     setAnimationProgress(0);
   };
 
   const handleRestart = () => {
+    scrollToTop();
     restartGame();
     setAnimationProgress(0);
     // Reset intro screens when restarting (optional: set to null/false to skip intros on restart)
@@ -265,6 +318,7 @@ function App() {
 
   // Intro screen navigation handlers
   const handleIntroNext = () => {
+    scrollToTop();
     if (introScreen !== null && introScreen < 4) {
       // Activate animation when moving from screen 1 to screen 2 (first time)
       if (introScreen === 1) {
@@ -281,6 +335,7 @@ function App() {
   };
 
   const handleStartGame = () => {
+    scrollToTop();
     // Complete intro and start pre-step-1 intro sequence
     // Deactivate animation when starting the game
     setIntroAnimationActive(false);
@@ -290,7 +345,7 @@ function App() {
 
   // Handler for zone selection during pre-step-1 intro
   const handlePreStep1ZoneSelect = (areaId: string) => {
-    if (!turnLogic || !logic) return;
+    if (!logic) return;
     
     // Check if choice already logged for this round to prevent duplicates
     const zoneNumber = parseInt(areaId.replace('A', ''));
@@ -300,8 +355,8 @@ function App() {
       return;
     }
     
-    // Apply the choice using existing logic (applies deltas + +0.1 bonus)
-    selectArea(areaId, turnLogic, logic);
+    // Apply the choice using existing logic (applies deltas + choice bonus)
+    selectArea(areaId);
     
     // Log the choice to debug panel (only once)
     setChoicesLog(prev => [...prev, {
@@ -312,6 +367,7 @@ function App() {
 
   // Handler for completing pre-step-1 intro and proceeding to Step 2
   const handlePreStep1Complete = () => {
+    scrollToTop();
     // IMPORTANT: Set showRoundNarrative BEFORE clearing showPreStep1Intro
     // This ensures the Round Narrative check (which comes first in rendering) will catch it
     setShowRoundNarrative(2);
@@ -325,7 +381,7 @@ function App() {
 
   // Handler for zone selection during round narrative (rounds 2-8)
   const handleRoundNarrativeZoneSelect = (areaId: string) => {
-    if (!turnLogic || !logic) return;
+    if (!logic) return;
     
     const currentRound = showRoundNarrative || gameState.currentTurn;
     const zoneNumber = parseInt(areaId.replace('A', ''));
@@ -337,8 +393,8 @@ function App() {
       return;
     }
     
-    // Apply the choice using existing logic (applies deltas + +0.1 bonus)
-    selectArea(areaId, turnLogic, logic);
+    // Apply the choice using existing logic (applies deltas + choice bonus)
+    selectArea(areaId);
     
     // Log the choice to debug panel (only once)
     setChoicesLog(prev => [...prev, {
@@ -349,17 +405,18 @@ function App() {
 
   // Handler for completing a round narrative and proceeding to next round
   const handleRoundNarrativeComplete = () => {
+    scrollToTop();
     const currentRound = showRoundNarrative;
     if (currentRound === null) return;
     
-    // If Round 8 is complete, mark it as completed and transition to final map screen
+    // If Round 8 is complete, mark it as completed and transition to first final screen (ending text)
     if (currentRound === 8) {
       // Mark round 8 as completed (this also captures the snapshot)
       // This ensures the round 8 icon turns green on final screens
       markCurrentRoundCompleted();
       setShowRoundNarrative(null);
-      setFinalScreen('finalMap');
-      setPhase('finalMap');
+      setFinalScreen('finalEnding');
+      setPhase('finalEnding');
       return;
     }
     
@@ -382,14 +439,23 @@ function App() {
     }
   };
   
-  // Handler for final map screen - proceed to ending
+  // Handler for ending screen - proceed to final results (map + charts)
+  const handleFinalEndingNext = () => {
+    scrollToTop();
+    setFinalScreen('finalMap');
+    setPhase('finalMap');
+  };
+
+  // Handler for final map screen - proceed to authorship/credits
   const handleFinalMapNext = () => {
-    setFinalScreen('finalEnding');
-    setPhase('finalEnding');
+    scrollToTop();
+    setFinalScreen('finalAuthorship');
+    setPhase('finalAuthorship');
   };
   
   // Handler for play again - reset game
   const handlePlayAgain = () => {
+    scrollToTop();
     restartGame();
     setAnimationProgress(0);
     setIntroScreen(1);
@@ -419,7 +485,7 @@ function App() {
     );
   }
 
-  if (error || textsError || !logic || !content || !turnLogic || !texts) {
+  if (error || textsError || !logic || !content || !texts) {
     return (
       <div className="error-screen">
         <h1>Error Loading Game</h1>
@@ -431,7 +497,38 @@ function App() {
 
   const currentStep = content.steps.find(s => s.id === gameState.currentTurn);
 
-  // FINAL SCREENS: Check before round narrative (after Round 8)
+  // FINAL SCREENS: Order is endingText → final results (mapText) → authorship
+  // 1) First final screen: ending text (with Next to go to results)
+  if (finalScreen === 'finalEnding' && !loading && !error && !textsLoading && logic && content && texts) {
+    return (
+      <div className="app">
+        <TopBar
+          currentRound={gameState.currentTurn}
+          completedRounds={gameState.completedSteps}
+          currentLanguage={selectedLanguage}
+          onLanguageChange={setSelectedLanguage}
+          texts={texts}
+        />
+        <main ref={scrollContainerRef} className="app-main">
+          <DebugPanel areas={gameState.areas} choicesLog={choicesLog} />
+          <FinalEndingScreen
+            areas={gameState.areas}
+            logic={logic}
+            texts={texts}
+            onPlayAgain={handlePlayAgain}
+            onNext={handleFinalEndingNext}
+          />
+        </main>
+        <GameFooter
+          currentRound={gameState.currentTurn}
+          currentLanguage={selectedLanguage}
+          getCurrentScreenText={getCurrentScreenText}
+        />
+      </div>
+    );
+  }
+
+  // 2) Second final screen: final results (mapText + charts, Next → authorship)
   if (finalScreen === 'finalMap' && !loading && !error && !textsLoading && logic && content && texts) {
     return (
       <div className="app">
@@ -442,7 +539,7 @@ function App() {
           onLanguageChange={setSelectedLanguage}
           texts={texts}
         />
-        <main className="app-main">
+        <main ref={scrollContainerRef} className="app-main">
           <DebugPanel areas={gameState.areas} choicesLog={choicesLog} />
           <FinalMapScreen
             areas={gameState.areas}
@@ -462,8 +559,9 @@ function App() {
       </div>
     );
   }
-  
-  if (finalScreen === 'finalEnding' && !loading && !error && !textsLoading && logic && content && texts) {
+
+  // 3) Third final screen: authorship / credits (same links: Play Again, My website)
+  if (finalScreen === 'finalAuthorship' && !loading && !error && !textsLoading && logic && content && texts) {
     return (
       <div className="app">
         <TopBar
@@ -473,9 +571,9 @@ function App() {
           onLanguageChange={setSelectedLanguage}
           texts={texts}
         />
-        <main className="app-main">
+        <main ref={scrollContainerRef} className="app-main">
           <DebugPanel areas={gameState.areas} choicesLog={choicesLog} />
-          <FinalEndingScreen
+          <FinalAuthorshipScreen
             areas={gameState.areas}
             logic={logic}
             texts={texts}
@@ -506,6 +604,7 @@ function App() {
             <h1>Error</h1>
             <p>Story data missing for round {showRoundNarrative}.</p>
             <button onClick={() => {
+              scrollToTop();
               setShowRoundNarrative(null);
               setPhase('phase1');
             }}>Continue without narrative</button>
@@ -522,7 +621,7 @@ function App() {
           onLanguageChange={setSelectedLanguage}
           texts={texts}
         />
-        <main className="app-main">
+        <main ref={scrollContainerRef} className="app-main">
           {texts && (
             <RoundNarrative
               key={`round-${showRoundNarrative}`}
@@ -562,7 +661,7 @@ function App() {
           isPreGame={true}
           texts={texts}
         />
-        <main className="app-main">
+        <main ref={scrollContainerRef} className="app-main">
           {introScreen !== null && texts && (
             <IntroScreens
               currentScreen={introScreen}
@@ -597,7 +696,7 @@ function App() {
           isPreGame={false}
           texts={texts}
         />
-        <main className="app-main">
+        <main ref={scrollContainerRef} className="app-main">
           {texts && (
             <PreStep1Intro
               areas={gameState.areas}
@@ -653,7 +752,7 @@ function App() {
           onLanguageChange={setSelectedLanguage}
           texts={texts}
         />
-        <main className="app-main">
+        <main ref={scrollContainerRef} className="app-main">
           <div className="completion-screen">
             <h2>{content.ui.finalScreen.title}</h2>
             <p>{content.ui.finalScreen.subtitle}</p>
@@ -712,7 +811,7 @@ function App() {
         onLanguageChange={setSelectedLanguage}
         texts={texts}
       />
-      <main className="app-main">
+      <main ref={scrollContainerRef} className="app-main">
         <section className="game-section">
           <h2 className="step-title">
             {currentStep?.title || 'Unknown Step'}

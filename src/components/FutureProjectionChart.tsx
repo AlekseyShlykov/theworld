@@ -64,15 +64,9 @@ export const FutureProjectionChart: React.FC<FutureProjectionChartProps> = ({
     return area?.color || '#999999';
   };
   
-  // Get short name for a civilization center
+  // Display name for a civilization center (from i18n areaButtons on final charts screen)
   const getCivilizationName = (areaId: string): string => {
-    const label = areaLabels[areaId] || areaId;
-    // Extract region number or short name
-    const match = label.match(/Region (\d+)/);
-    if (match) {
-      return `R${match[1]}`;
-    }
-    return label.split(':')[0] || areaId;
+    return areaLabels[areaId] || areaId;
   };
   
   // Convert round number to year (round 1 = 1000, round 2 = 2000, ..., round 12 = 12000)
@@ -508,12 +502,11 @@ export const FutureProjectionChart: React.FC<FutureProjectionChartProps> = ({
         ))}
       </div>
       
-      {/* Explanation */}
-      <div className="future-projection-chart-explanation">
-        <p>
-          {futureProjectionChartTexts.explanation}
-        </p>
-      </div>
+      {futureProjectionChartTexts.explanation && (
+        <div className="future-projection-chart-explanation">
+          <p>{futureProjectionChartTexts.explanation}</p>
+        </div>
+      )}
     </div>
   );
 };

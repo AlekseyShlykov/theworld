@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { LogicData, LanguageData, TurnLogic, Language } from '../types';
+import { LogicData, LanguageData, Language } from '../types';
 
 export const useGameData = (language: Language) => {
   const [logic, setLogic] = useState<LogicData | null>(null);
   const [content, setContent] = useState<LanguageData | null>(null);
-  const [turnLogic, setTurnLogic] = useState<TurnLogic | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -14,25 +13,22 @@ export const useGameData = (language: Language) => {
         setLoading(true);
         // Use base URL for GitHub Pages compatibility
         const baseUrl = import.meta.env.BASE_URL;
-        const [logicRes, contentRes, turnLogicRes] = await Promise.all([
+        const [logicRes, contentRes] = await Promise.all([
           fetch(`${baseUrl}data/logic.json`),
-          fetch(`${baseUrl}data/${language}.json`),
-          fetch(`${baseUrl}data/turnLogic.json`)
+          fetch(`${baseUrl}data/${language}.json`)
         ]);
 
-        if (!logicRes.ok || !contentRes.ok || !turnLogicRes.ok) {
+        if (!logicRes.ok || !contentRes.ok) {
           throw new Error('Failed to load game data');
         }
 
-        const [logicData, contentData, turnLogicData] = await Promise.all([
+        const [logicData, contentData] = await Promise.all([
           logicRes.json(),
-          contentRes.json(),
-          turnLogicRes.json()
+          contentRes.json()
         ]);
 
         setLogic(logicData);
         setContent(contentData);
-        setTurnLogic(turnLogicData);
         setError(null);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');
@@ -44,6 +40,6 @@ export const useGameData = (language: Language) => {
     loadData();
   }, [language]);
 
-  return { logic, content, turnLogic, loading, error };
+  return { logic, content, loading, error };
 };
 

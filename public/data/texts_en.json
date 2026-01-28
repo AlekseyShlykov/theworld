@@ -145,7 +145,8 @@
   },
   "final": {
     "mapText": "Here is the world we have built over these eight thousand years. We observed how our five civilization centers developed and which factors influenced their paths the most.\n\nAs you can see, much depended on the randomness of initial conditions — who had suitable grains, diverse large animals, or more opportunities for contact with neighbors due to geography.",
-    "endingText": "Now let us return to the beginning, to the story of the conquistador.\n\nAfter this interactive longread, we can finally answer the question:\nWhy did Europeans invade Atahualpa's territory — and not the other way around?\n\nFirst, technological differences. Eurasians had steel swords, armor, muskets, artillery, and horses — which simply did not exist in the Americas at that time.\n\nSecond, writing. Written systems existed for thousands of years in Eurasia, allowing knowledge about distant lands and peoples to be preserved and transmitted long before arrival. Writing also accelerated technological progress by preserving accumulated knowledge.\n\nThird, centralized competing states. Not every state could finance such an expedition — it required enormous resources, and those who invested expected profit in return. And on top of that, Europe had advanced maritime technology capable of crossing oceans against the wind.\n\nFourth, agricultural and energy advantages. Eurasians had long used cattle, horses, and donkeys, as well as watermills and windmills — while in the Americas most work was still done by human labor.\n\nFifth, diseases. Eurasian epidemic diseases were far more deadly than those of the Americas. Long life in dense cities and close proximity to livestock created pathogens that spread quickly — and Europeans had partial immunity.\n\nAll these factors shaped history in exactly the way it happened.\n\nThis interactive longread was created by Alex Shlykov, based on the book \"Guns, Germs, and Steel\" by Jared Diamond. I hope you found it interesting! The book contains far more details — it is absolutely worth reading.\n\nIf you enjoyed this, you can try my other educational games!",
+    "endingText": "Now let us return to the beginning, to the story of the conquistador.\n\nAfter this interactive longread, we can finally answer the question:\nWhy did Europeans invade Atahualpa's territory — and not the other way around?\n\nFirst, technological differences. Eurasians had steel swords, armor, muskets, artillery, and horses — which simply did not exist in the Americas at that time.\n\nSecond, writing. Written systems existed for thousands of years in Eurasia, allowing knowledge about distant lands and peoples to be preserved and transmitted long before arrival. Writing also accelerated technological progress by preserving accumulated knowledge.\n\nThird, centralized competing states. Not every state could finance such an expedition — it required enormous resources, and those who invested expected profit in return. And on top of that, Europe had advanced maritime technology capable of crossing oceans against the wind.\n\nFourth, agricultural and energy advantages. Eurasians had long used cattle, horses, and donkeys, as well as watermills and windmills — while in the Americas most work was still done by human labor.\n\nFifth, diseases. Eurasian epidemic diseases were far more deadly than those of the Americas. Long life in dense cities and close proximity to livestock created pathogens that spread quickly — and Europeans had partial immunity.\n\nAll these factors shaped history in exactly the way it happened.",
+    "authorshipText": "This interactive longread was created by Alex Shlykov, based on the book \"Guns, Germs, and Steel\" by Jared Diamond. I hope you found it interesting! The book contains far more details — it is absolutely worth reading.\n\nIf you enjoyed this, you can try my other educational games!",
     "playAgain": "Play again",
     "myWebsite": "My website: buildtounderstand.dev"
   },
@@ -171,7 +172,7 @@
     "title": "Population Dynamics",
     "axis": {
       "time": "Time (Years)",
-      "population": "Population (Acc × Power)"
+      "population": "Population"
     },
     "tooltip": {
       "round": "Round",
@@ -180,8 +181,8 @@
       "populationValue": "Population",
       "year": "Year"
     },
-    "explanation": "Note: Population is calculated as Acc × Power for each civilization center. Values are recorded after each round completes, tracking how each center's population evolves over 8000 years.",
-    "yAxisLabel": "Population (Acc × Power)"
+    "explanation": "",
+    "yAxisLabel": "Population"
   },
   "dominanceChart": {
     "title": "Periods of Civilization Dominance",
@@ -197,13 +198,13 @@
       "power": "Power",
       "rawValue": "Acc × Power"
     },
-    "explanation": "This chart shows which civilization center dominated each 1000-year period. Dominance is calculated as (Acc × Power) / sum(Acc × Power of all centers) for each round. The highlighted segments indicate the dominant civilization during each period."
+    "explanation": ""
   },
   "futureProjectionChart": {
     "title": "Future Projection: Next 4000 Years",
     "axis": {
       "time": "Time (Years)",
-      "development": "Development Strength (Acc × Power)"
+      "development": "Development Strength"
     },
     "tooltip": {
       "predicted": "Predicted",

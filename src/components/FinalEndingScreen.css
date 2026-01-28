@@ -10,17 +10,33 @@
   min-height: 0;
 }
 
-.final-ending-image {
-  margin-bottom: 30px;
+/* Image/animation: same as intro screen 2 (IntroMapAnimation + spacing from IntroScreens.css) */
+.final-ending-screen .intro-map-animation-container.intro-image-top-spacing {
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
+/* Text container: same structure as intro screen 2 (intro-text-container) */
+.final-ending-screen .intro-text-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+/* Single Next button: same layout as intro single-button screens */
+.final-ending-screen .action-section-single {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Used by FinalAuthorshipScreen (ending screen uses .intro-text-container) */
 .final-ending-text-container {
   max-width: 100%;
   width: 100%;
   text-align: left;
   margin-bottom: 40px;
   padding: 0;
-  /* UnifiedTextBlock handles its own padding and styling */
 }
 
 /* Action section for final ending screen */
@@ -73,7 +89,9 @@
     padding: 18px;
   }
 
-  /* Text styling now handled by UnifiedTextBlock */
+  .final-ending-screen .intro-map-animation-container.intro-image-top-spacing {
+    margin-top: 14px;
+  }
 }
 
 /* Responsive design - Mobile */
@@ -82,24 +100,14 @@
     padding: 16px;
   }
 
-  .final-ending-image {
+  .final-ending-screen .intro-map-animation-container.intro-image-top-spacing {
+    margin-top: 16px;
     margin-bottom: 20px;
-    width: 100%;
-    max-width: 100%;
   }
 
-  .final-ending-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  .final-ending-text-container {
-    max-width: 100%;
-    margin-bottom: 30px;
+  .final-ending-screen .intro-text-container {
     padding: 0 16px;
   }
-
-  /* Text styling now handled by UnifiedTextBlock */
 
   .final-ending-screen .action-section {
     margin-bottom: 100px;
@@ -124,11 +132,13 @@
     padding: 12px;
   }
 
-  .final-ending-text-container {
-    padding: 0 12px;
+  .final-ending-screen .intro-map-animation-container.intro-image-top-spacing {
+    margin-top: 10px;
   }
 
-  /* Text styling now handled by UnifiedTextBlock */
+  .final-ending-screen .intro-text-container {
+    padding: 0 12px;
+  }
 
   .final-ending-screen .action-section {
     margin-bottom: 100px;

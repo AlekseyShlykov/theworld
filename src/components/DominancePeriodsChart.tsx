@@ -57,15 +57,9 @@ export const DominancePeriodsChart: React.FC<DominancePeriodsChartProps> = ({
     return area?.color || '#999999';
   };
   
-  // Get short name for a civilization center
+  // Display name for a civilization center (from i18n areaButtons on final charts screen)
   const getCivilizationName = (areaId: string): string => {
-    const label = areaLabels[areaId] || areaId;
-    // Extract region number or short name
-    const match = label.match(/Region (\d+)/);
-    if (match) {
-      return `R${match[1]}`;
-    }
-    return label.split(':')[0] || areaId;
+    return areaLabels[areaId] || areaId;
   };
   
   // Convert round number to year (round 1 = 1000, round 2 = 2000, ..., round 8 = 8000)
@@ -486,12 +480,11 @@ export const DominancePeriodsChart: React.FC<DominancePeriodsChartProps> = ({
         ))}
       </div>
       
-      {/* Explanation */}
-      <div className="dominance-periods-chart-explanation">
-        <p>
-          {dominanceChartTexts.explanation}
-        </p>
-      </div>
+      {dominanceChartTexts.explanation && (
+        <div className="dominance-periods-chart-explanation">
+          <p>{dominanceChartTexts.explanation}</p>
+        </div>
+      )}
     </div>
   );
 };

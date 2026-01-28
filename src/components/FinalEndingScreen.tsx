@@ -1,6 +1,6 @@
 import React from 'react';
-import { MapCanvas } from './MapCanvas';
 import { UnifiedTextBlock } from './UnifiedTextBlock';
+import { IntroMapAnimation } from './IntroMapAnimation';
 import { Area, LogicData } from '../types';
 import { TextsData } from '../hooks/useTexts';
 import './FinalEndingScreen.css';
@@ -10,61 +10,84 @@ interface FinalEndingScreenProps {
   logic: LogicData;
   texts: TextsData;
   onPlayAgain: () => void;
+  /** When provided, only a single "Next" button is shown; otherwise Play Again + My website */
+  onNext?: () => void;
 }
 
+/** Same image as intro screen 2 when animation is shown */
+const ENDING_IMAGE = 'assets/intro/intro_map_1.png';
+
 export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
-  areas,
+  areas: _areas,
   logic,
   texts,
-  onPlayAgain
+  onPlayAgain,
+  onNext
 }) => {
+  const baseUrl = import.meta.env.BASE_URL;
   const handleWebsiteClick = () => {
     window.open('https://buildtounderstand.dev/', '_blank');
   };
 
   return (
     <div className="final-ending-screen" role="dialog" aria-label="Game ending">
-      <div className="final-ending-image">
-        <MapCanvas
-          areas={areas}
-          logic={logic}
-          highlightedArea={null}
-          animationProgress={1}
-          currentTurn={8}
+      <IntroMapAnimation
+        isActive={true}
+        imageSource={`${baseUrl}${ENDING_IMAGE}`}
+        animationKey="ending"
+        scrollSpeed={logic?.imageScrollSpeed}
+      />
+
+      <div className="intro-text-container">
+        <UnifiedTextBlock
+          text={texts.final.endingText}
+          emphasizeFirstIfQuestion={true}
+          useNumberedStyle={false}
         />
       </div>
 
-      <div className="final-ending-text-container">
-        <UnifiedTextBlock text={texts.final.endingText} emphasizeFirstIfQuestion={true} />
-      </div>
-
-      <div className="action-section">
-        <div className="final-ending-buttons">
+      <div className={`action-section ${onNext ? 'action-section-single' : ''}`}>
+        {onNext ? (
           <button
             className="nav-button final-ending-button final-ending-button-primary"
             onClick={() => {
               if ((window as any).playClickSound) {
                 (window as any).playClickSound();
               }
-              onPlayAgain();
+              onNext();
             }}
-            aria-label="Restart the game"
+            aria-label="Continue to final results"
           >
-            {texts.final.playAgain}
+            {texts.ui.next}
           </button>
-          <button
-            className="nav-button final-ending-button final-ending-button-link"
-            onClick={() => {
-              if ((window as any).playClickSound) {
-                (window as any).playClickSound();
-              }
-              handleWebsiteClick();
-            }}
-            aria-label="Visit buildtounderstand.dev"
-          >
-            {texts.final.myWebsite}
-          </button>
-        </div>
+        ) : (
+          <div className="final-ending-buttons">
+            <button
+              className="nav-button final-ending-button final-ending-button-primary"
+              onClick={() => {
+                if ((window as any).playClickSound) {
+                  (window as any).playClickSound();
+                }
+                onPlayAgain();
+              }}
+              aria-label="Restart the game"
+            >
+              {texts.final.playAgain}
+            </button>
+            <button
+              className="nav-button final-ending-button final-ending-button-link"
+              onClick={() => {
+                if ((window as any).playClickSound) {
+                  (window as any).playClickSound();
+                }
+                handleWebsiteClick();
+              }}
+              aria-label="Visit buildtounderstand.dev"
+            >
+              {texts.final.myWebsite}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
-import { GameState, Area, TurnLogic, LogicData, RoundSnapshot } from '../types';
+import { GameState, Area, RoundSnapshot } from '../types';
 
 // Types for steps configuration
 interface ZoneDelta {
@@ -214,9 +214,8 @@ export const useGameState = (
     setGameState(prev => ({ ...prev, highlightedArea: areaId }));
   }, []);
 
-  // selectArea: Apply round deltas to all zones (once per round), then apply choice bonus (+0.1) to chosen zone
-  // turnLogic and logic are kept in signature for interface compatibility but not used in current implementation
-  const selectArea = useCallback((areaId: string, _turnLogic: TurnLogic, _logic: LogicData) => {
+  // selectArea: Apply round deltas to all zones (once per round), then apply choice bonus (+0.05) to chosen zone
+  const selectArea = useCallback((areaId: string) => {
     // Increment the choice count for the selected zone
     setZoneChoiceCounts(prevCounts => {
       const newChoiceCounts = {
@@ -401,6 +400,7 @@ export const useGameState = (
     setPhase,
     setHighlightedArea,
     selectArea,
+    getStepDeltas, // Expose for toast (power/acc deltas per step from steps-config)
     nextTurn,
     restartGame,
     captureCurrentSnapshot, // Expose for capturing final snapshot

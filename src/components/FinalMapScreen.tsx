@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { MapCanvas } from './MapCanvas';
 import { UnifiedTextBlock } from './UnifiedTextBlock';
 import { FinalTimeline } from './FinalTimeline';
@@ -33,6 +33,18 @@ export const FinalMapScreen: React.FC<FinalMapScreenProps> = ({
   areaHistory,
   onNext
 }) => {
+  // Use areaButtons from i18n texts for chart and Final Values labels (real area names)
+  const chartAreaLabels = useMemo((): Record<string, string> => {
+    if (!texts?.areaButtons) return labels as unknown as Record<string, string>;
+    const ids = ['A1', 'A2', 'A3', 'A4', 'A5'] as const;
+    const keys = ['area1', 'area2', 'area3', 'area4', 'area5'] as const;
+    const out: Record<string, string> = {};
+    ids.forEach((id, i) => {
+      out[id] = texts.areaButtons[keys[i]];
+    });
+    return out;
+  }, [texts, labels]);
+
   return (
     <div className="final-map-screen" role="dialog" aria-label="Final map results">
       <MapCanvas
@@ -49,43 +61,40 @@ export const FinalMapScreen: React.FC<FinalMapScreenProps> = ({
 
       <div className="final-values-container">
         <h3 className="final-values-title">Final Values</h3>
-        {areas.map((area, index) => {
-          const zoneNumber = index + 1;
-          return (
-            <div key={area.id} className="final-value-row">
-              <span className="final-zone-label">Zone {zoneNumber}</span>
-              <span className="final-value-separator">—</span>
-              <span className="final-value">Power: {area.power.toFixed(1)}, Acc: {area.acc.toFixed(1)}</span>
-            </div>
-          );
-        })}
+        {areas.map((area) => (
+          <div key={area.id} className="final-value-row">
+            <span className="final-zone-label">{chartAreaLabels[area.id] ?? area.id}</span>
+            <span className="final-value-separator">—</span>
+            <span className="final-value">Power: {area.power.toFixed(1)}, Acc: {area.acc.toFixed(1)}</span>
+          </div>
+        ))}
       </div>
 
       <DominancePeriodsChart
         areas={areas}
         areaHistory={areaHistory}
-        areaLabels={labels}
+        areaLabels={chartAreaLabels}
         dominanceChartTexts={texts.dominanceChart}
       />
 
       <FinalPopulationChart
         areas={areas}
         areaHistory={areaHistory}
-        areaLabels={labels}
+        areaLabels={chartAreaLabels}
         populationChartTexts={texts.populationChart}
       />
 
       <FinalTimeline
         areas={areas}
         choicesLog={choicesLog}
-        areaLabels={labels}
+        areaLabels={chartAreaLabels}
         timelineTexts={texts.timeline}
       />
 
       <FutureProjectionChart
         areas={areas}
         areaHistory={areaHistory}
-        areaLabels={labels}
+        areaLabels={chartAreaLabels}
         futureProjectionChartTexts={texts.futureProjectionChart}
       />
 

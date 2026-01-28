@@ -76,7 +76,7 @@ export interface TurnLogic {
   };
 }
 
-export type GamePhase = 'phase1' | 'phase2' | 'phase3' | 'complete' | 'finalMap' | 'finalEnding';
+export type GamePhase = 'phase1' | 'phase2' | 'phase3' | 'complete' | 'finalEnding' | 'finalMap' | 'finalAuthorship';
 
 // History tracking for population chart
 // Stores Acc and Power values for each area after each round completes

@@ -115,15 +115,9 @@ export const FinalTimeline: React.FC<FinalTimelineProps> = ({
     return MARGIN_LEFT + (year / 8000) * CHART_WIDTH;
   };
   
-  // Get short name for a civilization
+  // Display name for a civilization (from i18n areaButtons on final charts screen)
   const getCivilizationName = (areaId: string): string => {
-    const label = areaLabels[areaId] || areaId;
-    // Extract region number or short name
-    const match = label.match(/Region (\d+)/);
-    if (match) {
-      return `R${match[1]}`;
-    }
-    return label.split(':')[0] || areaId;
+    return areaLabels[areaId] || areaId;
   };
   
   // Group milestones by civilization for rendering
@@ -135,6 +129,28 @@ export const FinalTimeline: React.FC<FinalTimelineProps> = ({
     return groups;
   }, [milestones, areas]);
   
+  // First appearance: for each round, the chosen zone gets the earliest year → "first discovery"
+  const firstDiscoveryKeys = useMemo(() => {
+    const chosenByRound = new Map<number, number>();
+    choicesLog.forEach(entry => {
+      chosenByRound.set(entry.round, entry.zone);
+    });
+    const keys = new Set<string>();
+    milestones.forEach(m => {
+      const round = m.round;
+      const zone = chosenByRound.get(round);
+      if (zone == null) return;
+      const areaId = `A${zone}`;
+      if (m.civilizationId === areaId) {
+        keys.add(`${m.round}-${m.civilizationId}`);
+      }
+    });
+    return keys;
+  }, [milestones, choicesLog]);
+  
+  const isFirstDiscovery = (milestone: Milestone): boolean =>
+    firstDiscoveryKeys.has(`${milestone.round}-${milestone.civilizationId}`);
+  
   // Generate tick marks for every 1000 years
   const ticks = useMemo(() => {
     const result = [];
@@ -143,11 +159,64 @@ export const FinalTimeline: React.FC<FinalTimelineProps> = ({
     }
     return result;
   }, []);
+
+  // Column width and center positions (same scale as chart) for round label overlay
+  const columnWidthPct = (CHART_WIDTH / 8 / TIMELINE_WIDTH) * 100;
+  const roundLabelSlots = useMemo(() => {
+    return [1, 2, 3, 4, 5, 6, 7, 8].map(round => {
+      const centerYear = (round - 0.5) * 1000;
+      const centerX = yearToX(centerYear);
+      const leftPct = (centerX / TIMELINE_WIDTH) * 100;
+      return {
+        round,
+        leftPct,
+        title: achievements[round - 1] ?? ''
+      };
+    });
+  }, [achievements]);
   
   return (
     <div className="final-timeline-container">
       <h3 className="final-timeline-title">{timelineTexts.title}</h3>
       <div className="final-timeline-wrapper">
+        {/* Round titles overlay: HTML for wrapping, aligned to chart columns */}
+        <div
+          className="final-timeline-round-labels-overlay"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: `${(MARGIN_TOP / TIMELINE_HEIGHT) * 100}%`,
+            pointerEvents: 'none'
+          }}
+          aria-hidden="true"
+        >
+          {roundLabelSlots.map(({ round, leftPct, title }) => (
+            <div
+              key={`round-label-${round}`}
+              className="final-timeline-round-label-cell"
+              style={{
+                position: 'absolute',
+                left: `${leftPct}%`,
+                top: 0,
+                width: `${columnWidthPct}%`,
+                maxWidth: `${columnWidthPct}%`,
+                height: '100%',
+                transform: 'translateX(-50%)',
+                display: 'flex',
+                alignItems: 'flex-end',
+                justifyContent: 'center',
+                paddingBottom: 4,
+                paddingLeft: 2,
+                paddingRight: 2,
+                boxSizing: 'border-box'
+              }}
+            >
+              <span className="final-timeline-round-label-text">{title}</span>
+            </div>
+          ))}
+        </div>
         <svg
           className="final-timeline-svg"
           viewBox={`0 0 ${TIMELINE_WIDTH} ${TIMELINE_HEIGHT}`}
@@ -233,17 +302,17 @@ export const FinalTimeline: React.FC<FinalTimelineProps> = ({
                 {/* Milestone markers */}
                 {areaMilestones.map(milestone => {
                   const x = yearToX(milestone.year);
-                  
+                  const first = isFirstDiscovery(milestone);
                   return (
                     <g key={`marker-${milestone.round}-${area.id}`}>
                       <circle
                         cx={x}
                         cy={rowCenterY}
-                        r="7"
+                        r={first ? 11 : 7}
                         fill={area.color}
-                        stroke="#fff"
-                        strokeWidth="2.5"
-                        className="milestone-marker"
+                        stroke={first ? '#333' : '#fff'}
+                        strokeWidth={first ? 3 : 2.5}
+                        className={first ? 'milestone-marker milestone-marker-first' : 'milestone-marker'}
                       />
                       {/* Tooltip on hover */}
                       <title>
@@ -256,42 +325,10 @@ export const FinalTimeline: React.FC<FinalTimelineProps> = ({
                     </g>
                   );
                 })}
-                
-                {/* Civilization label on the left */}
-                <text
-                  x={MARGIN_LEFT - 10}
-                  y={rowCenterY + 4}
-                  textAnchor="end"
-                  fontSize="11"
-                  fill={area.color}
-                  fontWeight="600"
-                >
-                  {getCivilizationName(area.id)}
-                </text>
               </g>
             );
           })}
           
-          {/* Round labels at the top */}
-          {[1, 2, 3, 4, 5, 6, 7, 8].map(round => {
-            const roundStart = (round - 1) * 1000;
-            const roundEnd = round * 1000;
-            const x = yearToX((roundStart + roundEnd) / 2);
-            
-            return (
-              <text
-                key={`round-label-${round}`}
-                x={x}
-                y={MARGIN_TOP - 10}
-                textAnchor="middle"
-                fontSize="10"
-                fill="#999"
-                fontWeight="500"
-              >
-                R{round}
-              </text>
-            );
-          })}
         </svg>
       </div>
       
@@ -306,18 +343,6 @@ export const FinalTimeline: React.FC<FinalTimelineProps> = ({
             <span className="legend-label">{getCivilizationName(area.id)}</span>
           </div>
         ))}
-      </div>
-      
-      {/* Achievement list */}
-      <div className="final-timeline-achievements">
-        <h4>{timelineTexts.achievementsTitle}</h4>
-        <ul>
-          {achievements.map((achievement, index) => (
-            <li key={index}>
-              <strong>{timelineTexts.roundLabel} {index + 1}:</strong> {achievement}
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );

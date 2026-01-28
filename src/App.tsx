@@ -278,7 +278,7 @@ function App() {
       round: gameState.currentTurn,
       zone: zoneNumber
     }]);
-    sendChoiceEvent(gameState.currentTurn, zoneNumber);
+    sendChoiceEvent(gameState.currentTurn, zoneNumber, selectedLanguage);
 
     // Show toast notification (deltas from steps-config + choice bonus 0.05)
     const area = gameState.areas.find(a => a.id === areaId);
@@ -365,7 +365,7 @@ function App() {
       round: 1,
       zone: zoneNumber
     }]);
-    sendChoiceEvent(1, zoneNumber);
+    sendChoiceEvent(1, zoneNumber, selectedLanguage);
   };
 
   // Handler for completing pre-step-1 intro and proceeding to Step 2
@@ -404,7 +404,7 @@ function App() {
       round: currentRound,
       zone: zoneNumber
     }]);
-    sendChoiceEvent(currentRound, zoneNumber);
+    sendChoiceEvent(currentRound, zoneNumber, selectedLanguage);
   };
 
   // Handler for completing a round narrative and proceeding to next round

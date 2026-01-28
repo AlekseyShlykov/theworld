@@ -46,17 +46,19 @@ export function getCountry(): string {
 
 /**
  * Send one choice event to the Web App. No-op if VITE_ANALYTICS_WEB_APP_URL is not set.
- * round: 1..8, choice: 1..5 (zone).
+ * round: 1..8, choice: 1..5 (zone), language: e.g. "en" or "ru" (optional).
  */
-export function sendChoiceEvent(round: number, choice: number): void {
+export function sendChoiceEvent(round: number, choice: number, language?: string): void {
   const url = import.meta.env.VITE_ANALYTICS_WEB_APP_URL;
   if (!url || typeof url !== 'string' || url.trim() === '') return;
 
+  const lang = language && String(language).trim() !== '' ? String(language).trim() : 'unknown';
   const payload = {
     timestamp: new Date().toISOString(),
     sessionId: getOrCreateSessionId(),
     country: getCountry(),
     device: getDevice(),
+    language: lang,
     round,
     choice,
     eventId: generateId(),
@@ -66,6 +68,7 @@ export function sendChoiceEvent(round: number, choice: number): void {
   const body = 'payload=' + encodeURIComponent(JSON.stringify(payload));
   fetch(url.trim(), {
     method: 'POST',
+    mode: 'no-cors',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body,
   }).catch(() => {

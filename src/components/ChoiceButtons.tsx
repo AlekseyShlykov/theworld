@@ -36,19 +36,18 @@ export const ChoiceButtons: React.FC<ChoiceButtonsProps> = ({
       (window as any).playClickSound();
     }
 
-    // Mobile: first tap selects, second tap confirms
-    if (tentativeSelection === areaId) {
-      setHasSelected(true);
-      onSelect(areaId);
-      setTentativeSelection(null);
-    } else {
-      setTentativeSelection(areaId);
-      onHover(areaId);
-      
-      // Auto-confirm after 300ms if on desktop (has mouse)
-      if (window.matchMedia('(pointer: fine)').matches) {
+    const isDesktop = window.matchMedia('(pointer: fine)').matches;
+
+    if (isDesktop) {
+      // Desktop: first click selects, auto-confirm after 300ms
+      if (tentativeSelection === areaId) {
+        setHasSelected(true);
+        onSelect(areaId);
+        setTentativeSelection(null);
+      } else {
+        setTentativeSelection(areaId);
+        onHover(areaId);
         setTimeout(() => {
-          // If still the same selection and not already selected, auto-confirm
           setTentativeSelection(prev => {
             if (prev === areaId && !hasSelected) {
               setHasSelected(true);
@@ -59,6 +58,11 @@ export const ChoiceButtons: React.FC<ChoiceButtonsProps> = ({
           });
         }, 300);
       }
+    } else {
+      // Mobile: single tap immediately confirms selection
+      setHasSelected(true);
+      onSelect(areaId);
+      setTentativeSelection(null);
     }
   };
 

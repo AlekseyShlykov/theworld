@@ -6,7 +6,7 @@ let globalAudioInstance: HTMLAudioElement | null = null;
 let globalIsPlaying = false;
 let globalListeners: Set<(isPlaying: boolean) => void> = new Set();
 
-// Music management - always plays round1.mp3 continuously
+// Music management - plays music.mp3 continuously (toggle via footer button)
 // currentRound parameter kept for backward compatibility but not used
 export const useMusic = (_currentRound: number) => {
   const [isPlaying, setIsPlaying] = useState(globalIsPlaying);
@@ -18,13 +18,13 @@ export const useMusic = (_currentRound: number) => {
       hasInitializedRef.current = true;
       
       const baseUrl = import.meta.env.BASE_URL;
-      const audio = new Audio(`${baseUrl}assets/audio/round1.mp3`);
+      const audio = new Audio(`${baseUrl}assets/audio/music.mp3`);
       audio.loop = true; // Loop continuously
       audio.volume = 0.5; // Set volume to 50%
       
       // Handle errors gracefully
       audio.addEventListener('error', () => {
-        console.warn('Background music file (round1.mp3) not found or failed to load');
+        console.warn('Background music file (music.mp3) not found or failed to load');
       });
 
       // Add ended event listener as fallback to ensure continuous looping

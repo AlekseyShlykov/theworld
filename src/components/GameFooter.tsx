@@ -73,9 +73,9 @@ export const GameFooter: React.FC<GameFooterProps> = ({
     window.open('https://x.com/buildtoundrstnd', '_blank');
   };
 
-  const handleEmailClick = () => {
+  const handlePatreonClick = () => {
     playClickSound();
-    window.location.href = 'mailto:buildtounderstand@gmail.com';
+    window.open('https://patreon.com/buildtounderstand', '_blank');
   };
 
   // Expose playClickSound to window for use in other components
@@ -128,9 +128,9 @@ export const GameFooter: React.FC<GameFooterProps> = ({
             ariaLabel="Visit my X (Twitter)"
           />
           <FooterButton
-            icon={`${baseUrl}assets/letter.png`}
-            onClick={handleEmailClick}
-            ariaLabel="Send email"
+            icon={`${baseUrl}assets/supportme.png`}
+            onClick={handlePatreonClick}
+            ariaLabel="Support on Patreon"
           />
         </div>
       </div>

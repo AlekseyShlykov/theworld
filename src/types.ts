@@ -1,5 +1,5 @@
 // Language type
-export type Language = 'en' | 'ru';
+export type Language = 'en' | 'ru' | 'es' | 'fr' | 'ja';
 
 // Game data types
 export interface Area {

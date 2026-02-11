@@ -29,16 +29,23 @@ export const TopBar: React.FC<TopBarProps> = ({
   // Available languages configuration
   const availableLanguages: LanguageOption[] = [
     { code: 'en', label: 'EN' },
-    { code: 'ru', label: 'RU' }
+    { code: 'ru', label: 'RU' },
+    { code: 'es', label: 'ES' },
+    { code: 'fr', label: 'FR' },
+    { code: 'ja', label: 'JA' }
   ];
 
   // Get title based on current round and screen state
   const getTitle = (): string => {
     if (!texts || !texts.header) {
       // Fallback to default title if texts not loaded
-      return currentLanguage === 'ru' 
-        ? 'Ружья, микробы и сталь' 
-        : 'Guns, Germs & Steel';
+      const fallbackTitles: Partial<Record<Language, string>> = {
+        ru: 'Ружья, микробы и сталь',
+        es: 'Armas, gérmenes y acero',
+        fr: 'De l\'inégalité parmi les sociétés',
+        ja: '銃・病原菌・鉄'
+      };
+      return fallbackTitles[currentLanguage] || 'Guns, Germs & Steel';
     }
 
     // Use introTitle if we're on intro/start screens

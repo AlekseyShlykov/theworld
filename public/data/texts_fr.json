@@ -1,0 +1,222 @@
+{
+  "intro": {
+    "screen1": {
+      "title": "L'évolution des civilisations",
+      "subtitle": "Une courte histoire interactive sur les facteurs qui ont façonné l'essor des civilisations. D'après le livre De l'inégalité parmi les sociétés de Jared Diamond.",
+      "button": "Commencer"
+    },
+    "screen2": {
+      "text": "Les civilisations se sont toujours développées de manière inégale.\n\n 1532. Une bande de 168 aventuriers espagnols menés par Francisco Pizarro parvint à capturer Atahualpa — le souverain du plus vaste et du plus avancé des empires du Nouveau Monde. Les Espagnols étaient en terre étrangère, ne savaient presque rien des peuples locaux et étaient complètement coupés des leurs."
+    },
+    "screen3": {
+      "text": "Atahualpa était au cœur de son royaume — à Cajamarca, entouré de plus d'un million de ses sujets.\n\nPourtant les hommes de Pizarro le capturèrent en quelques minutes lors de leur premier affrontement — et le gardèrent prisonnier huit mois. Ils reçurent une rançon immense… et l'exécutèrent quand même. Cet événement devint un tournant qui accéléra la conquête européenne de l'Empire inca."
+    },
+    "screen4": {
+      "text": "Nous connaissons l'issue. Le Nouveau Monde a été colonisé par les Européens. Mais pourquoi en fut-il ainsi, et non l'inverse ?\n\nPourquoi le peuple d'Atahualpa n'a-t-il pas navigué vers l'Europe pour la conquérir ?\nPourquoi les maladies européennes furent-elles plus meurtrières et les armes européennes plus avancées ? Quels facteurs ont façonné tout cela ?\n\nCe court jeu propose une explication, d'après le livre De l'inégalité parmi les sociétés de Jared Diamond. Le jeu simplifie certains points ; si l'histoire vous intéresse, je vous recommande vivement de lire le livre. Il en vaut la peine.",
+      "button": "Commencer le jeu"
+    }
+  },
+  "rounds": {
+    "1": {
+      "introText": "Commençons par le début ! Il y a environ 8 000 ans.\n\nDepuis des centaines de milliers d'années, les humains s'étaient répandus sur la planète, s'installant pas à pas sur de nouvelles terres. À un moment donné, ce long voyage prit fin. Les premiers centres des futures civilisations émergèrent.\n\nBien sûr, il y en eut plus de cinq, mais nous allons suivre ces cinq-ci et voir comment ils se développent sur 8 000 ans. Un coup — mille ans.\nLeur succès ou leur échec dépendra de leurs conditions de départ et de vos choix. Faisons leur connaissance.",
+      "zoneTexts": {
+        "1": "Le premier centre, Montagne Orange, est coupé du monde par de hautes montagnes. Y parvenir est difficile. Il est riche en grands animaux et en plantes productives. Grâce à l'isolement, les tribus y sont moins nombreuses et la terre suffit à tous.",
+        "2": "La deuxième région, Vallée Bleue, est un vaste territoire riche en grands animaux. La viande y est bien plus abondante que les plantes comestibles. De nombreuses tribus y vivent et les conflits entre elles sont fréquents.",
+        "3": "La troisième région, Jungles Jaunes, se trouve sur un autre continent. Peu de grands animaux, mais des plantes en abondance. C'est une région isolée qui se développe seule, et peu de gens y vivent.",
+        "4": "Le quatrième centre, Rivière Verte, est sur un troisième grand continent. Le climat y est doux, les prédateurs rares et les plantes comestibles abondantes — pas étonnant que bien des tribus y aient été attirées.",
+        "5": "La cinquième région, Croissant Rouge — de vastes terres fertiles où de nombreuses tribus vivent côte à côte. Les grands animaux y sont nombreux, mais les plantes utiles moins."
+      },
+      "preChoiceText": "Cette histoire ne sera pas passive — vous pouvez en changer le cours. Comment ? Vous contrôlerez le hasard, l'« atout » de l'histoire.\n\nVous décidez où une idée brillante apparaît en premier, où naît un leader talentueux capable d'unir les gens mieux que d'autres. Quel centre obtiendra un petit avantage dans le prochain millénaire ?",
+      "postChoiceText": "Que s'est-il passé durant ce millénaire ?\n\nLes centres des futures civilisations sont passés du nomadisme à la vie sédentaire, chacun à son rythme. Pendant des millénaires, nomades et sédentaires ont vécu côte à côte. La sédentarisation a été la plus rapide là où il y avait assez de plantes, des calories fiables, et où la raréfaction des grands animaux a poussé à trouver des moyens plus durables de se nourrir.\n\nLes tribus sédentaires ont grandi et progressé plus vite. Leurs vies sont devenues plus prévisibles et les enfants sont nés plus souvent — tous les deux ans, contre une fois tous les quatre ans chez les nomades. Avec le temps, les sociétés sédentaires sont devenues plus nombreuses et ont supplanté les nomades."
+    },
+    "2": {
+      "introText": "Mille ans ont passé. Les cinq centres des futures civilisations étaient passés à la vie sédentaire — les uns plus tôt, les autres plus tard. Les premières grandes agglomérations avec leurs propres chefs ont commencé à apparaître. Mais chacune a vite atteint une limite.\n\nIl n'y avait tout simplement pas assez de terres fertiles, de plantes et d'animaux pour continuer à croître. Voyons comment chaque centre s'est développé.",
+      "zoneTexts": {
+        "1": "Montagne Orange s'est développée rapidement. Les gens ont tôt appris à cultiver assez de plantes, et les grands animaux les ont aidés à survivre aux années de disette. Ils ont peu à peu vu les avantages de la sédentarisation.\n\nAvec peu de voisins, les expériences ont été un peu moins nombreuses, mais l'abondance de plantes a rendu beaucoup de tentatives réussies.",
+        "2": "Vallée Bleue a eu des difficultés. L'abondance d'animaux a maintenu ici la vie nomade plus longtemps qu'ailleurs. Les heurts avec les voisins étaient fréquents.\n\nMais les mêmes facteurs qui freinaient le développement offrent maintenant une chance. Les plantes sont rares ici, mais de nombreuses tribus voisines permettent d'échanger les meilleures variétés et d'accélérer la production alimentaire.",
+        "3": "Sur un autre continent, dans les Jungles Jaunes, le faible nombre de grands animaux — y compris de prédateurs — a permis une expansion rapide. La richesse en plantes a facilité le passage à la vie sédentaire.\n\nLe millénaire suivant s'est passé dans le calme : les gens ont essayé différentes cultures et choisi les meilleures. La population a cru rapidement.",
+        "4": "Rivière Verte a prospéré : plantes en abondance, peu de grands prédateurs, et un passage rapide à la sédentarisation.\n\nLes tribus y sont nombreuses aussi, ce qui a permis l'échange de nouvelles cultures — parfois par le commerce, parfois par la force.",
+        "5": "Croissant Rouge s'est développé lentement. L'abondance d'animaux a maintenu les gens dans le nomadisme, et des voisins nombreux ont créé des conflits constants.\n\nMais bien que les plantes soient rares, les expériences ont proliféré grâce aux tribus voisines. Le territoire a grandi lentement mais sûrement."
+      },
+      "preChoiceText": "Dans le prochain millénaire, les centres de civilisation grandiront grâce à l'agriculture : différentes cultures, méthodes de culture et nouvelles techniques.\n\nIls apprendront par tâtonnements. Mais encore une fois tout dépendra de la chance : qui découvrira le premier la meilleure culture ?",
+      "postChoiceText": "Durant ce millénaire, les gens ont peu à peu maîtrisé l'agriculture. Ils ont essayé différentes cultures et choisi les plus fiables — comme le blé ou le riz. C'est devenu la base de leur alimentation pour les millénaires à venir.\n\nLe hasard a joué un rôle énorme. Quelles plantes étaient disponibles, combien, à quel point elles étaient faciles à domestiquer. Le blé était bien plus facile que, disons, les pommiers.\n\nPeu à peu, l'agriculture est devenue plus efficace que la chasse — et toutes les sociétés ont opéré la transition."
+    },
+    "3": {
+      "introText": "Encore mille ans ont passé. Tous les centres de civilisation ont grandi, chacun à sa manière. Ceux qui ont obtenu les cultures les plus efficaces plus tôt se sont étendus plus vite. Tôt ou tard, toute technologie atteint une limite. Il y a un maximum de terres qu'une personne peut cultiver à la main.\n\nPour faire le bond suivant, les gens avaient besoin de quelque chose de nouveau — des aides qui puissent tirer la charrue, fournir viande, lait et laine. Ces aides, ce furent les animaux domestiques.\n\nVoyons ce qui s'est passé dans chaque centre.",
+      "zoneTexts": {
+        "1": "Les mille dernières années ont été un succès pour Montagne Orange. Les meilleures cultures ont été trouvées rapidement, et les terres se sont étendues.\n\nCe millénaire s'annonce prometteur aussi — il y a assez de grands animaux pour que certains puissent convenir à l'élevage.",
+        "2": "Le développement a été difficile dans Vallée Bleue à cause de la faible variété de plantes comestibles. Les voisins n'ont cessé de faire pression, tentant de s'emparer des terres fertiles.\n\nMais ce millénaire apporte une chance. Il y a ici beaucoup de grands animaux, et certains pourraient convenir à la domestication.",
+        "3": "Les Jungles Jaunes ont grandi régulièrement. Les terres se sont étendues, les meilleures cultures étaient abondantes, et les seuls obstacles étaient les barrières naturelles — montagnes et rivières.\n\nLes mille ans à venir seront difficiles. Il n'y a presque pas de grands animaux ici, et les chances de trouver des espèces adaptées sont très faibles.",
+        "4": "Tout s'est bien passé à Rivière Verte. La richesse en plantes a assuré une croissance rapide, et les voisins n'ont pas gêné.\n\nAvec les animaux, c'est différent. Ils sont peu nombreux, et trouver des espèces adaptées sera difficile.",
+        "5": "Ce millénaire a été difficile pour Croissant Rouge. Peu de plantes, forte concurrence.\n\nMais il y a ici très nombreux grands animaux. Cela ouvre de vastes possibilités — les utiliser pour l'élevage, les élever pour la viande, les utiliser pour le transport."
+      },
+      "preChoiceText": "Dans le prochain millénaire, les gens commenceront à domestiquer les animaux. Ils tireront la charrue, fourniront viande, laine et serviront de transport.\n\nMais une domestication réussie est toujours un mélange de chance et des traits des animaux. Certains sont dociles, d'autres non ; certains ne se reproduisent pas en captivité, d'autres ont besoin de trop de nourriture. Quel centre aura de la chance cette fois ?",
+      "postChoiceText": "Durant ce millénaire, les humains ont domestiqué de nombreux animaux, et cela a transformé l'élevage. Bovins, moutons, chèvres, porcs et chevaux sont devenus le fondement de l'agriculture et de la vie quotidienne.\n\nMais le succès était impossible sans chance : tous les animaux ne sont pas aptes à la domestication. Le régime alimentaire, le taux de croissance, la capacité à se reproduire en captivité, le comportement de troupeau et bien sûr le tempérament comptaient tous.\n\nPar exemple, les zèbres diffèrent à peine des chevaux, mais ils n'ont jamais été domestiqués — ils sont trop agressifs.\n\nLes animaux domestiques ont donné aux sociétés un élan considérable : plus de nourriture, plus de vêtements, le transport et de nouveaux outils. Ils sont devenus une partie cruciale de l'histoire humaine."
+    },
+    "4": {
+      "introText": "La domestication des animaux a ouvert la voie à de plus grandes récoltes et à un élevage plus prévisible. Les marchands purent voyager plus loin, et les bêtes de somme portèrent de lourdes charges, accélérant le commerce et l'échange d'idées.\n\nMais ce progrès a créé un nouveau problème : il y avait trop d'informations. La mémoire ne pouvait plus suivre, et transmettre le savoir sur de longues distances était devenu presque impossible. Il fallait inventer quelque chose pour enregistrer ces informations. Ce fut ainsi que l'écriture est apparue.\n\nVoyons quelles conditions chaque centre avait.",
+      "zoneTexts": {
+        "1": "À Montagne Orange, tout s'est développé rapidement. Assez d'animaux, de bonnes récoltes, une population croissante.\n\nMais les barrières naturelles — les mêmes montagnes et rivières qui protégeaient autrefois des envahisseurs — gênent maintenant. Le commerce est plus lent, et les idées arrivent moins vite.",
+        "2": "À Vallée Bleue, la grande variété d'animaux a permis une hausse rapide de la production alimentaire. Le territoire a grandi, et les voisins ont commercé et partagé des idées.\n\nLes conditions pour que l'écriture émerge ici sont les plus favorables. Il y a beaucoup à suivre, beaucoup de partenaires commerciaux, et un besoin clair d'enregistrer les informations.",
+        "3": "Les Jungles Jaunes ont eu des difficultés dans les mille dernières années. Il n'y a presque pas d'animaux, et la terre est encore cultivée à la main.\n\nLe besoin d'écriture est faible ici, et les voisins encore moins. Inventer l'écriture dans de telles conditions est difficile.",
+        "4": "À Rivière Verte, il y a peu de grands animaux — c'était un atout pour la sécurité. Mais quand il a fallu augmenter les rendements, c'est devenu une faiblesse.\n\nLe commerce se développe ici, et les voisins deviennent de plus en plus des partenaires plutôt que des ennemis. Peut-être que l'écriture apparaîtra par emprunt.",
+        "5": "À Croissant Rouge, les mille dernières années ont été un succès. Les animaux ont été domestiqués tôt, et le commerce a prospéré.\n\nL'écriture a de bonnes chances d'apparaître ici — il y a la demande, le besoin, et des voisins qui réfléchissent dans la même direction et expérimentent."
+      },
+      "preChoiceText": "Dans le prochain millénaire, l'écriture apparaîtra ou sera empruntée dans tous les centres de civilisation. Mais celui qui le fera le premier gagnera un énorme avantage.\n\nDans quelle région cette idée prendra-t-elle feu ?",
+      "postChoiceText": "L'écriture n'est apparue dans l'histoire humaine qu'une ou quelques fois. Pour autant qu'on sache, d'abord chez les Sumériens, puis chez les peuples indigènes du Mexique. Les systèmes égyptien et chinois ont peut-être émergé indépendamment aussi.\n\nBien plus souvent, l'écriture s'est répandue par l'échange et le commerce. Quelqu'un l'a vue chez les voisins et a commencé à créer son propre système, sachant déjà que c'était possible.\n\nPour que l'écriture prenne racine, il fallait des ressources. Des scribes capables d'écrire et de tenir les comptes, et un besoin de stocker et de transmettre l'information.\n\nEt avec le temps, l'écriture est devenue un outil pour l'émotion, l'histoire et la littérature."
+    },
+    "5": {
+      "introText": "Désormais, l'écriture fait partie de la vie dans tous les centres de civilisation. Ici elle sert surtout à la comptabilité, là on en est déjà aux premiers livres.\n\nLes civilisations se sont renforcées, ont appris à gouverner de vastes territoires et à commercer de plus en plus entre elles. Elles échangent idées, plantes, animaux et technologies.\n\nEt voici qu'entre en jeu un facteur que personne ne choisit — la géographie du continent. Voyons dans quel état chacun est parvenu à ce stade.",
+      "zoneTexts": {
+        "1": "À Montagne Orange, l'écriture est apparue tôt, bien qu'elle se soit développée de façon singulière faute de voisins nombreux.\n\nMaintenant l'enjeu est le commerce et l'échange d'idées. Ce qui compte le plus, c'est la forme du continent : s'étire-t-il du nord au sud ou d'est en ouest ? Cela détermine la facilité avec laquelle plantes et animaux se diffusent.",
+        "2": "À Vallée Bleue, l'écriture s'est développée vite et bien. Les gens ont appris à enregistrer le savoir et à le transmettre.\n\nLes continents étirés d'est en ouest ont un avantage énorme : le climat est semblable à une même latitude, donc les plantes n'ont pas besoin de s'adapter.\n\nLes conditions de croissance sont plutôt bonnes.",
+        "3": "L'écriture est apparue dans les Jungles Jaunes, mais tard. Pas de besoin urgent, ni assez de voisins pour emprunter l'idée.\n\nLes mille ans à venir seront difficiles. Le continent s'étire du nord au sud, donc à chaque pas une nouvelle zone climatique, de nouvelles maladies, de nouveaux obstacles.",
+        "4": "Rivière Verte s'est développée progressivement. L'écriture a aidé à gouverner de vastes territoires.\n\nMais les barrières naturelles — déserts, montagnes, océans — entravent l'échange d'idées.",
+        "5": "À Croissant Rouge, la civilisation s'est développée rapidement. L'écriture est apparue tôt ou a été empruntée.\n\nLe continent s'étire d'est en ouest, donc le climat est semblable sur de longues distances. Cela crée d'excellentes opportunités pour le commerce et la diffusion des technologies."
+      },
+      "preChoiceText": "Cette fois, la géographie joue un rôle décisif — même si tous les facteurs précédents comptent encore.\n\nOù les marchands auront-ils le plus de chance, et leurs caravanes atteindront-elles le plus souvent les voisins ?",
+      "postChoiceText": "L'orientation des continents est l'une des raisons clés des différences de rythme de développement. Sur les continents étirés d'est en ouest, les zones climatiques vont en parallèle. Les mêmes cultures qui poussent dans une région peuvent donc facilement s'implanter dans une autre à la même latitude.\n\nSur les continents étirés du nord au sud, en revanche, le climat change brutalement : tempéré, subtropical, tropical. Ces changements rendent bien plus difficile la diffusion des plantes et des animaux.\n\nDans chaque nouvelle zone climatique, il faut de nouvelles plantes, de nouveaux animaux, de nouvelles techniques — et ce n'est pas toujours facile."
+    },
+    "6": {
+      "introText": "La géographie a fortement influencé le développement des civilisations. Mais l'humanité fait face à un nouveau défi — né des succès passés. Les épidémies.\n\nPour qu'une maladie devienne une épidémie, il faut plusieurs conditions. Les plus importantes : des villes denses et la proximité du bétail. La croissance des populations urbaines et l'importance du commerce entre les villes ont créé des voies idéales pour l'apparition et la propagation des maladies.",
+      "zoneTexts": {
+        "1": "À Montagne Orange, tout allait bien. La population grandissait, les territoires s'étendaient.\n\nMais les conditions pour les épidémies sont réunies ici. Montagnes et rivières ralentiront un peu la propagation des maladies, mais ne l'arrêteront pas.",
+        "2": "Les mille dernières années ont été un succès pour Vallée Bleue. Le commerce a prospéré, les idées ont circulé.\n\nMais maintenant les villes denses et les routes commerciales animées apporteront non seulement des biens mais aussi des maladies.",
+        "3": "Les Jungles Jaunes ont grandi lentement, mais c'est devenu un atout.\n\nPeu de bétail et peu de peuplements denses ici, donc les épidémies auront plus de mal à s'installer.",
+        "4": "La population et l'échange d'idées ont grandi à Rivière Verte. Les premiers contacts par-delà l'océan ont commencé.\n\nLes maladies apparaîtront, mais en moins grand nombre qu'ailleurs à cause de l'isolement. Il n'empêche, on ne peut pas éviter complètement les épidémies.",
+        "5": "Les mille dernières années ont été un âge d'or pour Croissant Rouge. La population a grandi, le commerce a prospéré.\n\nMais c'est précisément ce qui rend la région vulnérable : une population énorme et une position au carrefour des routes commerciales. Les épidémies commenceront sans doute ici puis suivront ces routes."
+      },
+      "preChoiceText": "Il est temps de choisir à nouveau. Où apparaîtra un guérisseur ou un savant qui comprendra le premier comment contenir les épidémies ?",
+      "postChoiceText": "Les épidémies ont changé le monde autant que les guerres. Les maladies européennes ont tué plus de gens dans le Nouveau Monde que les Européens eux-mêmes. Les germes de l'Ancien Monde se sont révélés bien plus mortels que les locaux, et les Européens y étaient immunisés.\n\nPourquoi ? Beaucoup d'épidémies sont nées des animaux domestiques. Eux aussi souffraient de « maladies de la promiscuité », et certaines ont gagné l'homme.\n\nDès qu'on a domestiqué les animaux, on a gagné à la fois d'énormes avantages et de sérieux risques. Mais plus tard, le développement de la médecine, surtout des vaccins, a donné aux gens les moyens de contenir les épidémies."
+    },
+    "7": {
+      "introText": "Nous sommes presque à notre époque. Les épidémies ont coûté beaucoup de vies dans certaines régions mais à peine touché d'autres. Ces « chanceux » manquent aussi d'immunité, et d'autres épreuves les attendent.\n\nMaintenant le moteur principal du développement, c'est la technologie. Elle a toujours évolué, bien sûr, mais c'est seulement maintenant qu'elle commence à façonner le cours de l'histoire. Inventer ne suffit pas — il faut que la société puisse l'adopter et en bénéficier.\n\nLes inventions naissent de la curiosité des individus. Les technologies, elles, viennent de l'accumulation de savoirs multiples qui se nourrissent les uns les autres. Pour créer l'imprimerie, une idée ne suffit pas — il faut du papier, la métallurgie, les caractères mobiles, l'encre, les presses, et bien sûr l'écriture.\n\nVoyons comment nos centres se développeront dans le prochain millénaire.",
+      "zoneTexts": {
+        "1": "L'isolement a aidé Montagne Orange à éviter les pires épidémies. Les frontières ont été fermées à temps, et les maladies passaient rarement.\n\nMais maintenant ce même isolement devient un obstacle. Quand une société n'interagit pas avec ses voisins, la technologie stagne — ou disparaît si elle perd temporairement sa valeur pratique.",
+        "2": "Les épidémies ont coûté beaucoup de vies à Vallée Bleue. Mais elles ont aussi stimulé le développement de la médecine. L'espérance de vie a augmenté, les gens ont eu plus de temps pour expérimenter et découvrir.\n\nCe centre a d'excellentes conditions pour le progrès technologique : beaucoup de voisins, un commerce actif, un échange constant d'idées par les migrations et le choc des cultures.",
+        "3": "Les Jungles Jaunes ont bénéficié d'être loin des grandes routes commerciales. Les épidémies ont à peine touché la région. La population a grandi, le territoire s'est étendu.\n\nMais peu de voisins signifient moins d'idées à emprunter. Certaines inventions peuvent apparaître ici sans jamais se répandre, faute de besoin.",
+        "4": "Un commerce limité a protégé Rivière Verte des pires effets des épidémies. Pourtant des maladies sont arrivées et ont réduit la population.\n\nNéanmoins les conditions de croissance technologique sont bonnes. Pas beaucoup de voisins, mais assez pour que certaines inventions prennent racine et se diffusent.",
+        "5": "À Croissant Rouge, les mille dernières années ont été dures. Les épidémies ont porté un coup terrible ; population et territoire ont diminué.\n\nMais cela a forcé les gens à développer la médecine et à chercher des solutions. Maintenant que le commerce reprend, ce centre peut se développer plus vite que les autres."
+      },
+      "preChoiceText": "Il est temps de choisir. Où apparaîtront les savants les plus curieux ? Où les dirigeants seront-ils assez audacieux pour investir dans les nouvelles idées et en profiter ?",
+      "postChoiceText": "D'où viennent les technologies ?\n\nL'envie d'inventer est un trait humain partout. Mais inventer est une chose — en faire une technologie pratique en est une autre.\n\nLa plupart des innovations ne naissent pas de rien. Elles viennent de l'échange d'idées, de l'emprunt, du contact avec les cultures voisines. Plus les voisins diffèrent, plus on peut adopter de solutions.\n\nCe n'est pas suffisant. Le développement technologique exige bien des conditions : une longue vie pour apprendre, une main-d'œuvre coûteuse pour encourager la mécanisation, l'éducation et des lois qui protègent les inventeurs.\n\nIl se trouve que les institutions d'une société façonnent le développement technologique autant que la curiosité humaine."
+    },
+    "8": {
+      "introText": "Nous voici aux mille dernières années. Dans notre récit, les humains sont passés de petites communautés sédentaires à de grands États armés de technologies modernes.\n\nLe pouvoir a accompagné ce voyage, bien qu'en coulisses. Tout a commencé par des groupes de parenté d'une cinquantaine de personnes, unis par le sang. Puis sont venues les tribus. Des centaines de personnes, parmi lesquelles des rôles non productifs — artisans et chefs.\n\nPuis les chefferies. Des regroupements de dizaines de milliers de personnes. Les gens ont commencé à vivre aux côtés d'étrangers, et il a fallu un système de gouvernement pour maintenir l'ordre.\n\nPuis les États — de vastes structures gouvernant des millions de personnes par une bureaucratie complexe. Dans ce dernier millénaire, le facteur décisif sera les institutions du pouvoir.",
+      "zoneTexts": {
+        "1": "Les frontières naturelles ont rendu la civilisation de Montagne Orange distincte, mais un grand nombre de voisins a aidé à développer la gouvernance.\n\nMalgré un isolement relatif, ce centre est devenu l'un des plus avancés — même si pas par le chemin le plus rapide.",
+        "2": "L'abondance de voisins a forcé Vallée Bleue à apprendre tôt que la taille de la population, c'est le pouvoir. Pour se défendre et grandir, il a fallu créer des systèmes de gouvernance au service de toute la société, pas seulement de l'élite.\n\nEt maintenant, dans ce dernier millénaire, ces efforts portent leurs fruits.",
+        "3": "Un long isolement et le manque de voisins ont beaucoup retardé l'émergence d'institutions étatiques.\n\nÊtre coupé des routes commerciales mondiales a permis un développement calme longtemps, mais pas aussi rapide que dans d'autres centres.",
+        "4": "L'isolement a protégé Rivière Verte des épidémies, mais il a aussi ralenti le développement technologique et des institutions de gouvernance.\n\nLa bureaucratie s'est tout de même formée, plus tard qu'ailleurs, ce qui a permis à l'État de se développer de façon durable.",
+        "5": "La géographie a forcé ce centre à créer tôt des institutions de pouvoir efficaces. Certains des premiers bureaucrates sont apparus ici, et un riche cercle de voisins a permis d'adopter les meilleures pratiques.\n\nC'est dans ce millénaire que ces avantages accumulés joueront à plein."
+      },
+      "preChoiceText": "Les grands dirigeants, penseurs et réformateurs façonnent l'histoire autant que les inventeurs.\n\nOù apparaîtront les chefs les plus sages ?",
+      "postChoiceText": "Pendant des millénaires ont existé des communautés de parenté et tribales. Elles différaient par la taille, la densité et le degré de sédentarisation.\n\nIl y a environ 7 500 ans sont apparues les chefferies : de vastes regroupements où les gens ont appris à vivre aux côtés d'étrangers. Le chef a gagné le droit d'utiliser la force, de trancher les conflits et d'allouer les ressources.\n\nMais trop dépendait du caractère du chef. Il pouvait servir la société ou tout faire pour lui et son élite. Il existait des moyens de consolider le pouvoir : désarmer la population, renforcer l'élite, construire des projets grandioses, créer une religion ou une idéologie.\n\nPlus tard, il y a environ 6 000 ans, sont apparus les premiers États — bien plus stables et efficaces. Ils étaient dirigés par une classe de bureaucrates professionnels chargés d'allouer les ressources et de maintenir l'ordre.\n\nCe système a permis de gouverner des millions de personnes, de mener de vastes entreprises et de construire des armées puissantes. Ce sont les États qui sont devenus la forme de pouvoir qui a façonné le reste de l'histoire humaine."
+    }
+  },
+  "ui": {
+    "next": "Suivant",
+    "start": "Commencer",
+    "startGame": "Commencer le jeu",
+    "nextRound": "Ronde suivante",
+    "chooseLanguage": "Choisir la langue",
+    "english": "English",
+    "russian": "Русский"
+  },
+  "header": {
+    "introTitle": "L'évolution des civilisations",
+    "endingTitle": "Le monde",
+    "roundTitles": {
+      "round1": "Âge de pierre",
+      "round2": "Production alimentaire",
+      "round3": "Domestication des animaux",
+      "round4": "Écriture",
+      "round5": "Géographie et climat",
+      "round6": "Germes et épidémies",
+      "round7": "Technologies",
+      "round8": "Pouvoir"
+    }
+  },
+  "areaButtons": {
+    "area1": "Montagne Orange",
+    "area2": "Vallée Bleue",
+    "area3": "Jungles Jaunes",
+    "area4": "Rivière Verte",
+    "area5": "Croissant Rouge"
+  },
+  "final": {
+    "mapText": "Voici le voyage que notre monde a accompli en 8 000 ans. Nous avons suivi le développement de cinq centres de civilisation et vu quels facteurs ont façonné leur destin.\n\nBeaucoup a dépendu du hasard — où poussaient les céréales adaptées, où vivaient les grands animaux, et comment la géographie des continents était disposée. Mais vos choix ont aussi façonné le monde qui en a résulté.",
+    "endingText": "Revenons à l'histoire du conquistador Pizarro. Maintenant, après tout ce voyage, nous pouvons répondre à la question principale.\nPourquoi les Européens sont-ils venus sur les terres d'Atahualpa, et non l'inverse ?\n\nPremièrement, la technologie. Les peuples d'Eurasie avaient des épées d'acier, des armures, des mousquets, de l'artillerie et des chevaux — des animaux qui n'existaient tout simplement pas dans les Amériques.\n\nDeuxièmement, l'écriture. Elle existait en Eurasie depuis des millénaires. Grâce à elle, les hommes de Pizarro en savaient beaucoup sur le peuple inca avant même de les rencontrer.\n\nTroisièmement, les États. Seules les grandes puissances centralisées pouvaient équiper des expéditions océaniques.\n\nQuatrièmement, les avantages en élevage et en énergie. Les Eurasiens utilisaient depuis longtemps le bétail, les chevaux, les moulins à eau et à vent. Dans les Amériques, le travail lourd se faisait encore à la main — les seuls animaux disponibles étaient les lamas.\n\nCinquièmement, la maladie. Les épidémies eurasiennes se sont révélées plus meurtrières que toute arme.\n\nTous ces facteurs se sont conjugués — et ont rendu possible l'issue que nous connaissons par l'histoire.",
+    "authorshipText": "Ce longread interactif a été créé par Aleksey Shlykov, d'après le livre De l'inégalité parmi les sociétés de Jared Diamond. J'espère qu'il vous a intéressé ! Le livre offre bien plus et mérite d'être lu.\n\nSi vous avez aimé, vous pouvez aussi essayer mes autres jeux éducatifs.",
+    "illustrationsCredit": "Illustration de la carte par Ekaterina Zueva.",
+    "playAgain": "Rejouer",
+    "myWebsite": "Mon site : buildtounderstand.dev",
+    "illustratorButton": "Ekaterina Zueva, illustratrice",
+    "supportMe": "Soutenez-moi"
+  },
+  "timeline": {
+    "title": "Chronologie historique",
+    "axisYears": "Années",
+    "axisTime": "Temps",
+    "achievementsTitle": "Réalisations par ronde :",
+    "roundLabel": "Ronde",
+    "yearLabel": "Année",
+    "milestones": {
+      "sedentary": "Fin du nomadisme / transition à la sédentarisation",
+      "crops": "Meilleures cultures alimentaires identifiées",
+      "domestication": "Domestication des animaux",
+      "writing": "Écriture développée ou adoptée",
+      "trade": "Expansion des réseaux commerciaux et échanges culturels",
+      "epidemics": "Premières épidémies et mesures de confinement",
+      "technology": "Percées industrielles et technologiques",
+      "governance": "Institutions de gouvernance efficaces"
+    }
+  },
+  "populationChart": {
+    "title": "Dynamique démographique",
+    "axis": {
+      "time": "Temps (années)",
+      "population": "Population"
+    },
+    "tooltip": {
+      "round": "Ronde",
+      "acc": "Acc",
+      "power": "Puissance",
+      "populationValue": "Population",
+      "year": "Année"
+    },
+    "explanation": "",
+    "yAxisLabel": "Population"
+  },
+  "dominanceChart": {
+    "title": "Périodes de domination civilisationnelle",
+    "axis": {
+      "time": "Temps (années)",
+      "dominance": "Indice de domination (%)"
+    },
+    "tooltip": {
+      "round": "Ronde",
+      "year": "Année",
+      "dominance": "Domination",
+      "acc": "Acc",
+      "power": "Puissance",
+      "rawValue": "Acc × Puissance"
+    },
+    "explanation": ""
+  },
+  "futureProjectionChart": {
+    "title": "Projection future : 4 000 prochaines années",
+    "axis": {
+      "time": "Temps (années)",
+      "development": "Force de développement"
+    },
+    "tooltip": {
+      "predicted": "Prévu",
+      "round": "Ronde",
+      "acc": "Acc",
+      "power": "Puissance",
+      "value": "Valeur"
+    },
+    "explanation": "Ce graphique projette comment chaque centre de civilisation aurait continué à se développer au-delà des 8 000 ans. Les projections sont basées uniquement sur la tendance de croissance."
+  }
+}

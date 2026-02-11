@@ -38,10 +38,17 @@ export const TTSProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       
       const cleanText = text.trim();
       const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.lang = language === 'ru' ? 'ru-RU' : 'en-US';
-      
+      const langMap: Record<string, string> = {
+        en: 'en-US',
+        ru: 'ru-RU',
+        es: 'es-ES',
+        fr: 'fr-FR',
+        ja: 'ja-JP'
+      };
+      utterance.lang = langMap[language] || 'en-US';
+
       // Get and set a voice
-      const langPrefix = language === 'ru' ? 'ru' : 'en';
+      const langPrefix = language === 'ru' ? 'ru' : language === 'es' ? 'es' : language === 'fr' ? 'fr' : language === 'ja' ? 'ja' : 'en';
       const voice = voices.find(v => v.lang.startsWith(langPrefix)) || voices[0];
       
       if (voice) {

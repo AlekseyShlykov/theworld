@@ -1,0 +1,222 @@
+{
+  "intro": {
+    "screen1": {
+      "title": "La evolución de las civilizaciones",
+      "subtitle": "Una breve historia interactiva sobre los factores que moldearon el auge de las civilizaciones. Basado en el libro Armas, gérmenes y acero de Jared Diamond.",
+      "button": "Comenzar"
+    },
+    "screen2": {
+      "text": "Las civilizaciones siempre se han desarrollado de forma desigual.\n\n1532. Un grupo de 168 aventureros españoles liderados por Francisco Pizarro logró capturar a Atahualpa — el gobernante del imperio más grande y avanzado del Nuevo Mundo. Los españoles estaban en tierras extrañas, sabían casi nada de los pueblos locales y estaban completamente desconectados de los suyos."
+    },
+    "screen3": {
+      "text": "Atahualpa estaba en el corazón de su reino — en Cajamarca, rodeado de más de un millón de sus súbditos.\n\nAun así, los hombres de Pizarro lo capturaron en minutos tras su primer enfrentamiento — y lo mantuvieron prisionero ocho meses. Recibieron un rescate inmenso… y lo ejecutaron de todos modos. Este suceso se convirtió en un punto de inflexión que aceleró la conquista europea del Imperio inca."
+    },
+    "screen4": {
+      "text": "Conocemos el desenlace. El Nuevo Mundo fue colonizado por los europeos. Pero ¿por qué ocurrió así y no al revés?\n\n¿Por qué el pueblo de Atahualpa no navegó a Europa para conquistarla?\n¿Por qué las enfermedades europeas fueron más mortíferas y las armas europeas más avanzadas? ¿Qué factores moldearon todo esto?\n\nEste breve juego ofrece una explicación, basada en el libro Armas, gérmenes y acero de Jared Diamond. El juego simplifica algunas cosas; si la historia te interesa, recomiendo mucho leer el libro. Vale la pena.",
+      "button": "Comenzar el juego"
+    }
+  },
+  "rounds": {
+    "1": {
+      "introText": "¡Empecemos por el principio! Hace unos 8.000 años.\n\nDurante cientos de miles de años, los humanos se habían extendido por el planeta, asentándose poco a poco en nuevas tierras. En algún momento, ese largo viaje llegó a su fin. Surgieron los primeros centros de las futuras civilizaciones.\n\nPor supuesto, hubo más de cinco, pero seguiremos estos cinco y veremos cómo se desarrollan en 8.000 años. Un movimiento — mil años.\nSu éxito o fracaso dependerá de sus condiciones iniciales y de tus elecciones. Conozcámoslos.",
+      "zoneTexts": {
+        "1": "El primer centro, Montaña Naranja, está aislado del mundo por altas montañas. Llegar aquí es difícil. Es rico en grandes animales y plantas productivas. Gracias al aislamiento, hay menos tribus y tierra suficiente para todos.",
+        "2": "La segunda región, Valle Azul, es un vasto territorio rico en grandes animales. Aquí hay mucho más carne que plantas comestibles. Muchas tribus viven en esta región y los conflictos entre ellas son frecuentes.",
+        "3": "El tercer territorio, Junglas Amarillas, está en otro continente. Hay pocos grandes animales pero plantas en abundancia. Es una región aislada que se desarrolla por su cuenta y poca gente vive aquí.",
+        "4": "El cuarto centro, Río Verde, está en un tercer gran continente. El clima es suave, hay pocos depredadores y plantas comestibles en abundancia — no es extraño que muchas tribus hayan sido atraídas aquí.",
+        "5": "La quinta región, Creciente Rojo — amplias tierras fértiles donde muchas tribus conviven. Hay gran cantidad de grandes animales, pero las plantas útiles no son tan numerosas."
+      },
+      "preChoiceText": "Esta historia no será pasiva — puedes cambiar su curso. ¿Cómo? Controlarás el azar, la \"carta wild\" de la historia.\n\nTú decides dónde aparece primero una idea brillante, dónde nace un líder talentoso que puede unir a la gente mejor que otros. ¿Qué centro obtendrá una pequeña ventaja en el próximo milenio?",
+      "postChoiceText": "¿Qué ocurrió en este milenio?\n\nLos centros de las futuras civilizaciones pasaron de una vida nómada a una sedentaria, cada uno a su ritmo. Durante milenios, nómadas y sedentarios convivieron. El paso al asentamiento fue más rápido donde había plantas suficientes, se podían obtener calorías de forma fiable y la pérdida de grandes animales empujó a la gente a buscar formas más sostenibles de conseguir alimento.\n\nLas tribus sedentarias crecieron y se desarrollaron más rápido. Sus vidas se volvieron más predecibles y los hijos nacían con más frecuencia — cada dos años, frente a una vez cada cuatro entre los nómadas. Con el tiempo, las sociedades sedentarias se volvieron más numerosas y desplazaron a las nómadas."
+    },
+    "2": {
+      "introText": "Pasó un milenio. Los cinco centros de las futuras civilizaciones habían pasado a la vida sedentaria — unos antes, otros después. Empezaron a aparecer los primeros asentamientos grandes con sus propios líderes. Pero cada uno pronto tocó techo.\n\nSimplemente no había suficientes tierras fértiles, plantas y animales para seguir creciendo. Veamos cómo se desarrolló cada centro.",
+      "zoneTexts": {
+        "1": "Montaña Naranja se desarrolló rápido. Aquí aprendieron pronto a cultivar suficientes plantas, y los grandes animales les ayudaron a sobrevivir a los años malos. Fueron viendo las ventajas del asentamiento.\n\nCon pocos vecinos hubo algo menos de experimentos, pero la abundancia de plantas hizo que muchos intentos triunfaran.",
+        "2": "Valle Azul lo tuvo difícil. La abundancia de animales mantuvo aquí la vida nómada más tiempo que en otros sitios. Los choques con vecinos eran frecuentes.\n\nPero los mismos factores que frenaban el desarrollo ahora ofrecen una oportunidad. Aquí escasean las plantas, pero muchas tribus vecinas permiten intercambiar las mejores variedades y acelerar la producción de alimentos.",
+        "3": "En otro continente, en Junglas Amarillas, el escaso número de grandes animales — incluidos depredadores — permitió a la gente expandirse rápido. La riqueza de plantas hizo fácil el paso a la vida sedentaria.\n\nLos siguientes mil años pasaron en calma: la gente probó distintos cultivos y eligió los mejores. La población creció con rapidez.",
+        "4": "Río Verde floreció: plantas en abundancia, pocos grandes depredadores y un paso rápido al asentamiento.\n\nAquí también hay muchas tribus, lo que permitió el intercambio de nuevos cultivos — a veces en paz por el comercio, a veces por la fuerza.",
+        "5": "Creciente Rojo se desarrolló despacio. La abundancia de animales mantuvo a la gente en el nomadismo y los numerosos vecinos crearon conflicto constante.\n\nPero aunque las plantas escasean, los experimentos con ellas se multiplicaron gracias a las tribus vecinas. El territorio creció lento pero con firmeza."
+      },
+      "preChoiceText": "En el próximo milenio los centros de civilización crecerán gracias a la agricultura: distintos cultivos, métodos de cultivo y nuevas técnicas.\n\nAprenderán por prueba y error. Pero de nuevo todo depende de la suerte: ¿quién descubrirá primero el mejor cultivo?",
+      "postChoiceText": "En este milenio la gente fue dominando poco a poco la agricultura. Probó distintos cultivos y eligió los más fiables — como el trigo o el arroz. Eso se convirtió en la base de su dieta durante miles de años.\n\nEl azar jugó un papel enorme. Qué plantas había, cuántas, lo fácil que era domesticarlas. El trigo fue mucho más fácil que, pongamos, los manzanos.\n\nPoco a poco la agricultura fue más eficiente que la caza — y todas las sociedades hicieron el cambio."
+    },
+    "3": {
+      "introText": "Pasó otro milenio. Todos los centros de civilización crecieron, pero cada uno a su manera. Quienes obtuvieron antes los cultivos más eficientes se expandieron más rápido. Pero tarde o temprano toda tecnología toca techo. Hay un máximo de tierra que una persona puede cultivar a mano.\n\nPara el siguiente salto hacía falta algo nuevo — ayudantes que tiraran del arado, dieran carne, leche y lana. Esos ayudantes fueron los animales domésticos.\n\nVeamos qué pasó en cada centro.",
+      "zoneTexts": {
+        "1": "Los últimos mil años fueron un éxito para Montaña Naranja. Se encontraron pronto los mejores cultivos y la tierra se expandió.\n\nEste milenio también se presenta bien — hay suficientes grandes animales para que alguno pueda servir para la ganadería.",
+        "2": "En Valle Azul el desarrollo fue duro por la escasa variedad de plantas comestibles. Los vecinos no dejaban de presionar, intentando apoderarse de tierras fértiles.\n\nPero este milenio trae una oportunidad. Aquí hay muchos grandes animales y algunos pueden ser aptos para la domesticación.",
+        "3": "Junglas Amarillas crecieron con firmeza. La tierra se expandió, los mejores cultivos abundaban y los únicos obstáculos eran barreras naturales — montañas y ríos.\n\nLos próximos mil años serán duros. Aquí hay casi ningún gran animal y las probabilidades de encontrar especies aptas son muy bajas.",
+        "4": "En Río Verde las cosas fueron bien. La riqueza de plantas aseguró un crecimiento rápido y los vecinos no estorbaron.\n\nCon los animales es distinto. Hay pocos y encontrar especies aptas será difícil.",
+        "5": "Este milenio fue duro para Creciente Rojo. Pocas plantas, competencia fuerte.\n\nPero aquí hay muchísimos grandes animales. Eso abre muchas posibilidades — usarlos en la ganadería, criarlos para carne y usarlos para el transporte."
+      },
+      "preChoiceText": "En el próximo milenio la gente empezará a domesticar animales. Tirarán del arado, darán carne, lana y servirán de transporte.\n\nPero una domesticación con éxito es siempre una mezcla de suerte y rasgos del animal. Unos son dóciles, otros no; unos no se reproducen en cautividad, otros necesitan demasiada comida. ¿Qué centro tendrá suerte esta vez?",
+      "postChoiceText": "En este milenio los humanos domesticaron muchos animales y eso transformó la ganadería. Vacas, ovejas, cabras, cerdos y caballos se convirtieron en la base de la agricultura y la vida cotidiana.\n\nPero el éxito era imposible sin suerte: no todo animal es apto para domesticar. La dieta, la tasa de crecimiento, la capacidad de reproducirse en cautividad, el comportamiento de rebaño y desde luego el temperamento importaban.\n\nPor ejemplo, las cebras apenas se diferencian de los caballos, pero nunca se domesticaron — son demasiado agresivas.\n\nLos animales domésticos dieron a las sociedades un gran impulso: más comida, más ropa, transporte y nuevas herramientas. Se convirtieron en una parte crucial de la historia humana."
+    },
+    "4": {
+      "introText": "Domesticar animales abrió el camino a cosechas mayores y una ganadería más previsible. Los comerciantes pudieron viajar más lejos y los animales de carga llevaron pesos pesados, acelerando el comercio y el intercambio de ideas.\n\nPero ese progreso creó un problema nuevo: había demasiada información. La memoria ya no daba abasto y transmitir conocimiento a largas distancias se volvió casi imposible. Hubo que inventar algo para registrar esa información. Así apareció la escritura.\n\nVeamos qué condiciones tenía cada centro.",
+      "zoneTexts": {
+        "1": "En Montaña Naranja todo se desarrolló rápido. Animales suficientes, buenas cosechas, población creciente.\n\nPero las barreras naturales — las mismas montañas y ríos que antes protegían de invasores — ahora estorban. El comercio es más lento y las ideas llegan con más retraso.",
+        "2": "En Valle Azul la gran variedad de animales permitió un rápido aumento de la producción de alimentos. El territorio creció y los vecinos comerciaron e intercambiaron ideas.\n\nLas condiciones para que surja aquí la escritura son las más favorables. Hay mucho que registrar, muchos socios comerciales y una necesidad clara de guardar información.",
+        "3": "Junglas Amarillas lo pasaron mal en los últimos mil años. Casi no hay animales y la tierra se sigue cultivando a mano.\n\nAquí hay poca necesidad de escritura y aún menos vecinos. Inventar la escritura en esas condiciones es difícil.",
+        "4": "En Río Verde hay pocos grandes animales — era una ventaja para la seguridad. Pero cuando tocó aumentar rendimientos se volvió una debilidad.\n\nAquí el comercio crece y los vecinos se vuelven cada vez más socios que enemigos. Tal vez la escritura aparezca por préstamo.",
+        "5": "En Creciente Rojo los últimos mil años fueron un éxito. Los animales se domesticaron pronto y el comercio floreció.\n\nLa escritura tiene buenas posibilidades de surgir aquí — hay demanda, hay necesidad y hay vecinos que piensan en la misma línea y experimentan."
+      },
+      "preChoiceText": "En el próximo milenio la escritura aparecerá o se tomará prestada en todos los centros de civilización. Pero quien lo haga primero ganará una gran ventaja.\n\n¿En qué región prenderá esta idea?",
+      "postChoiceText": "La escritura surgió en la historia humana solo una o pocas veces. Que sepamos, primero entre los sumerios, luego entre los pueblos indígenas de México. Los sistemas egipcio y chino quizá surgieron también de forma independiente.\n\nMucho más a menudo la escritura se extendió por intercambio y comercio. Alguien la vio entre vecinos y empezó a crear su propio sistema, sabiendo ya que era posible.\n\nPara que la escritura echara raíz hacían falta recursos. Escribas que supieran escribir y llevar cuentas, y una necesidad de almacenar y transmitir información.\n\nY con el tiempo la escritura se convirtió en una herramienta para la emoción, la historia y la literatura."
+    },
+    "5": {
+      "introText": "Para entonces la escritura ya formaba parte de la vida en todos los centros de civilización. En unos sitios se usa sobre todo para llevar cuentas, en otros ya se crean los primeros libros.\n\nLas civilizaciones se han fortalecido, han aprendido a gobernar grandes territorios y comercian cada vez más entre sí. Intercambian ideas, plantas, animales y tecnologías.\n\nY aquí entra en escena un factor que nadie elige — la geografía del continente. Veamos quién ha llegado a este punto y en qué estado.",
+      "zoneTexts": {
+        "1": "En Montaña Naranja la escritura apareció pronto, aunque se desarrolló de forma peculiar por el escaso número de vecinos.\n\nAhora el foco está en el comercio y el intercambio de ideas. Lo que más importa es la forma del continente: si se alarga de norte a sur o de este a oeste. Eso determina lo fácil que es que se extiendan plantas y animales.",
+        "2": "En Valle Azul la escritura se desarrolló rápido y con éxito. La gente aprendió a registrar conocimiento y transmitirlo.\n\nLos continentes alargados de este a oeste tienen una gran ventaja: el clima es parecido a la misma latitud, así que las plantas no tienen que adaptarse de nuevo.\n\nLas condiciones de crecimiento se ven bastante bien.",
+        "3": "La escritura apareció en Junglas Amarillas, pero tarde. No había una necesidad urgente ni suficientes vecinos para tomar prestada la idea.\n\nLos próximos mil años serán difíciles. El continente se alarga de norte a sur, así que a cada paso hay una nueva zona climática, nuevas enfermedades y nuevos obstáculos.",
+        "4": "Río Verde se desarrolló de forma gradual. La escritura ayudó a gobernar grandes territorios.\n\nPero las barreras naturales — desiertos, montañas, océanos — dificultan el intercambio de ideas.",
+        "5": "En Creciente Rojo la civilización se desarrolló rápido. La escritura apareció pronto o se tomó prestada.\n\nEl continente se alarga de este a oeste, así que el clima es parecido a largas distancias. Eso crea excelentes oportunidades para el comercio y la difusión de la tecnología."
+      },
+      "preChoiceText": "En este milenio la geografía juega un papel decisivo — aunque todos los factores anteriores siguen importando.\n\n¿Dónde tendrán los comerciantes mejor suerte y sus caravanas llegarán más a menudo a los vecinos?",
+      "postChoiceText": "La orientación de los continentes es una de las razones clave de las diferencias en el ritmo de desarrollo. En continentes alargados de este a oeste, las zonas climáticas van en paralelo. Eso significa que los mismos cultivos que crecen en una región pueden echar raíz con facilidad en otra a la misma latitud.\n\nEn continentes alargados de norte a sur, en cambio, el clima cambia de golpe: de templado a subtropical y tropical. Esos cambios hacen mucho más difícil extender plantas y animales.\n\nEn cada nueva zona climática hacen falta nuevas plantas, nuevos animales y nuevas técnicas — y no siempre es fácil."
+    },
+    "6": {
+      "introText": "La geografía influyó mucho en el desarrollo de las civilizaciones. Pero ahora la humanidad se enfrenta a un reto nuevo — uno que nació del éxito anterior. Las epidemias.\n\nPara que una enfermedad se convierta en epidemia hacen falta varias condiciones. Las más importantes son ciudades densas y cercanía al ganado. El crecimiento de la población urbana y la importancia del comercio entre ciudades crearon vías ideales para que surgieran y se extendieran las enfermedades.",
+      "zoneTexts": {
+        "1": "En Montaña Naranja todo fue bien. La población creció, los territorios se expandieron.\n\nPero aquí se dan las condiciones para epidemias. Las montañas y los ríos frenarán un poco la propagación de la enfermedad, pero no la detendrán.",
+        "2": "Los últimos mil años fueron un éxito para Valle Azul. El comercio floreció, las ideas circularon.\n\nPero ahora las ciudades densas y las rutas comerciales ocupadas traerán no solo bienes sino también enfermedad.",
+        "3": "Junglas Amarillas crecieron despacio, pero ahora eso se vuelve una ventaja.\n\nAquí hay poco ganado y pocos asentamientos densos, así que a las epidemias les costará más afianzarse.",
+        "4": "En Río Verde crecieron la población y el intercambio de ideas. Empezaron los primeros contactos al otro lado del océano.\n\nAparecerán enfermedades, pero serán menos que en otros sitios por el aislamiento. Aun así no se pueden evitar del todo las epidemias.",
+        "5": "Los últimos mil años fueron una edad de oro para Creciente Rojo. La población creció, el comercio floreció.\n\nPero eso es justo lo que hace ahora vulnerable a la región: una población enorme y una posición en el cruce de las rutas comerciales. Lo más probable es que las epidemias empiecen aquí y luego sigan esas rutas."
+      },
+      "preChoiceText": "Es hora de elegir de nuevo. ¿Dónde aparecerá un sanador o un sabio que entienda antes que nadie cómo contener las epidemias?",
+      "postChoiceText": "Las epidemias cambiaron el mundo tanto como las guerras. Las enfermedades europeas mataron a más gente en el Nuevo Mundo que los propios europeos. Los gérmenes del Viejo Mundo resultaron mucho más mortíferos que los locales, y los europeos tenían inmunidad.\n\n¿Por qué? Muchas epidemias surgieron de los animales domésticos. Ellos también padecían \"enfermedades del hacinamiento\" y algunas pasaron al hombre.\n\nEn cuanto domesticamos animales, ganamos ventajas enormes y riesgos serios. Pero más tarde el desarrollo de la medicina, sobre todo las vacunas, dio a la gente herramientas para contener las epidemias."
+    },
+    "7": {
+      "introText": "Casi hemos llegado a nuestro tiempo. Las epidemias se llevaron muchas vidas en unas regiones pero apenas tocaron otras. Aunque esos \"afortunados\" tampoco tienen inmunidad y les esperan más problemas.\n\nAhora el motor principal del desarrollo es la tecnología. Siempre ha ido evolucionando, claro, pero solo ahora está empezando a marcar el rumbo de la historia. Inventar algo no basta — la sociedad tiene que poder adoptarlo y beneficiarse.\n\nLos inventos nacen de la curiosidad de individuos. Las tecnologías, en cambio, vienen de la acumulación de muchos saberes que se alimentan entre sí. Para crear la imprenta, por ejemplo, no basta una idea — hacen falta papel, metalurgia, tipos móviles, tinta, prensas y por supuesto escritura.\n\nVeamos cómo se desarrollarán nuestros centros en el próximo milenio.",
+      "zoneTexts": {
+        "1": "El aislamiento ayudó a Montaña Naranja a evitar las peores epidemias. Se cerraron a tiempo las fronteras y la enfermedad casi no entró.\n\nPero ahora ese mismo aislamiento se vuelve un obstáculo. Cuando una sociedad no interactúa con vecinos, la tecnología se estanca — o hasta desaparece si pierde valor práctico de forma temporal.",
+        "2": "Las epidemias costaron muchas vidas en Valle Azul. Pero también impulsaron el desarrollo de la medicina. Subió la esperanza de vida y la gente tuvo más tiempo para experimentar y descubrir.\n\nEste centro tiene excelentes condiciones para el progreso tecnológico: muchos vecinos, comercio activo e intercambio constante de ideas por migración y choque de culturas.",
+        "3": "Junglas Amarillas se beneficiaron de estar lejos de las principales rutas comerciales. Las epidemias apenas tocaron la región. La población creció, el territorio se expandió.\n\nPero pocos vecinos significan menos ideas que tomar prestadas. Puede que aquí surjan inventos que nunca se extiendan por falta de necesidad.",
+        "4": "Un comercio limitado protegió a Río Verde de los peores efectos de las epidemias. Aun así algunas enfermedades llegaron y redujeron la población.\n\nSin embargo las condiciones para el crecimiento tecnológico son buenas. No hay muchos vecinos, pero suficientes para que algunos inventos echen raíz y se extiendan.",
+        "5": "En Creciente Rojo los últimos mil años fueron duros. Las epidemias asestaron un golpe terrible; población y territorio se redujeron.\n\nPero eso obligó a la gente a desarrollar la medicina y buscar soluciones nuevas. Ahora que el comercio revive, este centro puede desarrollarse más rápido que otros."
+      },
+      "preChoiceText": "Es hora de elegir. ¿Dónde aparecerán los sabios más curiosos? ¿Dónde se atreverán los gobernantes a invertir en ideas nuevas y sacar provecho?",
+      "postChoiceText": "¿De dónde vienen las tecnologías?\n\nEl afán de inventar es un rasgo humano en todas partes. Pero inventar algo es una cosa — convertirlo en tecnología práctica es otra.\n\nLa mayoría de las innovaciones no surgen de la nada. Llegan por el intercambio de ideas, por préstamos, por el contacto con culturas vecinas. Cuanto más se diferencian los vecinos, más amplio es el abanico de soluciones que se pueden adoptar.\n\nEso tampoco basta. El desarrollo tecnológico exige muchas condiciones. Vidas largas para aprender. Trabajo costoso para crear un incentivo a la mecanización. Educación y leyes que protejan a los inventores.\n\nResulta que las instituciones de una sociedad moldean el desarrollo de la tecnología tanto como la curiosidad humana."
+    },
+    "8": {
+      "introText": "Hemos llegado a los últimos mil años. A lo largo de nuestra historia, los humanos pasaron de pequeñas comunidades sedentarias a grandes Estados armados con tecnología moderna.\n\nEl poder ha acompañado todo el viaje, aunque en segundo plano. Empezó con grupos de parentesco de unas cincuenta personas unidas por la sangre. Luego vinieron las tribus. Cientos de personas entre las que ya había roles no productivos — artesanos y líderes.\n\nDespués vinieron los cacicazgos. Asociaciones de decenas de miles. La gente empezó a vivir junto a desconocidos y necesitaban un sistema de gobierno que mantuviera el orden.\n\nLuego vinieron los Estados — estructuras enormes que gobiernan a millones mediante una burocracia compleja. En estos últimos mil años el factor decisivo serán las instituciones del poder.",
+      "zoneTexts": {
+        "1": "Las fronteras naturales hicieron distintiva a la civilización de Montaña Naranja, pero un gran número de vecinos ayudó a desarrollar el gobierno.\n\nA pesar del aislamiento relativo, este centro llegó a ser uno de los más avanzados — aunque no por la vía más rápida.",
+        "2": "La abundancia de vecinos obligó a Valle Azul a aprender pronto que el tamaño de la población es poder. Para defenderse y crecer tuvieron que crear sistemas de gobierno al servicio de toda la sociedad, no solo de su élite.\n\nY ahora, en estos últimos mil años, esos esfuerzos están dando fruto.",
+        "3": "Un largo aislamiento y la falta de vecinos retrasaron mucho la aparición de instituciones estatales.\n\nEstar desconectado de las rutas comerciales globales permitió un desarrollo tranquilo durante mucho tiempo, pero no tan rápido como en otros centros de civilización.",
+        "4": "El aislamiento protegió a Río Verde de las epidemias, pero también ralentizó el desarrollo de la tecnología y las instituciones de gobierno.\n\nLa burocracia sí se formó al final, más tarde que en otros sitios, lo que permitió al Estado desarrollarse de forma sostenible.",
+        "5": "La geografía obligó a este centro de civilización a crear pronto instituciones de poder eficaces. Algunos de los primeros burócratas aparecieron aquí y un círculo rico de vecinos les permitió adoptar las mejores prácticas.\n\nY es en este milenio cuando esas ventajas acumuladas entrarán en juego por completo."
+      },
+      "preChoiceText": "Los grandes gobernantes, pensadores y reformadores moldean la historia tanto como los inventores.\n\n¿Dónde aparecerán los líderes más sabios?",
+      "postChoiceText": "Durante milenios existieron comunidades de parentesco y tribales. Se diferenciaban en tamaño, densidad de población y grado de asentamiento.\n\nHace unos 7.500 años aparecieron los cacicazgos. Eran grandes asociaciones donde la gente aprendió por primera vez a vivir junto a desconocidos. El cacique obtuvo el derecho a usar la fuerza, resolver disputas y asignar recursos.\n\nPero demasiado dependía del carácter del cacique. Podía servir a la sociedad o hacerlo todo para sí y su élite. Había formas de afianzar el poder: desarmar a la población, reforzar la élite, construir proyectos grandiosos, crear religión o ideología.\n\nMás tarde, hace unos 6.000 años, aparecieron los primeros Estados — mucho más estables y eficientes. Los dirigía una clase de burócratas profesionales encargados de asignar recursos y mantener el orden.\n\nEse sistema permitió gobernar a millones, abordar tareas enormes y construir ejércitos poderosos. Fueron los Estados la forma de poder que modeló el resto de la historia humana."
+    }
+  },
+  "ui": {
+    "next": "Siguiente",
+    "start": "Comenzar",
+    "startGame": "Comenzar el juego",
+    "nextRound": "Siguiente ronda",
+    "chooseLanguage": "Elige idioma",
+    "english": "English",
+    "russian": "Русский"
+  },
+  "header": {
+    "introTitle": "La evolución de las civilizaciones",
+    "endingTitle": "El mundo",
+    "roundTitles": {
+      "round1": "Edad de Piedra",
+      "round2": "Producción de alimentos",
+      "round3": "Domesticación de animales",
+      "round4": "Escritura",
+      "round5": "Geografía y clima",
+      "round6": "Gérmenes y epidemias",
+      "round7": "Tecnologías",
+      "round8": "Poder"
+    }
+  },
+  "areaButtons": {
+    "area1": "Montaña Naranja",
+    "area2": "Valle Azul",
+    "area3": "Junglas Amarillas",
+    "area4": "Río Verde",
+    "area5": "Creciente Rojo"
+  },
+  "final": {
+    "mapText": "Este es el viaje que nuestro mundo ha recorrido en 8.000 años. Hemos seguido el desarrollo de cinco centros de civilización y hemos visto qué factores moldearon su destino.\n\nMucho dependió del azar: dónde crecían los granos adecuados, dónde vivían los grandes animales y cómo estaba dispuesta la geografía de los continentes. Pero tus elecciones también moldearon el mundo resultante.",
+    "endingText": "Volvamos a la historia del conquistador Pizarro. Ahora, tras todo este viaje, podemos responder la pregunta principal.\n¿Por qué fueron los europeos a las tierras de Atahualpa, y no al revés?\n\nPrimero, la tecnología. Los pueblos de Eurasia tenían espadas de acero, armaduras, mosquetes, artillería y caballos — animales que simplemente no existían en las Américas.\n\nSegundo, la escritura. Había existido en Eurasia durante miles de años, almacenando conocimiento y transmitiéndolo entre generaciones. Gracias a ello, los hombres de Pizarro conocían mucho sobre el pueblo inca antes de encontrarlos.\n\nTercero, los estados. Solo las grandes potencias centralizadas podían equipar expediciones oceánicas y competir por nuevas tierras.\n\nCuarto, ventajas en ganadería y energía. Los euroasiáticos habían usado durante mucho tiempo ganado, caballos, burros y molinos de agua y viento. En las Américas, el trabajo pesado se hacía a mano. No porque los pueblos americanos se desarrollaran más lento, sino porque los únicos animales disponibles eran las llamas.\n\nQuinto, la enfermedad. Las epidemias euroasiáticas resultaron más mortíferas que cualquier arma. Las ciudades densas y la vida junto a los animales domésticos generaron infecciones a las que los pueblos del Viejo Mundo tenían inmunidad.\n\nTodos estos factores se unieron — y hicieron posible el desenlace que conocemos por la historia.",
+    "authorshipText": "Este relato interactivo fue creado por Aleksey Shlykov, basado en el libro Armas, gérmenes y acero de Jared Diamond. ¡Espero que te haya resultado interesante! El libro ofrece mucho más y merece la pena leerlo.\n\nSi te ha gustado, puedes probar mis otros juegos educativos.",
+    "illustrationsCredit": "Ilustración del mapa por Ekaterina Zueva.",
+    "playAgain": "Jugar de nuevo",
+    "myWebsite": "Mi web: buildtounderstand.dev",
+    "illustratorButton": "Ekaterina Zueva, ilustradora",
+    "supportMe": "Apóyame"
+  },
+  "timeline": {
+    "title": "Línea temporal histórica",
+    "axisYears": "Años",
+    "axisTime": "Tiempo",
+    "achievementsTitle": "Logros por ronda:",
+    "roundLabel": "Ronda",
+    "yearLabel": "Año",
+    "milestones": {
+      "sedentary": "Fin del nomadismo / transición a la sedentarización",
+      "crops": "Mejores cultivos alimentarios identificados",
+      "domestication": "Domesticación de animales",
+      "writing": "Escritura desarrollada o adoptada",
+      "trade": "Expansión de redes comerciales e intercambio cultural",
+      "epidemics": "Primeras epidemias y medidas de contención",
+      "technology": "Avances industriales y tecnológicos",
+      "governance": "Instituciones de gobierno efectivas"
+    }
+  },
+  "populationChart": {
+    "title": "Dinámica poblacional",
+    "axis": {
+      "time": "Tiempo (años)",
+      "population": "Población"
+    },
+    "tooltip": {
+      "round": "Ronda",
+      "acc": "Acum",
+      "power": "Poder",
+      "populationValue": "Población",
+      "year": "Año"
+    },
+    "explanation": "",
+    "yAxisLabel": "Población"
+  },
+  "dominanceChart": {
+    "title": "Períodos de predominio civilizatorio",
+    "axis": {
+      "time": "Tiempo (años)",
+      "dominance": "Índice de predominio (%)"
+    },
+    "tooltip": {
+      "round": "Ronda",
+      "year": "Año",
+      "dominance": "Predominio",
+      "acc": "Acum",
+      "power": "Poder",
+      "rawValue": "Acum × Poder"
+    },
+    "explanation": ""
+  },
+  "futureProjectionChart": {
+    "title": "Proyección futura: próximos 4.000 años",
+    "axis": {
+      "time": "Tiempo (años)",
+      "development": "Fuerza de desarrollo"
+    },
+    "tooltip": {
+      "predicted": "Previsto",
+      "round": "Ronda",
+      "acc": "Acum",
+      "power": "Poder",
+      "value": "Valor"
+    },
+    "explanation": "Este gráfico proyecta cómo cada centro de civilización habría seguido desarrollándose más allá de los 8.000 años. Las proyecciones se basan únicamente en la tendencia de crecimiento. Las líneas continuas muestran datos reales (rondas 1–8) y las discontinuas las trayectorias proyectadas (rondas 9–12)."
+  }
+}

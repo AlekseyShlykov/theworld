@@ -25,6 +25,27 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onLanguageSe
         >
           Русский
         </button>
+        <button
+          className="nav-button language-button language-button-spanish"
+          onClick={() => onLanguageSelect('es')}
+          aria-label="Select Spanish"
+        >
+          Español
+        </button>
+        <button
+          className="nav-button language-button language-button-french"
+          onClick={() => onLanguageSelect('fr')}
+          aria-label="Select French"
+        >
+          Français
+        </button>
+        <button
+          className="nav-button language-button language-button-japanese"
+          onClick={() => onLanguageSelect('ja')}
+          aria-label="Select Japanese"
+        >
+          日本語
+        </button>
       </div>
     </div>
   );

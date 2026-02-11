@@ -20,6 +20,38 @@
     "round6": { "title": "Микробы и эпидемии" },
     "round7": { "title": "Технологии" },
     "round8": { "title": "Власть" }
+  },
+  "es": {
+    "startScreen": { "title": "Una breve historia interactiva" },
+    "round1": { "title": "Edad de Piedra" },
+    "round2": { "title": "Producción de alimentos" },
+    "round3": { "title": "Domesticación de animales" },
+    "round4": { "title": "Escritura" },
+    "round5": { "title": "Eje este-oeste" },
+    "round6": { "title": "Gérmenes y epidemias" },
+    "round7": { "title": "Tecnologías" },
+    "round8": { "title": "Poder" }
+  },
+  "fr": {
+    "startScreen": { "title": "Une courte histoire interactive" },
+    "round1": { "title": "Âge de pierre" },
+    "round2": { "title": "Production alimentaire" },
+    "round3": { "title": "Domestication des animaux" },
+    "round4": { "title": "Écriture" },
+    "round5": { "title": "Axe est-ouest" },
+    "round6": { "title": "Germes et pandémies" },
+    "round7": { "title": "Technologies" },
+    "round8": { "title": "Pouvoir" }
+  },
+  "ja": {
+    "startScreen": { "title": "短いインタラクティブストーリー" },
+    "round1": { "title": "石器時代" },
+    "round2": { "title": "食料生産" },
+    "round3": { "title": "動物の家畜化" },
+    "round4": { "title": "文字" },
+    "round5": { "title": "東西軸" },
+    "round6": { "title": "病原菌とパンデミック" },
+    "round7": { "title": "技術" },
+    "round8": { "title": "権力" }
   }
 }
-

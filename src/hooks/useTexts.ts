@@ -37,6 +37,7 @@ export interface FinalData {
   playAgain: string;
   myWebsite: string;
   illustratorButton: string;
+  supportMe: string;
 }
 
 export interface TimelineData {
@@ -162,7 +163,7 @@ export const useTexts = (language: Language) => {
       setLoading(true);
       // Use base URL for GitHub Pages compatibility
       const baseUrl = import.meta.env.BASE_URL;
-      const url = lang === 'ru' ? `${baseUrl}data/texts_ru.json` : `${baseUrl}data/texts_en.json`;
+      const url = `${baseUrl}data/texts_${lang}.json`;
       const response = await fetch(url);
       
       if (!response.ok) {

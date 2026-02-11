@@ -55,7 +55,7 @@ export function validateTextsStructure(texts: TextsData | null): string[] {
   if (!texts.final) {
     errors.push("Missing 'final' object");
   } else {
-    const requiredFinalKeys = ['mapText', 'endingText', 'authorshipText', 'illustrationsCredit', 'playAgain', 'myWebsite', 'illustratorButton'];
+    const requiredFinalKeys = ['mapText', 'endingText', 'authorshipText', 'illustrationsCredit', 'playAgain', 'myWebsite', 'illustratorButton', 'supportMe'];
     for (const key of requiredFinalKeys) {
       if (!texts.final[key as keyof typeof texts.final] || typeof texts.final[key as keyof typeof texts.final] !== 'string') {
         errors.push(`Missing or invalid final.${key}`);

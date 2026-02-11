@@ -29,6 +29,10 @@ export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
     window.open('https://buildtounderstand.dev/', '_blank');
   };
 
+  const handleSupportClick = () => {
+    window.open('https://patreon.com/buildtounderstand', '_blank');
+  };
+
   return (
     <div className="final-ending-screen" role="dialog" aria-label="Game ending">
       <IntroMapAnimation
@@ -85,6 +89,18 @@ export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
               aria-label="Visit buildtounderstand.dev"
             >
               {texts.final.myWebsite}
+            </button>
+            <button
+              className="nav-button final-ending-button final-ending-button-link"
+              onClick={() => {
+                if ((window as any).playClickSound) {
+                  (window as any).playClickSound();
+                }
+                handleSupportClick();
+              }}
+              aria-label={texts.final.supportMe}
+            >
+              {texts.final.supportMe}
             </button>
           </div>
         )}

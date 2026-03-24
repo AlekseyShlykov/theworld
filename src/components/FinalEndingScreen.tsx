@@ -10,7 +10,7 @@ interface FinalEndingScreenProps {
   logic: LogicData;
   texts: TextsData;
   onPlayAgain: () => void;
-  /** When provided, only a single "Next" button is shown; otherwise Play Again + My website */
+  /** When provided, only a single "Next" button is shown; otherwise Play Again + links */
   onNext?: () => void;
 }
 
@@ -27,6 +27,10 @@ export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
   const baseUrl = import.meta.env.BASE_URL;
   const handleWebsiteClick = () => {
     window.open('https://buildtounderstand.dev/', '_blank');
+  };
+
+  const handleSubscribeClick = () => {
+    window.open('https://buildtounderstand.substack.com/?subscribe=true', '_blank');
   };
 
   const handleSupportClick = () => {
@@ -86,9 +90,21 @@ export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
                 }
                 handleWebsiteClick();
               }}
-              aria-label="Visit buildtounderstand.dev"
+              aria-label={texts.final.myWebsite}
             >
               {texts.final.myWebsite}
+            </button>
+            <button
+              className="nav-button final-ending-button final-ending-button-link"
+              onClick={() => {
+                if ((window as any).playClickSound) {
+                  (window as any).playClickSound();
+                }
+                handleSubscribeClick();
+              }}
+              aria-label={texts.final.subscribeToUpdates}
+            >
+              {texts.final.subscribeToUpdates}
             </button>
             <button
               className="nav-button final-ending-button final-ending-button-link"

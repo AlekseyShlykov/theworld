@@ -14,8 +14,8 @@ interface FinalAuthorshipScreenProps {
 
 /**
  * Final authorship / credits screen.
- * Same layout and link buttons as FinalEndingScreen (Play Again, My website).
- * Uses texts.final.authorshipText and reuses texts.final.playAgain / myWebsite.
+ * Same layout and link buttons as FinalEndingScreen (Play Again, other games, subscribe, etc.).
+ * Uses texts.final.authorshipText and reuses texts.final.playAgain / myWebsite / subscribeToUpdates.
  */
 export const FinalAuthorshipScreen: React.FC<FinalAuthorshipScreenProps> = ({
   areas,
@@ -25,6 +25,10 @@ export const FinalAuthorshipScreen: React.FC<FinalAuthorshipScreenProps> = ({
 }) => {
   const handleWebsiteClick = () => {
     window.open('https://buildtounderstand.dev/', '_blank');
+  };
+
+  const handleSubscribeClick = () => {
+    window.open('https://buildtounderstand.substack.com/?subscribe=true', '_blank');
   };
 
   const handleIllustratorClick = () => {
@@ -73,9 +77,21 @@ export const FinalAuthorshipScreen: React.FC<FinalAuthorshipScreenProps> = ({
               }
               handleWebsiteClick();
             }}
-            aria-label="Visit buildtounderstand.dev"
+            aria-label={texts.final.myWebsite}
           >
             {texts.final.myWebsite}
+          </button>
+          <button
+            className="nav-button final-ending-button final-ending-button-link"
+            onClick={() => {
+              if ((window as any).playClickSound) {
+                (window as any).playClickSound();
+              }
+              handleSubscribeClick();
+            }}
+            aria-label={texts.final.subscribeToUpdates}
+          >
+            {texts.final.subscribeToUpdates}
           </button>
           <button
             className="nav-button final-ending-button final-ending-button-link"

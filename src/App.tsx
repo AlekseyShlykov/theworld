@@ -565,7 +565,7 @@ function App() {
     );
   }
 
-  // 3) Third final screen: authorship / credits (same links: Play Again, My website)
+  // 3) Third final screen: authorship / credits (Play Again, other games, subscribe, illustrator, support)
   if (finalScreen === 'finalAuthorship' && !loading && !error && !textsLoading && logic && content && texts) {
     return (
       <div className="app">

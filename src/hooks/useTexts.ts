@@ -36,6 +36,7 @@ export interface FinalData {
   illustrationsCredit: string;
   playAgain: string;
   myWebsite: string;
+  subscribeToUpdates: string;
   illustratorButton: string;
   supportMe: string;
 }

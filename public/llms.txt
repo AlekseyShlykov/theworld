@@ -1,0 +1,20 @@
+# The World
+
+> Interactive strategy long-read game about how geography and environment shaped civilizations.
+
+## Primary URL
+- https://alekseyshlykov.github.io/theworld/
+
+## Project Summary
+- Browser game inspired by "Guns, Germs & Steel".
+- Built with React + TypeScript.
+- Focuses on historical milestones, geography, resources, and societal development.
+
+## Content and Usage
+- This project is for reading/playing in a browser.
+- Attribution requested when quoting project descriptions.
+- License: CC BY-NC 4.0.
+- Legal text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+## Contact
+- Author: Alex Shlykov

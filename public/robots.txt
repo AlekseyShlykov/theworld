@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alekseyshlykov.github.io/theworld/sitemap.xml

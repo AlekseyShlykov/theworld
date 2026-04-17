@@ -49,7 +49,7 @@ export const GameFooter: React.FC<GameFooterProps> = ({
 
   const handleWebsiteClick = () => {
     playClickSound();
-    window.open('https://buildtounderstand.dev/', '_blank');
+    window.open('https://evolutionofcivilizations.earth/', '_blank');
   };
 
   const handleNewsletterClick = () => {

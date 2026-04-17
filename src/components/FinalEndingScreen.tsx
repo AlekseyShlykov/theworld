@@ -26,7 +26,7 @@ export const FinalEndingScreen: React.FC<FinalEndingScreenProps> = ({
 }) => {
   const baseUrl = import.meta.env.BASE_URL;
   const handleWebsiteClick = () => {
-    window.open('https://buildtounderstand.dev/', '_blank');
+    window.open('https://evolutionofcivilizations.earth/', '_blank');
   };
 
   const handleSubscribeClick = () => {

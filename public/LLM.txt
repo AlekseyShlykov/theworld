@@ -1,1 +1,1 @@
-See: /theworld/llms.txt
+See: /llms.txt

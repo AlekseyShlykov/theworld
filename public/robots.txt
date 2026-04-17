@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alekseyshlykov.github.io/theworld/sitemap.xml
+Sitemap: https://evolutionofcivilizations.earth/sitemap.xml

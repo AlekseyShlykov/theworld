@@ -3,7 +3,7 @@
 > Interactive strategy long-read game about how geography and environment shaped civilizations.
 
 ## Primary URL
-- https://alekseyshlykov.github.io/theworld/
+- https://evolutionofcivilizations.earth/
 
 ## Project Summary
 - Browser game inspired by "Guns, Germs & Steel".

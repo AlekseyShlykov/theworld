@@ -1,6 +1,5 @@
 import React from 'react';
 import { useMusic, useSFX } from '../hooks/useAudio';
-import { useTTS } from '../contexts/TTSContext';
 import { Language } from '../types';
 import './GameFooter.css';
 
@@ -37,25 +36,10 @@ export const GameFooter: React.FC<GameFooterProps> = ({
 }) => {
   const { isPlaying: isMusicPlaying, toggleMusic } = useMusic(currentRound);
   const { sfxEnabled, toggleSFX, playClickSound } = useSFX();
-  const { isSpeechOn, setIsSpeechOn, stopSpeaking } = useTTS();
 
   const handleMusicClick = () => {
     playClickSound();
     toggleMusic();
-  };
-
-  const handleTTSClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    playClickSound();
-    
-    if (!isSpeechOn) {
-      // Turn speech ON - useEffect in App.tsx will handle reading
-      setIsSpeechOn(true);
-    } else {
-      // Turn speech OFF and stop reading
-      setIsSpeechOn(false);
-      stopSpeaking();
-    }
   };
 
   const handleSFXClick = () => {
@@ -68,14 +52,9 @@ export const GameFooter: React.FC<GameFooterProps> = ({
     window.open('https://buildtounderstand.dev/', '_blank');
   };
 
-  const handleXClick = () => {
+  const handleNewsletterClick = () => {
     playClickSound();
-    window.open('https://x.com/buildtoundrstnd', '_blank');
-  };
-
-  const handlePatreonClick = () => {
-    playClickSound();
-    window.open('https://patreon.com/buildtounderstand', '_blank');
+    window.open('https://buildtounderstand.substack.com/', '_blank');
   };
 
   // Expose playClickSound to window for use in other components
@@ -99,12 +78,6 @@ export const GameFooter: React.FC<GameFooterProps> = ({
             ariaLabel="Toggle background music"
           />
           <FooterButton
-            icon={`${baseUrl}assets/Speech.png`}
-            onClick={handleTTSClick}
-            isActive={isSpeechOn}
-            ariaLabel={isSpeechOn ? "Stop reading" : "Start reading"}
-          />
-          <FooterButton
             icon={`${baseUrl}assets/sounds.png`}
             onClick={handleSFXClick}
             isActive={sfxEnabled}
@@ -123,14 +96,9 @@ export const GameFooter: React.FC<GameFooterProps> = ({
             ariaLabel="Visit my website"
           />
           <FooterButton
-            icon={`${baseUrl}assets/X.png`}
-            onClick={handleXClick}
-            ariaLabel="Visit my X (Twitter)"
-          />
-          <FooterButton
-            icon={`${baseUrl}assets/supportme.png`}
-            onClick={handlePatreonClick}
-            ariaLabel="Support on Patreon"
+            icon={`${baseUrl}assets/letter.png`}
+            onClick={handleNewsletterClick}
+            ariaLabel="Newsletter on Substack"
           />
         </div>
       </div>
